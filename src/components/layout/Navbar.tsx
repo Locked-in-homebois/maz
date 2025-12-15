@@ -88,7 +88,8 @@ export default function Navbar() {
             key={item.label}
             href={item.href}
             onMouseEnter={() => setHoveredIndex(index)}
-            className="relative text-xs font-bold uppercase tracking-widest text-neutral-500 transition-colors hover:text-black"
+            // ADDED: 'px-2 py-2' to make the hit box bigger
+            className="relative px-2 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500 transition-colors hover:text-black"
           >
             {item.label}
 
