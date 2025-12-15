@@ -11,6 +11,7 @@ const LINKS = [
   { label: "Flooring", href: "/" },
   { label: "Portfolio", href: "/" },
   { label: "Contact", href: "/" },
+  { label: "Get A Quote", href: "/" },
 ];
 
 const menuVariants: Variants = {
@@ -59,6 +60,10 @@ const itemVariants: Variants = {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Keeps track of which link you are hovering over
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  //   this is so that when you scroll on the mobile menu, you scroll the menu not the page behind it
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -73,22 +78,34 @@ export default function Navbar() {
         <h1>mohammed azzam ahdab</h1>
       </div>
 
-      <div className="hidden gap-8 md:flex">
-        {LINKS.map((item) => (
+      {/* DESKTOP MENU */}
+      <div
+        className="hidden gap-8 md:flex"
+        onMouseLeave={() => setHoveredIndex(null)} // Reset when mouse leaves the whole list
+      >
+        {LINKS.map((item, index) => (
           <Link
             key={item.label}
             href={item.href}
-            className="text-xs font-bold uppercase tracking-widest text-neutral-500 transition-colors hover:text-black"
+            onMouseEnter={() => setHoveredIndex(index)}
+            className="relative text-xs font-bold uppercase tracking-widest text-neutral-500 transition-colors hover:text-black"
           >
             {item.label}
+
+            {/* THE UNDERLINE GHOST */}
+            {hoveredIndex === index && (
+              <motion.span
+                layoutId="navbar-underline"
+                className="absolute -bottom-1 left-0 h-0.5 w-full bg-black"
+                transition={{
+                  type: "spring",
+                  bounce: 0.2,
+                  duration: 0.6,
+                }}
+              />
+            )}
           </Link>
         ))}
-        <Link
-          href="/"
-          className="text-xs font-bold uppercase tracking-widest text-black underline underline-offset-4"
-        >
-          Get A Quote
-        </Link>
       </div>
 
       <div className="md:hidden">
