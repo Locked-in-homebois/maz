@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import MaxWidthWrapper from "../../ui/MaxWidthWrapper";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -24,6 +25,20 @@ const Hero = () => {
               works, and stone finishing. I personally oversee every detail,
               from the initial survey to the final design.
             </p>
+            <div className="flex items-center gap-5">
+              <Link
+                href={""}
+                className="bg-white hover:bg-neutral-300 rounded-xl px-4 py-2 font-bold transition-colors duration-300 shadow-md"
+              >
+                this is a test button
+              </Link>
+              <Link
+                href={""}
+                className="bg-white hover:bg-neutral-300 rounded-xl px-4 py-2 font-bold transition-colors duration-300 shadow-md"
+              >
+                this is a test button
+              </Link>
+            </div>
           </div>
         </div>
       </MaxWidthWrapper>
