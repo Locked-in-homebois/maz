@@ -8,59 +8,59 @@ import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
 
 const LINKS = [
-    { label: "Renovation", href: "/" },
-    { label: "Facades", href: "/" },
-    { label: "Flooring", href: "/" },
-    {   label: "Portfolio", href: "/" },
-    {  label: "Contact", href: "/" },
-    { label: "About us", href: "/aboutus" },
+  { label: "Renovation", href: "/" },
+  { label: "Facades", href: "/" },
+  { label: "Flooring", href: "/" },
+  { label: "Portfolio", href: "/" },
+  { label: "Contact", href: "/" },
+  { label: "About us", href: "/aboutus" },
 ];
 
 const menuVariants: Variants = {
-    initial: { x: "100%" },
-        animate: {
+  initial: { x: "100%" },
+  animate: {
     x: 0,
     transition: {
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.08,
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.08,
     },
-    },
-    exit: {
+  },
+  exit: {
     x: "100%",
     transition: {
-        duration: 0.3,
-        staggerChildren: 0.05,
-        staggerDirection: -1,
+      duration: 0.3,
+      staggerChildren: 0.05,
+      staggerDirection: -1,
     },
-    },
+  },
 };
 
 const itemVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: {
+  initial: { opacity: 0, y: 20 },
+  animate: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.3 },
-    },
-    exit: {
+  },
+  exit: {
     opacity: 0,
     y: 20,
     transition: { duration: 0.2 },
-    },
+  },
 };
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-    useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
-        document.body.style.overflow = "hidden";
-        } else {
-        document.body.style.overflow = "unset";
-        }
-    }, [isOpen]);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   return (
     // 1. Outer Shell: Handles Position, Background, Blur, and Border only.
@@ -70,88 +70,88 @@ export default function Navbar() {
       <MaxWidthWrapper className="flex items-center justify-between">
         {/* LOGO */}
         <Link href="/">
-        <Image
-          src="/logoTemp.png"
-          width={70}
-          height={37}
-          alt="logo gang"
-          className=""
-        />
-         </Link>
+          <Image
+            src="/logoTemp.png"
+            width={70}
+            height={37}
+            alt="logo gang"
+            className=""
+          />
+        </Link>
 
         {/* DESKTOP MENU */}
         <div
-            className="hidden gap-8 md:flex"
-            onMouseLeave={() => setHoveredIndex(null)}
+          className="hidden gap-8 md:flex"
+          onMouseLeave={() => setHoveredIndex(null)}
         >
-            {LINKS.map((item, index) => (
+          {LINKS.map((item, index) => (
             <Link
-                key={item.label}
-                href={item.href}
-                onMouseEnter={() => setHoveredIndex(index)}
-                className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
+              key={item.label}
+              href={item.href}
+              onMouseEnter={() => setHoveredIndex(index)}
+              className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
                 hoveredIndex === index ? "text-white" : "text-neutral-500"
-                }`}
+              }`}
             >
-                {item.label}
-                {hoveredIndex === index && (
+              {item.label}
+              {hoveredIndex === index && (
                 <motion.span
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-3 -left-4 -right-4 -top-3 -z-10 rounded-full bg-black"
-                    transition={{
+                  layoutId="navbar-underline"
+                  className="absolute -bottom-3 -left-4 -right-4 -top-3 -z-10 rounded-full bg-black"
+                  transition={{
                     type: "spring",
                     bounce: 0.2,
                     duration: 0.6,
-                    }}
+                  }}
                 />
-                    )}
+              )}
             </Link>
-            ))}
+          ))}
         </div>
 
         {/* MOBILE TOGGLE */}
         <div className="md:hidden">
-            <button
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-50 focus:outline-none"
-        >
+          >
             <motion.div
-            animate={{ rotate: isOpen ? 90 : 0 }}
-            transition={{ duration: 0.2 }}
+              animate={{ rotate: isOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
             >
-                {isOpen ? <X size={28} /> : <MenuIcon size={28} />}
+              {isOpen ? <X size={28} /> : <MenuIcon size={28} />}
             </motion.div>
-            </button>
+          </button>
         </div>
-
+      </MaxWidthWrapper>
       {/* MOBILE MENU OVERLAY */}
       {/* Kept outside the wrapper so it fills the screen properly */}
-        <AnimatePresence>
+      <AnimatePresence>
         {isOpen && (
-            <motion.div
+          <motion.div
             variants={menuVariants}
             initial="initial"
             animate="animate"
             exit="exit"
             className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto bg-white px-6 pb-8 pt-24"
-            >
+          >
             <div className="flex flex-col gap-4">
-                {LINKS.map((item) => (
+              {LINKS.map((item) => (
                 <motion.div key={item.label} variants={itemVariants}>
-                    <Link
+                  <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-between border-b border-neutral-100 py-4 text-3xl font-black uppercase tracking-tighter text-neutral-900 active:text-neutral-500"
-                    >
+                  >
                     {item.label}
                     <ArrowRight className="text-neutral-300" size={24} />
-                    </Link>
+                  </Link>
                 </motion.div>
-                ))}
+              ))}
             </div>
-            </motion.div>
+          </motion.div>
         )}
-        </AnimatePresence>
+      </AnimatePresence>
     </nav>
-    );
+  );
 }
