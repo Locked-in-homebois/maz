@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { MenuIcon, X, ArrowRight } from "lucide-react";
@@ -62,15 +62,17 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    // 1. Outer Shell: Handles Position, Background, Blur, and Border only.
-    // Removed 'px-6' and flex utilities from here.
-    <nav className="sticky top-0 z-50 w-full border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
-      {/* 2. MaxWidthWrapper: Handles the width constraints and alignment */}
-      <MaxWidthWrapper className="flex items-center justify-between">
-        {/* LOGO */}
-        <div className="z-50 text-xl font-black uppercase tracking-wider text-black">
-          <h1>mohammed azzam ahdab</h1>
-        </div>
+    <nav className="sticky top-0 z-50 flex w-full flex-wrap items-center justify-between border-b border-neutral-100 bg-white/80 px-6 py-4 shadow-sm backdrop-blur-md">
+      <div className="z-50 text-xl font-black uppercase tracking-wider text-black">
+        <Image
+        src="/logoTemp.png"
+        width={70}
+        height={37}
+        alt="logo gang"
+        className=""
+
+        />
+      </div>
 
         {/* DESKTOP MENU */}
         <div
