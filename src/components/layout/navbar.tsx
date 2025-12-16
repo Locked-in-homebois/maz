@@ -103,7 +103,7 @@ export default function Navbar() {
                 // 2. FIXED SIZE: Changed 'inset-0' to negative values (-top-2 etc).
                 // This makes the background bleed OUTWARDS effectively making it bigger
                 // without changing the layout spacing.
-                className="absolute -bottom-2 -left-4 -right-4 -top-2 -z-10 rounded-full bg-black"
+                className="absolute -bottom-3 -left-4 -right-4 -top-3 -z-10 rounded-full bg-black"
                 transition={{
                   type: "spring",
                   bounce: 0.2,
