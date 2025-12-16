@@ -88,16 +88,22 @@ export default function Navbar() {
             key={item.label}
             href={item.href}
             onMouseEnter={() => setHoveredIndex(index)}
-            // ADDED: 'px-2 py-2' to make the hit box bigger
-            className="relative px-2 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500 transition-colors hover:text-black"
+            // 1. FIXED COLOR FLICKER: Used conditional logic instead of 'hover:' class.
+            // If hoveredIndex matches, force White. Otherwise, Gray.
+            className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
+              hoveredIndex === index ? "text-white" : "text-neutral-500"
+            }`}
           >
             {item.label}
 
-            {/* THE UNDERLINE GHOST */}
+            {/* THE PILL GHOST */}
             {hoveredIndex === index && (
               <motion.span
                 layoutId="navbar-underline"
-                className="absolute -bottom-1 left-0 h-0.5 w-full bg-black"
+                // 2. FIXED SIZE: Changed 'inset-0' to negative values (-top-2 etc).
+                // This makes the background bleed OUTWARDS effectively making it bigger
+                // without changing the layout spacing.
+                className="absolute -bottom-2 -left-4 -right-4 -top-2 -z-10 rounded-full bg-black"
                 transition={{
                   type: "spring",
                   bounce: 0.2,
