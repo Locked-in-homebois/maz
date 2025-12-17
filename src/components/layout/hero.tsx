@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <main className="flex justify-center py-5">
       <MaxWidthWrapper>
-        <div className="relative flex flex-col justify-center rounded-4xl h-200 overflow-hidden">
+        <div className="relative flex flex-col justify-center  rounded-4xl h-200 overflow-hidden">
           {/* Background image */}
           <Image
             src="/image3.jpeg"
@@ -21,15 +21,11 @@ const Hero = () => {
           {/* Optional dark overlay for readability */}
           <div className="absolute inset-0 bg-black/40" />
           {/* Text on top */}
-          <div className="relative z-10  flex flex-col justify-center gap-10 px-12 max-w-5xl backdrop-blur-sm rounded-3xl bg-white/1 py-10 mx-10">
+          <div className="relative z-10  flex flex-col justify-center gap-10 px-12 max-w-5xl  rounded-3xl py-10 mx-10">
             <h1 className="text-6xl font-extrabold tracking-tight leading-tight text-white">
               Precision Engineering with a Personal Touch
             </h1>
-            <div className="">
-              <p className="text-2xl text-gray-200 font-light leading-relaxed max-w-100">
-                King Faisal University -alhufuf design supply and installation
-              </p>
-            </div>
+              
             <div className="flex gap-5">
               <Link href="/" className={buttonVars}>
                 View Portfolio
@@ -37,8 +33,13 @@ const Hero = () => {
               <Link href="/" className={buttonVars}>
                 Contact Me
               </Link>
+              
             </div>
+            
           </div>
+          <p className="text-2xl z-10 text-gray-200 mx-4 font-light px-3 translate-y-40 backdrop-blur-lg w-fit rounded-lg leading-relaxed ">
+                King Faisal University -alhufuf design supply and installation
+              </p>
         </div>
       </MaxWidthWrapper>
     </main>

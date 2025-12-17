@@ -126,7 +126,7 @@ export default function Navbar() {
       </MaxWidthWrapper>
       {/* MOBILE MENU OVERLAY */}
       {/* Kept outside the wrapper so it fills the screen properly */}
-      <AnimatePresence>
+      <AnimatePresence> 
         {isOpen && (
           <motion.div
             variants={menuVariants}
