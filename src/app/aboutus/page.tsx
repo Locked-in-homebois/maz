@@ -1,4 +1,4 @@
-import Hero from "@/src/components/layout/aboutus/hero";
+import Hero from "@/src/components/layout/aboutus/hero/hero";
 import Phy from "@/src/components/layout/aboutus/phy/phy";
 import React from "react";
 
