@@ -6,20 +6,26 @@ export const HEADERCONTENT: Header = {
 };
 export const BOXCONTENT: ServiceBox[] = [
     {
-        title: "aysdvgfc",
-        description: "sdcacasasdakjsbcuiabdcadc",
+        title: "Hardscape",
+        description: "sdcaca sasdakj sbcuiab dcadc",
         image: { src: "/image2.jpeg", alt: "image" },
         icon: Hammer,
     },
     {
-        title: "ksudbvcksjbdv",
-        description: "skjcfbaskjdsbfakjsbdfckajlbsd",
+        title: "Villas",
+        description: "skjcf baskjds bfakjs bdfckaj lbsd",
         image: { src: "/image2.jpeg", alt: "image" },
         icon: SwatchBook,
     },
     {
-        title: "ksudahfkuhsf",
-        description: "asljdfnalscasdasdfasfdskhfbskd",
+        title: "facedes",
+        description: "asljdf nalscasdasd fasfd skhfbskd",
+        image: { src: "/image2.jpeg", alt: "image" },
+        icon: Hammer,
+    },
+    {
+        title: "Rock",
+        description: "asljdf nalscasdasd fasfd skhfbskd",
         image: { src: "/image2.jpeg", alt: "image" },
         icon: Hammer,
     },

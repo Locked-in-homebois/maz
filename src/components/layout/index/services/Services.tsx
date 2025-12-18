@@ -5,31 +5,37 @@ import Image from "next/image";
 const Services = () => {
     return (
         <MaxWidthWrapper>
-            <div className="w-full grid gap-9 grid-cols-3 justify-items-center h-60">
-                <div className="col-span-3 text-center">
-                    <h1>{HEADERCONTENT.title}</h1>
+            <div className="w-full grid gap-9 grid-cols-4 relative -z-30 justify-items-center ">
+                <div className="col-span-4 text-center shadow-black  w-full shadow- rounded-2xl">
+                    <h1 className="uppercase text-4xl font-black">
+                        {HEADERCONTENT.title}
+                    </h1>
                     <p>{HEADERCONTENT.description}</p>
                 </div>
 
                 {BOXCONTENT.map((item, index) => (
-                    <div key={index}>
-                        <div className="relative -z-10">
+                    <div
+                        key={index}
+                        className="grid gap-3 rounded-3xl  bg-black/10"
+                    >
+                        <div className=" w-full relative rounded-2xl -z-10">
                             <Image
                                 src={item.image.src}
                                 alt={item.image.alt}
                                 width={1200}
                                 height={1000}
-                                className="rounded-2xl absolute"
+                                className="rounded-[20px]"
                             />
-                            <item.icon className="bg-neutral-50 rounded-md relative justify-self-end size-9 " />
+                            <item.icon
+                                size={45}
+                                className="bg-neutral-50 absolute rounded-xl top-5 right-5 p-2 justify-self-end "
+                            />
                         </div>
-                        <div className="">
-                            <h1 className="backdrop-blur-2xl max-w-fit">
+                        <div className="text-center px-3 rounded-2xl flex flex-col justify-center">
+                            <h1 className="uppercase text-2xl font-black">
                                 {item.title}
                             </h1>
-                            <p className="backdrop-blur-2xl max-w-fit">
-                                {item.description}
-                            </p>
+                            <p className="">{item.description}</p>
                         </div>
                     </div>
                 ))}
