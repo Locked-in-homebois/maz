@@ -7,7 +7,7 @@ const Philosophy = () => {
 	return (
 		<main>
 			<MaxWidthWrapper>
-				<div className="rounded-4xl bg-white flex flex-col gap-10 items-center">
+				<div className="rounded-4xl bg-white flex flex-col gap-10 p-20 items-center">
 					{/* Section Header */}
 					<div className="text-center space-y-4">
 						<h1 className="font-black text-5xl">My Philosophy</h1>
