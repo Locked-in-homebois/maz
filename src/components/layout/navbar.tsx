@@ -12,7 +12,7 @@ const LINKS = [
 	{ label: "Facades", href: "/" },
 	{ label: "Flooring", href: "/" },
 	{ label: "Portfolio", href: "/" },
-	{ label: "Contact", href: "/" },
+	{ label: "Contact", href: "/contact" },
 	{ label: "About us", href: "/aboutus" },
 ];
 

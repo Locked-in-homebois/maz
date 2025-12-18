@@ -18,7 +18,7 @@ const Services = () => {
 						key={index}
 						className={`grid gap-3 rounded-3xl  ${item.colspan}`}
 					>
-						<div className=" w-full relative rounded-2xl max-h-[250px] overflow-hidden z-10">
+						<div className=" w-full relative rounded-2xl max-h-62.5 overflow-hidden z-10">
 							<Image
 								src={item.image.src}
 								alt={item.image.alt}
