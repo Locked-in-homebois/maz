@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import MaxWidthWrapper from "../ui/MaxWidthWrapper";
+import MaxWidthWrapper from "../../ui/MaxWidthWrapper";
 
 const buttonVars =
 	"md:text-[21px] text-[15px] bg-neutral-100 md:font-medium font-[550] rounded-full shadow-sm py-2 md:px-4.25 px-3.75 hover:bg-lime-900 hover:text-white hover:shadow-lg transition-color duration-300 ";
