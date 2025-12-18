@@ -15,7 +15,7 @@ const ProfileSection = () => {
 					<div className="flex flex-col gap-8">
 						<div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-lg sm:w-[80%] lg:w-full">
 							<Image
-								src="/" // Update this path
+								src="/image2.jpeg" // Update this path
 								alt="Profile Picture"
 								fill
 								className="object-cover"
