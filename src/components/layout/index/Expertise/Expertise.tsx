@@ -1,7 +1,8 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { HEADERCONTENT, LISTCONTENT, BUTTONS, IMAGECONTENT } from "./constants";
 import Image from "next/image";
-
+{
+}
 const Expertise = () => {
     return (
         <div className="w-screen bg-white md:py-25 py-15 mb-20">
