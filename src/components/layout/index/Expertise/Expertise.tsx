@@ -5,7 +5,7 @@ import Image from "next/image";
 }
 const Expertise = () => {
     return (
-        <div className="w-screen bg-white md:py-25 py-15 mb-20">
+        <div className="bg-white md:py-25 py-15 mb-20">
             <MaxWidthWrapper>
                 <div className="md:grid md:grid-cols-2  grid-rows-2 gap-0 md:gap-30">
                     <div className="grid gap-5">
@@ -24,8 +24,8 @@ const Expertise = () => {
                         <Image
                             src={IMAGECONTENT.photo.src}
                             alt={IMAGECONTENT.photo.alt}
-                            width={1200}
-                            height={1000}
+                            width={1000}
+                            height={800}
                             className="h-full w-fit rounded-2xl shadow-2xl"
                         />
                     </div>
