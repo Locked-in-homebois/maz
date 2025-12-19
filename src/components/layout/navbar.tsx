@@ -73,7 +73,7 @@ export default function Navbar() {
 					<Image
 						src="/logo/logo_no_bg_cropped.png"
 						width={70}
-						height={37}
+						height={44}
 						alt="logo gang"
 						className=""
 					/>
