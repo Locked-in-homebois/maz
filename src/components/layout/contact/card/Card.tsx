@@ -13,7 +13,7 @@ const Card = () => {
                     height={1000}
                     className="w-full h-200 rounded-4xl"
                 ></Image>
-                <div className="grid  grid-cols-2 absolute top-0 z-10 w-full h-full px-5 py-5 rounded-2xl bg-black/50 text-neutral-200 backdrop-blur-xs">
+                <div className="grid grid-cols-2 absolute top-0 z-10 w-full h-full px-5 py-5 rounded-2xl bg-black/50 text-neutral-200 backdrop-blur-xs">
                     <div className=" w-fit h-fit rounded-xl">
                         <h1 className="font-black  text-6xl">
                             {HEADERCONTENT.title}
