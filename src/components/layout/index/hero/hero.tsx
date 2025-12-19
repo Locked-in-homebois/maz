@@ -15,7 +15,6 @@ const buttonVars =
 	"hover:bg-lime-900 hover:text-white hover:shadow-lg active:scale-95";
 
 // 2. Optimized Paragraph Vars:
-// - 'max-w-md' on mobile ensures text doesn't stretch too wide if the screen is large but not yet desktop
 const pVars =
 	"z-10 rounded-lg backdrop-blur-md bg-black/20 text-gray-100 font-light leading-relaxed " +
 	"text-base text-center px-4 py-2 mt-8  mx-auto " + // Mobile: Centered, constrained width, reasonable margin
