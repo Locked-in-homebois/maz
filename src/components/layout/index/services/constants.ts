@@ -1,40 +1,42 @@
 import { ServiceBox, Header } from "./types";
 import { Hammer, SwatchBook } from "lucide-react";
+
 export const HEADERCONTENT: Header = {
-    title: "helloooooooo",
-    description: "aubdkaubksjdfbnwkuerufbcskjdbcfiuskdjbc",
+    title: "Our Expertise",
+    description:
+        "Comprehensive design and construction services tailored to your needs.",
 };
-//this is the list
+
 export const BOXCONTENT: ServiceBox[] = [
     {
         title: "Hardscape",
-        description: "sdcaca sasdakj sbcuiab dcadc",
-        image: { src: "/image2.jpeg", alt: "image" },
+        description:
+            "Professional hardscaping solutions for durable and aesthetic outdoor spaces.",
+        image: { src: "/image2.jpeg", alt: "Hardscape design" },
         icon: Hammer,
-        colspan: "col-span-2",
+        // FIX: Use 'md:' so it takes full width on mobile, and 2 columns on desktop
+        colspan: "md:col-span-2",
     },
-    //each "{}" is an item of the list like a basket the list contains many baskets
-    // each basket contains many stuff nothing is a must whatever you want
-    //in this one we have hakuna matata? limonata
     {
         title: "Villas",
-        description: "skjcf baskjds bfakjs bdfckaj lbsd",
-        image: { src: "/image2.jpeg", alt: "image" },
+        description: "Luxury villa construction and renovation services.",
+        image: { src: "/image2.jpeg", alt: "Villa project" },
         icon: SwatchBook,
-        colspan: "col-span-1",
+        colspan: "md:col-span-1",
     },
     {
-        title: "facedes",
-        description: "asljdf nalscasdasd fasfd skhfbskd",
-        image: { src: "/image2.jpeg", alt: "image" },
+        title: "Facades",
+        description:
+            "Modern and classic facade designs to elevate building aesthetics.",
+        image: { src: "/image2.jpeg", alt: "Facade detail" },
         icon: Hammer,
-        colspan: "col-span-1",
+        colspan: "md:col-span-1",
     },
     {
-        title: "Rock",
-        description: "asljdf nalscasdasd fasfd skhfbskd",
-        image: { src: "/image2.jpeg", alt: "image" },
+        title: "Rock Works",
+        description: "Natural rock installations and artistic stone features.",
+        image: { src: "/image2.jpeg", alt: "Rock work" },
         icon: Hammer,
-        colspan: "col-span-2",
+        colspan: "md:col-span-2",
     },
 ];

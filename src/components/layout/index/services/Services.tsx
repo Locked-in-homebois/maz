@@ -1,63 +1,83 @@
+"use client"; // <--- Essential for Framer Motion
+
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { BOXCONTENT, HEADERCONTENT } from "./constants";
 import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
 
 const Services = () => {
     return (
         <MaxWidthWrapper>
-            <div className="w-full grid gap-x-5 gap-y-2  grid-cols-3 relative -z-30 justify-items-center rounded-2xl my-20 ">
-                <div className="col-span-full text-center shadow-black  w-full shadow- rounded-2xl">
-                    <h1 className="uppercase text-4xl font-black">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="w-full grid gap-8 grid-cols-1 md:grid-cols-3 my-20"
+            >
+                <motion.div
+                    variants={itemVariants}
+                    className="col-span-full text-center mb-4"
+                >
+                    <h1 className="uppercase text-3xl md:text-4xl font-black mb-3">
                         {HEADERCONTENT.title}
                     </h1>
-                    <p>{HEADERCONTENT.description}</p>
-                </div>
-                {/* //here we called the list and said map wtf is map?
-				//map ma nigga is the thing that streams the lists out 
-				//so basically it goes through the list and displays the baskets
-				//why dont we just write them ourselves?
-				//when we map we  only creat one div and it just creates more of it 
-				// so for example we want to add another basket we just do it 
-				// in the other file 
-				// let me show you see i just added a basket 
-				// it automatically made it with all the div stuff we wanted like ye grape
-				// so this map has 2 pointers type shi item is the attributes of basket like the
-				// title and index is just to follow wich basket we are on 
-				// we do not focus in index at all the computer does it all 
-				// we just have to define it for syntax 
-				// so inside the div we give it a key to follow which we decided is index
-				// afterwards we do stuff like java oop*/}
+                    <p className="text-neutral-600 max-w-2xl mx-auto">
+                        {HEADERCONTENT.description}
+                    </p>
+                </motion.div>
                 {BOXCONTENT.map((item, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className={`grid gap-3 rounded-3xl  ${item.colspan}`}
+                        variants={itemVariants}
+                        className={`flex flex-col gap-4 ${item.colspan}`}
                     >
-                        <div className=" w-full relative rounded-2xl max-h-62.5 overflow-hidden z-10">
+                        {/* Image Container */}
+                        <div className="relative w-full h-64 md:h-72 rounded-2xl overflow-hidden group">
                             <Image
                                 src={item.image.src}
                                 alt={item.image.alt}
-                                width={1200}
-                                height={1000}
-                                className="rounded-[20px] "
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            <item.icon
-                                size={45}
-                                className="bg-neutral-50 absolute rounded-xl top-5 right-5 p-2 justify-self-end "
-                            />
+                            {/* Icon */}
+                            <div className="absolute top-4 right-4 bg-white/90 p-2 rounded-xl backdrop-blur-sm">
+                                <item.icon size={24} className="text-black" />
+                            </div>
                         </div>
-                        <div className="px-3 rounded-2xl flex flex-col justify-center">
-                            <h1 className="uppercase text-2xl font-black">
+                        {/* Text Content */}
+                        <div className="px-2">
+                            <h3 className="text-xl font-bold mb-1">
                                 {item.title}
-                                {/* this will go to the basket copy the title and paste it here ez ez right let me show you  */}
-                            </h1>
-                            <p className="text-gray-500 font-light">
+                            </h3>
+                            <p className="text-sm text-neutral-600 leading-relaxed">
                                 {item.description}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </MaxWidthWrapper>
     );
 };
+
 export default Services;
