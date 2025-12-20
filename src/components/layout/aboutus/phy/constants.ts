@@ -1,6 +1,6 @@
 // src/lib/constants.ts
 import { Ruler, ShieldCheck, LightbulbIcon } from "lucide-react";
-import { PhilosophyItem } from "./types";
+import { PhilosophyItem, PhyItem } from "./types";
 
 export const PHILOSOPHY_DATA: PhilosophyItem[] = [
 	{
@@ -22,3 +22,8 @@ export const PHILOSOPHY_DATA: PhilosophyItem[] = [
 			"Safety is not a checklist, it's a culture. I ensure the site is secure and the materials are top tier.",
 	},
 ];
+
+export const PHY_DATA: PhyItem = {
+	header: "My Philosophy",
+	desc: "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
+};
