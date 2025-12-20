@@ -8,12 +8,10 @@ import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
 
 const LINKS = [
-    { label: "Renovation", href: "/" },
-    { label: "Facades", href: "/" },
-    { label: "Hardscape", href: "/" },
+    { label: "Projects", href: "/" },
     { label: "Material Manufacturing", href: "/" },
     { label: "Contact", href: "/contact" },
-    { label: "About us", href: "/aboutus" },
+    { label: "About me", href: "/aboutus" },
 ];
 
 const menuVariants: Variants = {

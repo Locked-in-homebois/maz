@@ -24,5 +24,5 @@ export const BUTTONS: Button = {
     },
 };
 export const IMAGECONTENT: Photo = {
-    photo: { src: "/test.jpeg", alt: "image" },
+    photo: { src: "/29s.jpeg", alt: "image" },
 };

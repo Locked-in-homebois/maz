@@ -16,7 +16,7 @@ const buttonVars =
 
 // 2. Optimized Paragraph Vars:
 const pVars =
-    "z-10 rounded-lg backdrop-blur-sm bg-black/1 text-gray-100 font-light leading-relaxed " +
+    "z-10 rounded-lg backdrop-blur-sm bg-black/1 text-gray-300 font-light leading-relaxed " +
     "text-base text-center px-4 py-2 mt-8  mx-auto " + // Mobile: Centered, constrained width, reasonable margin
     "md:text-2xl md:text-left md:absolute md:bottom-10 md:left-10 md:m-0 md:max-w-none md:px-4"; // Desktop: Pinned, larger
 
@@ -73,9 +73,7 @@ const Hero = () => {
                         viewport={{ once: true }}
                         className={pVars}
                     >
-                        <h1 className="text-gray-300">
-                            {INDEX_HERO_CONTENT.footer}
-                        </h1>
+                        {INDEX_HERO_CONTENT.footer}
                     </motion.p>
                 </div>
             </MaxWidthWrapper>
