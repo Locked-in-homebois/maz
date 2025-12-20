@@ -9,10 +9,10 @@ const KemalCard = ({ title, desc, image: { src, alt } }: Cards) => {
 				alt={alt}
 				width={400}
 				height={200}
-				className="rounded-3xl"
+				className="rounded-3xl w-full max-h-62.5 object-cover"
 			/>
 			<h1 className="uppercase font-bold text-2xl">{title}</h1>
-			<p className="text-gray-700 font-extralight">{desc}</p>
+			<p className="text-gray-500 text-xl font-medium">{desc}</p>
 		</div>
 	);
 };
