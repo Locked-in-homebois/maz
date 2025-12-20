@@ -6,13 +6,13 @@ import MasterPiece from "../components/layout/index/maasterpiece/MasterPiece";
 import ProjectsGallery from "../components/layout/projects/projects/Projects";
 
 export default function Home() {
-	return (
-		<main>
-			<Hero />
-			<Services />
-			<Expertise />
-			<MasterPiece />
-			<ProjectsGallery />
-		</main>
-	);
+    return (
+        <main>
+            <Hero />
+            <Services />
+            <Expertise />
+            <MasterPiece />
+            <ProjectsGallery />
+        </main>
+    );
 }
