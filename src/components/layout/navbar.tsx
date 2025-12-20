@@ -63,11 +63,10 @@ export default function Navbar() {
 				{/* LOGO */}
 				<Link href="/">
 					<Image
-						src="/logo/logo_no_bg_cropped.png"
-						width={70}
+						src="/LOGOFINAL.png"
+						width={80}
 						height={44}
 						alt="logo gang"
-						className=""
 					/>
 				</Link>
 
