@@ -6,8 +6,6 @@ export interface Header {
 }
 export interface Photos {
     photo: { src: string; alt: string };
-}
-export interface PhotoInternalP {
     tag: { text: string; className: string };
     location: { text: string; icon: LucideIcon };
     text: string;
