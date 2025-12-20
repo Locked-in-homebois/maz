@@ -25,6 +25,7 @@ const ProjectsGallery = () => {
 						Explore our protfolio across various sectors.
 					</p>
 				</div>
+
 				{/* filter buttons */}
 				<FilterTabs
 					activeFilter={activeFilter}
