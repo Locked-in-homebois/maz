@@ -6,3 +6,8 @@ export interface PhilosophyItem {
 	header: string;
 	description: string;
 }
+
+export interface PhyItem {
+	header: string;
+	desc: string;
+}

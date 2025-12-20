@@ -1,6 +1,7 @@
 import Hero from "@/src/components/layout/aboutus/hero/hero";
 import Phy from "@/src/components/layout/aboutus/phy/phy";
 import ProfileSection from "@/src/components/layout/aboutus/Profile/Skills";
+import Kemal from "@/src/components/layout/projects/kemal/Kemal";
 import React from "react";
 
 export default function page() {
@@ -9,6 +10,7 @@ export default function page() {
 			<Hero />
 			<Phy />
 			<ProfileSection />
+			<Kemal />
 		</main>
 	);
 }
