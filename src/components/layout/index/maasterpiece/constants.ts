@@ -13,43 +13,43 @@ export const HEADERCONTENT: Header = {
 
 export const PHOTOSIMAGES: Photos[] = [
     {
-        photo: { src: "/image2.jpeg", alt: "1st" },
+        photo: { src: "/VillaFront.jpg", alt: "1st" },
         tag: {
-            text: "Villa",
+            text: "Private property",
             className:
                 "text-center px-3 py-2 bg-blue-700 rounded-xl text-white",
         },
-        location: { text: "NIGGAZ IN PARIS", icon: MapPin },
-        text: "the milla voila",
+        location: { text: "Riyadh", icon: MapPin },
+        text: "this photo will be changed",
     },
     {
-        photo: { src: "/image3.jpeg", alt: "2nd" },
+        photo: { src: "/IMG_2290.JPG", alt: "2nd" },
         tag: {
-            text: "Hardscape",
+            text: "Private property",
             className:
-                "text-center px-3 py-2 bg-lime-800 rounded-xl text-white",
+                "text-center px-3 py-2 bg-blue-700 rounded-xl text-white",
         },
-        location: { text: "ALABAMA", icon: MapPin },
-        text: "SWEEEEETTTT HOME ALABAMA",
+        location: { text: "Riyadh", icon: MapPin },
+        text: "will ask my father",
     },
     {
-        photo: { src: "/test.jpeg", alt: "3rd" },
+        photo: { src: "/IMG_0064.JPG", alt: "3rd" },
         tag: {
-            text: "Facede ex here",
+            text: "Design & Hardscape",
             className:
-                "text-center px-3 py-2 bg-blue-800 rounded-xl text-white ",
+                "text-center px-3 py-2 bg-gray-700 rounded-xl text-white ",
         },
-        location: { text: "KENTUCHY FRIED CHICKEN", icon: MapPin },
-        text: "CHICKEN BEEERRRGGGAAAHHH",
+        location: { text: "Riyadh", icon: MapPin },
+        text: "Saudi Television station",
     },
     {
-        photo: { src: "/image2.jpeg", alt: "4th" },
+        photo: { src: "/23--1.jpg", alt: "4th" },
         tag: {
-            text: "Trade Center",
+            text: "Design & Hardscape",
             className:
-                "text-center px-3 py-2 bg-orange-500 rounded-xl text-white",
+                "text-center px-3 py-2 bg-gray-700 rounded-xl text-white",
         },
-        location: { text: "KÖLN ", icon: MapPin },
-        text: "Apperantly its a place my friend launches missiles from",
+        location: { text: "AL-HUFUF ", icon: MapPin },
+        text: "King Faisal university",
     },
 ];
