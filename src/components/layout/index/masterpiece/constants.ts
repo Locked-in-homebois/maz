@@ -5,7 +5,7 @@ export const HEADERCONTENT: Header = {
     header: "Our Masterpieces",
     desc: "Explore our top pick projects in private villas and facedes ",
     linkFull: {
-        href: "/",
+        href: "/projects",
         className: "text-blue-500 hover:text-gray-600 hover:underline",
         text: "View My Portifolio →",
     },

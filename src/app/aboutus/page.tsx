@@ -5,12 +5,12 @@ import Kemal from "@/src/components/layout/projects/kemal/Kemal";
 import React from "react";
 
 export default function page() {
-	return (
-		<main className="grid gap-10 mt-5">
-			<Hero />
-			<Phy />
-			<ProfileSection />
-			<Kemal />
-		</main>
-	);
+    return (
+        <main className="grid gap-10 mt-5">
+            <Hero />
+            <Phy />
+            <ProfileSection />
+            <Kemal />
+        </main>
+    );
 }
