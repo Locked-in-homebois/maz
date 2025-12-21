@@ -1,41 +1,41 @@
 import { ServiceBox, Header } from "./types";
-import { Hammer, SwatchBook } from "lucide-react";
+import { Hammer, BrickWall, House, HotelIcon } from "lucide-react";
 
 export const HEADERCONTENT: Header = {
-    title: "Our Expertise",
+    title: "Services",
     description:
         "Comprehensive design and construction services tailored to your needs.",
 };
 
 export const BOXCONTENT: ServiceBox[] = [
     {
-        title: "Hardscape",
-        description:
-            "Professional hardscaping solutions for durable and aesthetic outdoor spaces.",
-        image: { src: "/image2.jpeg", alt: "Hardscape design" },
-        icon: Hammer,
+        title: "Residential",
+        description: "Luxury property construction and renovation services. ",
+        image: { src: "/3.jpeg", alt: "Hardscape design" },
+        icon: House,
         // FIX: Use 'md:' so it takes full width on mobile, and 2 columns on desktop
         colspan: "md:col-span-2",
     },
     {
-        title: "Villas",
-        description: "Luxury villa construction and renovation services.",
-        image: { src: "/image2.jpeg", alt: "Villa project" },
-        icon: SwatchBook,
+        title: "Hardscape",
+        description:
+            "Professional hardscaping solutions for durable and aesthetic outdoor spaces.",
+        image: { src: "/IMG_0064.JPG", alt: "Villa project" },
+        icon: HotelIcon,
         colspan: "md:col-span-1",
     },
     {
         title: "Facades",
         description:
             "Modern and classic facade designs to elevate building aesthetics.",
-        image: { src: "/image2.jpeg", alt: "Facade detail" },
-        icon: Hammer,
+        image: { src: "/11mn.jpeg", alt: "Facade detail" },
+        icon: BrickWall,
         colspan: "md:col-span-1",
     },
     {
         title: "Rock Works",
         description: "Natural rock installations and artistic stone features.",
-        image: { src: "/image2.jpeg", alt: "Rock work" },
+        image: { src: "/IMG_2889.JPG", alt: "Rock work" },
         icon: Hammer,
         colspan: "md:col-span-2",
     },
