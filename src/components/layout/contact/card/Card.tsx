@@ -1,39 +1,37 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
-import { GRIDCONTENT, HEADERCONTENT, CAROUSELCONTENT } from "./contsants";
 import Image from "next/image";
+import { CAROUSELCONTENT } from "./constants";
+import ContactInfo from "./ContactInfo";
+import ContactForm from "./ContactForm";
 
-const Card = () => {
-    return (
-        <MaxWidthWrapper>
-            <div className="max-h-200 relative rounded-3xl -z-30">
-                <Image
-                    src={CAROUSELCONTENT.image.src}
-                    alt={CAROUSELCONTENT.image.alt}
-                    width={1200}
-                    height={1000}
-                    className="w-full h-200 rounded-4xl"
-                ></Image>
-                <div className="grid grid-cols-2 absolute top-0 z-10 w-full h-full px-5 py-5 rounded-2xl bg-black/50 text-neutral-200 backdrop-blur-xs">
-                    <div className=" w-fit h-fit rounded-xl">
-                        <h1 className="font-black  text-6xl">
-                            {HEADERCONTENT.title}
-                        </h1>
-                        <p className="text-neutral-400 max-w-lg">
-                            {HEADERCONTENT.desc}
-                        </p>
-                    </div>
-                    <div className=" row-span-2">hi</div>
-                    <div className="grid grid-cols-2 gap-x-30 w-fit">
-                        {GRIDCONTENT.map((item, index) => (
-                            <div key={index} className="flex flex-col gap-6">
-                                <h1 className="text-2xl">{item.title}</h1>
-                                <p className="text-neutral-400">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </MaxWidthWrapper>
-    );
+const ContactCard = () => {
+	return (
+		<MaxWidthWrapper>
+			<div className="relative rounded-3xl overflow-hidden min-h-[800px]">
+				{/* Background Image */}
+				<Image
+					src={CAROUSELCONTENT.image.src}
+					alt={CAROUSELCONTENT.image.alt}
+					fill
+					className="object-cover -z-10"
+					priority
+				/>
+
+				{/* Overlay Layout */}
+				<div className="absolute inset-0 bg-black/60 backdrop-blur-sm px-8 py-10">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-10 h-full w-full">
+						{/* Left Side */}
+						<ContactInfo />
+
+						{/* Right Side */}
+						<div className="flex items-center justify-center md:justify-end">
+							<ContactForm />
+						</div>
+					</div>
+				</div>
+			</div>
+		</MaxWidthWrapper>
+	);
 };
-export default Card;
+
+export default ContactCard;
