@@ -9,8 +9,8 @@ export const HEADERCONTENT: Header = {
 
 export const BOXCONTENT: ServiceBox[] = [
     {
-        title: "Villas",
-        description: "Luxury villa construction and renovation services. ",
+        title: "Residential",
+        description: "Luxury property construction and renovation services. ",
         image: { src: "/3.jpeg", alt: "Hardscape design" },
         icon: House,
         // FIX: Use 'md:' so it takes full width on mobile, and 2 columns on desktop

@@ -29,3 +29,7 @@ export const PHILOSOPHY_DATA: PhilosophyItem[] = [
             "I integrate sustainability considerations to reduce material waste and long-term maintenance needs.",
     },
 ];
+export const PHY_DATA: PhyItem = {
+    header: "My Philosophy",
+    desc: "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
+};
