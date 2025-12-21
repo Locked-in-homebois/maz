@@ -6,6 +6,7 @@ import Services from "../components/layout/index/services/Services";
 export default function Home() {
 	return (
 		<main>
+			{/* test */}
 			<Hero />
 			<Services />
 			<Expertise />
