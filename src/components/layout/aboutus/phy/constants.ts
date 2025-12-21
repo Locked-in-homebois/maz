@@ -7,7 +7,7 @@ import {
     Building2,
     BrickWallShieldIcon,
 } from "lucide-react";
-import { PhilosophyItem } from "./types";
+import { PhilosophyItem, PhyItem } from "./types";
 
 export const PHILOSOPHY_DATA: PhilosophyItem[] = [
     {

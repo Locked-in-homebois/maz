@@ -1,7 +1,7 @@
 // src/components/sections/Philosophy.tsx
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { PhilosophyCard } from "./phycard";
-import { PHILOSOPHY_DATA } from "./constants";
+import { PHILOSOPHY_DATA, PHY_DATA } from "./constants";
 
 const Philosophy = () => {
     return (
@@ -10,14 +10,11 @@ const Philosophy = () => {
                 <div className="rounded-4xl bg-white flex flex-col gap-10 p-20 items-center">
                     {/* Section Header */}
                     <div className="text-center space-y-4">
-                        <h1 className="font-black text-5xl">My Philosophy</h1>
+                        <h1 className="font-black text-5xl">
+                            {PHY_DATA.header}
+                        </h1>
                         <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-                            I combine technical accuracy with real-world
-                            execution. I turn site conditions and constraints
-                            into clear, coordinated, construction-ready designs.
-                            I value quality control, timely communication, and
-                            continuous learning, because early decisions and
-                            small details drive the best outcomes.
+                            {PHY_DATA.desc}
                         </p>
                     </div>
 

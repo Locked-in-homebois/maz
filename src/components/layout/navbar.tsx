@@ -52,14 +52,6 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-    }, [isOpen]);
-
     return (
         // 1. Outer Shell: Handles Position, Background, Blur, and Border only.
         // Removed 'px-6' and flex utilities from here.
@@ -132,7 +124,7 @@ export default function Navbar() {
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                        className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto bg-white px-6 pb-8 pt-24"
+                        className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-24"
                     >
                         <div className="flex flex-col gap-4">
                             {LINKS.map((item) => (
