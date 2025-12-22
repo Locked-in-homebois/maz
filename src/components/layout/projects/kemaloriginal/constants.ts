@@ -25,32 +25,32 @@ export const RightCards_DATA: RightCards[] = [
         Image: {
             alt: "1",
             src: "/2s.jpeg",
-            height: "400",
-            width: "200",
+            height: 350,
+            width: 350,
         },
     },
     {
         Image: {
             alt: "2",
             src: "/9s.jpeg",
-            height: "100",
-            width: "200",
+            height: 250,
+            width: 350,
         },
     },
     {
         Image: {
             alt: "3",
             src: "/27s.jpeg",
-            height: "150",
-            width: "200",
+            height: 150,
+            width: 250,
         },
     },
     {
         Image: {
             alt: "4",
             src: "/29s.jpeg",
-            height: "200",
-            width: "200",
+            height: 200,
+            width: 250,
         },
     },
 ];

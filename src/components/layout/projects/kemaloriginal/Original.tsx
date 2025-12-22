@@ -41,15 +41,16 @@ export default function OriginalFunction() {
                     {RightCards_DATA.map((item, index) => {
                         return (
                             <div key={index} className="relative" >
-                                <Image className={`rounded-2xl h-[${item.Image.height}px] w-62.5 object-cover`}
+                                <Image
                                     src={item.Image.src}
                                     alt={item.Image.alt}
-                                    height={200}
-                                    width={200}
-
-                                // ={{ height: `${item.Image.height}px`, width: '250px' }} className={`rounded-2xl { height: ${item.Image.height}px, width: '250px' } object-cover `}
-                                // src={item.Image.src}
+                                    width={item.Image.width}
+                                    height={item.Image.height}
+                                    // 2. This ensures the image respects the height from your constants file
+                                    style={{ height: `${item.Image.height}px`, width: 'auto' }}
+                                    className="rounded-2xl object-cover"
                                 />
+
 
 
                             </div>

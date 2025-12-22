@@ -16,7 +16,7 @@ export interface RightCards {
     Image: {
         alt: string;
         src: string;
-        width: string;
-        height: string;
+        width: number;
+        height: number;
     };
 }
