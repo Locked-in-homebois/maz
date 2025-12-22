@@ -39,7 +39,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 					<div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200">
 						<Image
 							src={product.image.src}
-							alt={product.id} // <--- HERE is your requested ID as alt
+							alt={product.id}
 							fill
 							className="object-cover"
 							priority
