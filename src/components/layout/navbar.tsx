@@ -78,11 +78,10 @@ export default function Navbar() {
 							key={item.label}
 							href={item.href}
 							onMouseEnter={() => setHoveredIndex(index)}
-							className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
-								hoveredIndex === index
-									? "text-white"
-									: "text-neutral-500"
-							}`}
+							className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${hoveredIndex === index
+								? "text-white"
+								: "text-neutral-500"
+								}`}
 						>
 							{item.label}
 							{hoveredIndex === index && (
