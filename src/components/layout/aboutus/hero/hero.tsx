@@ -13,13 +13,7 @@ const Hero = () => {
             <div className="w-full ">
                 <div className="relative md:w-full rounded-4xl overflow-hidden flex flex-col items-center text-center py-24 px-6">
                     {/* Background Image */}
-                    <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                    <Image src={imageSrc} alt={imageAlt} fill priority />
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-black/60" />
                     {/* Content Container */}
