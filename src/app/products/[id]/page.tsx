@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
-import { PRODUCTS } from "@/src/components/layout/products/constants";
+import { PRODUCTS } from "@/src/components/layout/projects/products/constants";
 
 // This tells Next.js what parameters to expect
 interface PageProps {
