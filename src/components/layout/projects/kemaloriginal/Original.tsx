@@ -1,66 +1,97 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
-import { LeftLowCard, TextPart, RightCards } from "./types";
-import { LeftLowCards_DATA, RightCards_DATA, TextPart_DATA } from "./constants";
-import { Diamond, icons, Key } from "lucide-react";
+import {
+	LeftLowCards_DATA,
+	RightImages_LeftCol,
+	RightImages_RightCol,
+	TextPart_DATA,
+} from "./constants";
+import { Diamond } from "lucide-react";
 import Image from "next/image";
+
 export default function OriginalFunction() {
-    return (
-        <MaxWidthWrapper className="">
-            <main className="grid grid-cols-2 gap-10 mt-10">
-                <div className="">
-                    <div className="flex gap-6 text-blue-500 text-xl font-bold ">
-                        <Diamond className="bg-blue-100" />
-                        {TextPart_DATA.iconTitle}
-                    </div>
-                    <div className="flex flex-col mt-8 text-5xl  w-full font-bold gap-3">
-                        {TextPart_DATA.header}
-                    </div>
+	return (
+		<MaxWidthWrapper className="">
+			<main className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
+				{/* --- Left Side: Text Content --- */}
+				<div className="flex flex-col justify-center">
+					<div className="flex gap-4 items-center text-blue-500 text-xl font-bold">
+						<div className="p-2 bg-blue-100 rounded-lg">
+							<Diamond className="w-6 h-6" />
+						</div>
+						{TextPart_DATA.iconTitle}
+					</div>
 
-                    <div className="flex flex-col mt-8 text-2xl  text-gray-500 gap-3">
-                        {TextPart_DATA.desc}
-                    </div>
+					<h2 className="mt-6 text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+						{TextPart_DATA.header}
+					</h2>
 
-                    <div className="grid grid-cols-2 mt-8 gap-4 ">
-                        {LeftLowCards_DATA.map((cards, index) => {
-                            const IconComponent = cards.icon;
+					<p className="mt-6 text-lg text-gray-600 leading-relaxed">
+						{TextPart_DATA.desc}
+					</p>
 
-                            return (
-                                <div className="border border-gray-400 flex flex-col gap-2 px-6 py-4 rounded-2xl"
-                                    key={index}>
-                                    <div className="flex gap-6">
-                                        <IconComponent className="bg-blue-300" />
-                                        <h1 className="font-bold text-lg">{cards.title}</h1>
-                                    </div>
-                                    <p className="text-gray-500">{cards.desc}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-                <div className=" grid grid-cols-2  gap-6 " >
-                    {RightCards_DATA.map((item, index) => {
-                        return (
-                            <div key={index} className="relative" >
-                                <Image
-                                    src={item.Image.src}
-                                    alt={item.Image.alt}
-                                    width={item.Image.width}
-                                    height={item.Image.height}
-                                    // 2. This ensures the image respects the height from your constants file
-                                    style={{ height: `${item.Image.height}px`, width: 'auto' }}
-                                    className="rounded-2xl object-cover"
-                                />
+					<div className="grid grid-cols-1 md:grid-cols-2 mt-10 gap-6">
+						{LeftLowCards_DATA.map((card, index) => {
+							const IconComponent = card.icon;
+							return (
+								<div
+									key={index}
+									className="border border-gray-200 bg-white shadow-sm flex flex-col gap-4 p-6 rounded-2xl"
+								>
+									<div className="flex items-center gap-4">
+										<div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+											<IconComponent size={24} />
+										</div>
+										<h3 className="font-bold text-lg text-gray-900">
+											{card.title}
+										</h3>
+									</div>
+									<p className="text-gray-500 text-sm leading-relaxed">
+										{card.desc}
+									</p>
+								</div>
+							);
+						})}
+					</div>
+				</div>
 
+				<div className="grid grid-cols-2 gap-4 md:gap-6">
+					<div className="flex flex-col gap-4 md:gap-6 mt-12 md:mt-24">
+						{RightImages_LeftCol.map((item, index) => (
+							<div
+								key={`l-${index}`}
+								className="relative group overflow-hidden rounded-2xl"
+							>
+								<Image
+									src={item.Image.src}
+									alt={item.Image.alt}
+									width={item.Image.width}
+									height={item.Image.height}
+									className="w-full h-auto object-cover rounded-2xl"
+									style={{ height: `${item.Image.height}px` }}
+								/>
+							</div>
+						))}
+					</div>
 
-
-                            </div>
-                        );
-                    })}
-                </div>
-
-
-
-            </main>
-        </MaxWidthWrapper>
-    );
+					<div className="flex flex-col gap-4 md:gap-6">
+						{RightImages_RightCol.map((item, index) => (
+							<div
+								key={`r-${index}`}
+								className="relative group overflow-hidden rounded-2xl"
+							>
+								<Image
+									src={item.Image.src}
+									alt={item.Image.alt}
+									width={item.Image.width}
+									height={item.Image.height}
+									className="w-full h-auto object-cover rounded-2xl "
+									style={{ height: `${item.Image.height}px` }}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+			</main>
+		</MaxWidthWrapper>
+	);
 }

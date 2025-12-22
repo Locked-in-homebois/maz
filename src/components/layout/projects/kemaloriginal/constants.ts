@@ -1,56 +1,60 @@
 import { Diamond, Check, Scissors } from "lucide-react";
-import { LeftLowCard, TextPart, RightCards } from "./types";
+import { LeftLowCard, TextPart, RightCard } from "./types";
 
 export const TextPart_DATA: TextPart = {
-    icon: Diamond,
-    iconTitle: "Direct Manufacturer",
-    header: "Our Stone Factory: Where Raw Earth Becomes Art",
-    desc: "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design.",
+	icon: Diamond,
+	iconTitle: "Direct Manufacturer",
+	header: "Our Stone Factory: Where Raw Earth Becomes Art",
+	desc: "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design.",
 };
+
 export const LeftLowCards_DATA: LeftLowCard[] = [
-    {
-        icon: Scissors,
-        title: "Advanced Cutting",
-        desc: " Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter.",
-    },
-    {
-        icon: Check,
-        title: "Quality Control",
-        desc: "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity.",
-    },
+	{
+		icon: Scissors,
+		title: "Advanced Cutting",
+		desc: "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter.",
+	},
+	{
+		icon: Check,
+		title: "Quality Control",
+		desc: "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity.",
+	},
 ];
 
-export const RightCards_DATA: RightCards[] = [
-    {
-        Image: {
-            alt: "1",
-            src: "/2s.jpeg",
-            height: 350,
-            width: 350,
-        },
-    },
-    {
-        Image: {
-            alt: "2",
-            src: "/9s.jpeg",
-            height: 250,
-            width: 350,
-        },
-    },
-    {
-        Image: {
-            alt: "3",
-            src: "/27s.jpeg",
-            height: 150,
-            width: 250,
-        },
-    },
-    {
-        Image: {
-            alt: "4",
-            src: "/29s.jpeg",
-            height: 200,
-            width: 250,
-        },
-    },
+export const RightImages_LeftCol: RightCard[] = [
+	{
+		Image: {
+			alt: "Stone Texture",
+			src: "/2s.jpeg",
+			height: 400,
+			width: 400,
+		},
+	},
+	{
+		Image: {
+			alt: "Stone Detail",
+			src: "/27s.jpeg",
+			height: 300,
+			width: 400,
+		},
+	},
+];
+
+export const RightImages_RightCol: RightCard[] = [
+	{
+		Image: {
+			alt: "Building Facade",
+			src: "/9s.jpeg",
+			height: 300,
+			width: 400,
+		},
+	},
+	{
+		Image: {
+			alt: "Construction View",
+			src: "/29s.jpeg",
+			height: 400,
+			width: 400,
+		},
+	},
 ];
