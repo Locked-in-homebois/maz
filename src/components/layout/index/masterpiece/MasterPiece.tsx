@@ -63,7 +63,7 @@ const MasterPiece = () => {
                                         width={1000}
                                         height={1000}
                                         alt={item.photo.alt}
-                                        className="rounded-2xl h-100"
+                                        className="rounded-2xl md:h-100 h-56"
                                     />
                                 </motion.div>
 

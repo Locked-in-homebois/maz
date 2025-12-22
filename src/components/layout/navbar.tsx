@@ -8,7 +8,7 @@ import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
 
 const LINKS = [
-	{ label: "Projects", href: "/projects" },
+	{ label: "Products", href: "/products" },
 	{ label: "Material Manufacturing", href: "/material-manufacturing" },
 	{ label: "Contact", href: "/contact" },
 	{ label: "About me", href: "/aboutus" },
@@ -55,7 +55,7 @@ export default function Navbar() {
 	return (
 		// 1. Outer Shell: Handles Position, Background, Blur, and Border only.
 		// Removed 'px-6' and flex utilities from here.
-		<nav className="sticky top-0 z-50 w-full border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
+		<nav className="sticky top-0 z-50 border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
 			{/* 2. MaxWidthWrapper: Handles the width constraints and alignment */}
 			<MaxWidthWrapper className="flex items-center justify-between">
 				{/* LOGO */}

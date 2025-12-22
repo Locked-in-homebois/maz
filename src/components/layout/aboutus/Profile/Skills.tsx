@@ -8,8 +8,8 @@ import { PROFILE_TEXT, SKILLS_DATA } from "./constants";
 
 const ProfileSection = () => {
     return (
-        <section className="mt-10">
-            <MaxWidthWrapper>
+        <MaxWidthWrapper>
+            <section className="mt-10">
                 <div className="grid gap-12 rounded-2xl bg-white p-10 lg:grid-cols-2 lg:gap-20">
                     {/* LEFT COLUMN: Bio & Image */}
                     <div className="flex flex-col gap-8">
@@ -70,8 +70,8 @@ const ProfileSection = () => {
                         </div>
                     </div>
                 </div>
-            </MaxWidthWrapper>
-        </section>
+            </section>
+        </MaxWidthWrapper>
     );
 };
 
