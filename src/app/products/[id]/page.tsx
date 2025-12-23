@@ -1,26 +1,30 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { PRODUCTS } from "@/src/components/layout/projects/products/constants";
+import ProductImageGallery from "@/src/components/layout/projects/products/ProductImageGallery";
 
-// This tells Next.js what parameters to expect
 interface PageProps {
 	params: Promise<{ id: string }>;
 }
 
 export default async function ProductDetailPage({ params }: PageProps) {
-	// Await the params
 	const { id } = await params;
 
-	// Find the product
+	// Find the product based on your constants.ts data
 	const product = PRODUCTS.find((p) => p.id === id);
 
-	// 404 if not found
 	if (!product) {
 		return notFound();
 	}
+
+	const galleryImages = [
+		product.image,
+		product.image, // Duplicate for demo
+		product.image, // Duplicate for demo
+		product.image, // Duplicate for demo
+	];
 
 	return (
 		<main className="py-20 min-h-screen bg-white">
@@ -35,18 +39,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
 				</Link>
 
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-					{/* Left: Image */}
-					<div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200">
-						<Image
-							src={product.image.src}
-							alt={product.id}
-							fill
-							className="object-cover"
-							priority
+					<div className="w-full">
+						<ProductImageGallery
+							images={galleryImages}
+							productName={product.name}
 						/>
 					</div>
 
-					{/* Right: Product Details */}
+					{/* RIGHT COLUMN: Product Details (Unchanged) */}
 					<div className="flex flex-col">
 						<span className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">
 							{product.category}
