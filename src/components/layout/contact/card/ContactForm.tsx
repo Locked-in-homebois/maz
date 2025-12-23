@@ -59,7 +59,7 @@ const ContactForm = () => {
 								delay: 0.1,
 							}}
 						>
-							<CheckCircle2 className="w-20 h-20 text-lime-400 mb-4" />
+							<CheckCircle2 className="w-20 h-20 text-logo mb-4" />
 						</motion.div>
 						<h3 className="text-2xl font-bold text-white mb-2">
 							Message Sent!
@@ -102,7 +102,7 @@ const ContactForm = () => {
 											placeholder={field.placeholder}
 											required
 											rows={4}
-											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500 resize-none transition-all"
+											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor resize-none transition-all"
 										/>
 									) : (
 										<input
@@ -110,7 +110,7 @@ const ContactForm = () => {
 											name={field.name}
 											placeholder={field.placeholder}
 											required
-											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all"
+											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor transition-all"
 										/>
 									)}
 								</div>
