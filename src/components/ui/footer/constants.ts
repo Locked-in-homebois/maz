@@ -10,16 +10,20 @@ export const LEFT_DATA: LeftEnd = {
 
 export const SERVICE_LINKS: Links[] = [
     {
-        href: "/",
-        label: "Renovations",
+        href: "/material-manufacturing",
+        label: "Hardscape",
     },
     {
-        href: "/",
-        label: "Company Owner",
+        href: "/products",
+        label: "Renovation & Decor",
     },
     {
-        href: "/",
-        label: "Cutting stone ",
+        href: "/products",
+        label: "Facedes",
+    },
+    {
+        href: "/products",
+        label: "Landscape",
     },
 ];
 
