@@ -5,9 +5,9 @@ export interface Product {
 	id: string;
 	name: string;
 	category: Category;
-	image: {
+	images: {
 		src: string;
-	};
+	}[];
 	description: string;
 	details: string;
 }
