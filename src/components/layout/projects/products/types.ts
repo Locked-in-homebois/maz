@@ -1,4 +1,5 @@
 export type Category = "All" | "Stone" | "Industrial" | "Furniture";
+export type SortOption = "name-asc" | "name-desc";
 
 export interface Product {
 	id: string;
@@ -13,4 +14,9 @@ export interface Product {
 
 export interface ProductCardProps {
 	product: Product;
+}
+
+export interface FilterTabsProps {
+	activeFilter: Category;
+	onFilterChange: (filter: Category) => void;
 }
