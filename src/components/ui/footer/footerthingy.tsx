@@ -64,7 +64,7 @@ export default function Footer() {
                             width="600"
                             height="450"
                             loading="lazy"
-                            className="w-full h-63 rounded-xl"
+                            className="w-full h-63 rounded-xl invert-95 hue-rotate-10 contrast-120 saturate-160"
                         ></iframe>
                     </div>
                 </div>
@@ -75,3 +75,5 @@ export default function Footer() {
         </main>
     );
 }
+// [filter:invert(.92)_contrast(1.3)_saturate(1.6)_hue-rotate(210deg)_brightness(.9)]"
+// />

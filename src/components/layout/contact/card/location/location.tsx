@@ -9,7 +9,7 @@ const Maplocation = () => {
                     width="600"
                     height="450"
                     loading="lazy"
-                    className="rounded-2xl w-full md:h-150 h-100 bg-gray-200"
+                    className="rounded-2xl w-full md:h-150 h-100  invert-92 hue-rotate-180 brightness-90 saturate-90 contrast-150"
                 ></iframe>
             </main>
         </MaxWidthWrapper>
