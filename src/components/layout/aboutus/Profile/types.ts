@@ -3,7 +3,6 @@ import { LucideIcon } from "lucide-react";
 export interface SkillItem {
 	label: string;
 	level: string;
-	percentage: number;
 	icon: LucideIcon;
 }
 

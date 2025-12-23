@@ -19,7 +19,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 				{/* Image Container */}
 				<div className="relative h-64 w-full overflow-hidden">
 					<Image
-						src={product.image.src}
+						src={product.images[0].src}
 						alt={product.id}
 						fill
 						className="object-cover transition-transform duration-700 group-hover:scale-110"

@@ -25,7 +25,7 @@ export const RightImages_LeftCol: RightCard[] = [
     {
         Image: {
             alt: "Stone Texture",
-            src: "/2s.jpeg",
+            src: "/2s.webp",
             height: 400,
             width: 400,
         },
@@ -33,7 +33,7 @@ export const RightImages_LeftCol: RightCard[] = [
     {
         Image: {
             alt: "Stone Detail",
-            src: "/27s.jpeg",
+            src: "/27s.webp",
             height: 300,
             width: 400,
         },
@@ -44,7 +44,7 @@ export const RightImages_RightCol: RightCard[] = [
     {
         Image: {
             alt: "Building Facade",
-            src: "/9s.jpeg",
+            src: "/9s.webp",
             height: 300,
             width: 400,
         },
@@ -52,7 +52,7 @@ export const RightImages_RightCol: RightCard[] = [
     {
         Image: {
             alt: "Construction View",
-            src: "/6m.jpeg",
+            src: "/6m.webp",
             height: 400,
             width: 400,
         },
