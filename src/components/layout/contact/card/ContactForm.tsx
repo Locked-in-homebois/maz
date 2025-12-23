@@ -59,7 +59,7 @@ const ContactForm = () => {
 								delay: 0.1,
 							}}
 						>
-							<CheckCircle2 className="w-20 h-20 text-logo mb-4" />
+							<CheckCircle2 className="w-20 h-20 text-logocolor mb-4" />
 						</motion.div>
 						<h3 className="text-2xl font-bold text-white mb-2">
 							Message Sent!
