@@ -12,7 +12,7 @@ const buttonVars =
     "group relative flex items-center justify-center rounded-full bg-neutral-100 shadow-sm transition-all duration-300 " +
     "text-[15px] font-[550] py-3 px-5 " + // Mobile: larger touch target, standard text
     "md:text-[21px] md:font-medium md:py-2 md:px-6 " + // Desktop: larger text, refined padding
-    "hover:bg-lime-900 hover:text-white hover:shadow-lg active:scale-95";
+    "hover:bg-sky-950 hover:text-logocolor hover:shadow-lg active:scale-95";
 
 // 2. Optimized Paragraph Vars:
 const pVars =

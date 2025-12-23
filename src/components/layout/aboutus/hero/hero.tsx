@@ -15,7 +15,7 @@ const Hero = () => {
                     {/* Background Image */}
                     <Image src={imageSrc} alt={imageAlt} fill priority />
                     {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/60" />
+                    <div className="absolute inset-0 bg-black/50" />
                     {/* Content Container */}
                     <div className="relative z-10 flex flex-col items-center gap-8 max-w-4xl">
                         <h1 className="text-5xl font-extrabold tracking-tight leading-tight text-white">
