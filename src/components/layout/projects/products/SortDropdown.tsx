@@ -28,7 +28,7 @@ const SortDropdown = ({ currentSort, onSortChange }: SortDropdownProps) => {
 				{/* Trigger Button */}
 				<button
 					onClick={() => setIsOpen(!isOpen)}
-					className="flex items-center gap-2 bg-white border border-neutral-200 text-neutral-700 text-sm font-medium rounded-full px-5 py-2.5 hover:border-lime-900 hover:text-lime-900 transition-all shadow-sm active:scale-95"
+					className="flex items-center gap-2 bg-white border border-neutral-200 text-neutral-700 text-sm font-medium rounded-full px-5 py-2.5 hover:border-sky-950 hover:text-sky-950 transition-all shadow-sm active:scale-95"
 				>
 					{currentSort === "name-asc" ? "Name (A-Z)" : "Name (Z-A)"}
 					<motion.div
@@ -90,7 +90,7 @@ const SortOptionButton = ({
 		onClick={onClick}
 		className={`w-full text-left px-4 py-2.5 text-sm rounded-xl flex items-center justify-between transition-colors ${
 			isActive
-				? "bg-lime-50 text-lime-900 font-bold"
+				? "bg-sky-50 text-sky-900 font-bold"
 				: "text-neutral-600 hover:bg-neutral-50"
 		}`}
 	>
