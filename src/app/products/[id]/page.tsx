@@ -19,12 +19,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 		return notFound();
 	}
 
-	const galleryImages = [
-		product.image,
-		product.image, // Duplicate for demo
-		product.image, // Duplicate for demo
-		product.image, // Duplicate for demo
-	];
+	const galleryImages = product.images;
 
 	return (
 		<main className="py-20 min-h-screen bg-white">
