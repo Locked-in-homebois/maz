@@ -61,7 +61,7 @@ export default function Navbar() {
                 {/* LOGO */}
                 <Link href="/">
                     <Image
-                        src="/logo.png"
+                        src="/logo.webp"
                         width={80}
                         height={44}
                         alt="logo gang"
@@ -80,7 +80,7 @@ export default function Navbar() {
                             onMouseEnter={() => setHoveredIndex(index)}
                             className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
                                 hoveredIndex === index
-                                    ? "text-[#cfc8a4]"
+                                    ? "text-logocolor"
                                     : "text-neutral-500"
                             }`}
                         >

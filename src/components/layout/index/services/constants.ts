@@ -20,7 +20,7 @@ export const BOXCONTENT: ServiceBox[] = [
         title: "Hardscape",
         description:
             "Professional hardscaping solutions for durable and aesthetic outdoor spaces.",
-        image: { src: "/IMG_0064.JPG", alt: "Villa project" },
+        image: { src: "/IMG_0064.webp", alt: "Villa project" },
         icon: HotelIcon,
         colspan: "md:col-span-1",
     },
@@ -35,7 +35,7 @@ export const BOXCONTENT: ServiceBox[] = [
     {
         title: "Rock Works",
         description: "Natural rock installations and artistic stone features.",
-        image: { src: "/IMG_2889.JPG", alt: "Rock work" },
+        image: { src: "/IMG_2889.webp", alt: "Rock work" },
         icon: Hammer,
         colspan: "md:col-span-2",
     },
