@@ -5,6 +5,7 @@ import {
     LocationEdit,
     Key,
 } from "lucide-react";
+import Image from "next/image";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import {
     COMPANY_LINKS,
@@ -21,14 +22,14 @@ export default function Footer() {
         <main className="bg-sky-950 px-4 mt-10 py-10 ">
             <MaxWidthWrapper className="text-logocolor">
                 <div className="grid md:grid-cols-4 justify-center md:gap-0 gap-6 border-b md:text-left text-center border-[#ffe56f81]  pb-10  ">
-                    <div className="flex flex-col gap-6 max-w-55 ">
-                        <div className="flex md:gap-6 gap-2 md:self-auto self-center ">
-                            <Icon />
-                            <h1 className="text-2xl self-center font-bold">
-                                {" "}
-                                {LEFT_DATA.header}{" "}
-                            </h1>
-                        </div>
+                    <div className="flex flex-col gap-6 md:max-w-55 max-w-full text-center items-center">
+                        {/* <div className="flex md:gap-6 gap-2 md:self-auto self-center "> */}
+                        <Image
+                            src="/logo.png"
+                            alt="das da logo"
+                            width={120}
+                            height={100}
+                        />
                         <p> {LEFT_DATA.text}</p>
                     </div>
 
@@ -69,11 +70,9 @@ export default function Footer() {
                     </div>
                 </div>
                 <p className="text-xl grid tracking-tighter grid-span-2">
-                    2025 C all rights are reserved by Tarsier Corp.
+                    2025 C all rights are reserved by MPK Corp.
                 </p>
             </MaxWidthWrapper>
         </main>
     );
 }
-// [filter:invert(.92)_contrast(1.3)_saturate(1.6)_hue-rotate(210deg)_brightness(.9)]"
-// />
