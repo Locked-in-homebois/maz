@@ -19,7 +19,7 @@ export default function Footer() {
     const Icon = LEFT_DATA.icon;
 
     return (
-        <main className="bg-sky-950 px-4 mt-10 py-10 ">
+        <main className="bg-sky-950 px-4 mt-10 py-10 self-z-10">
             <MaxWidthWrapper className="text-logocolor">
                 <div className="grid md:grid-cols-4 justify-center md:gap-0 gap-6 border-b md:text-left text-center border-[#ffe56f81]  pb-10  ">
                     <div className="flex flex-col gap-6 md:max-w-55 max-w-full text-center items-center">
