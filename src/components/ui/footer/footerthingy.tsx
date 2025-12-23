@@ -25,7 +25,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-6 md:max-w-55 max-w-full text-center items-center">
                         {/* <div className="flex md:gap-6 gap-2 md:self-auto self-center "> */}
                         <Image
-                            src="/logo.png"
+                            src="/logo.webp"
                             alt="das da logo"
                             width={120}
                             height={100}
