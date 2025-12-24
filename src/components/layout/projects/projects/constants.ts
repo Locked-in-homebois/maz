@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
             { src: "/23--1.jpg" },
             { src: "/herobg.webp" },
             { src: "/image67.webp" },
-            { src: "/IMG_1140.jpg" },
+            { src: "/IMG_1140.JPG" },
             { src: "/(59) - 1.jpg" },
             { src: "/PAIN_059.webp" },
             { src: "/PAAL_056.webp" },
