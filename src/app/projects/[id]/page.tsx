@@ -44,7 +44,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     {/* RIGHT COLUMN: Product Details (Unchanged) */}
                     <div className="flex flex-col">
                         <span className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">
-                            {product.category}
+                            {product.categories}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
                             {product.name}
