@@ -1,4 +1,4 @@
-import { Product, Category } from "./types";
+import { Category, Product } from "../projects/types";
 
 export const FILTERS: Category[] = [
     "All",
