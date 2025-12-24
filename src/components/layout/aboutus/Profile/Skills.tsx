@@ -15,7 +15,7 @@ const ProfileSection = () => {
                     <div className="flex flex-col gap-8">
                         <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-lg sm:w-[80%] lg:w-full">
                             <Image
-                                src="/myBaba.PNG" // Update this path
+                                src="/myBaba.webp" // Update this path
                                 alt="Profile Picture"
                                 fill
                                 className="object-cover"
@@ -24,10 +24,10 @@ const ProfileSection = () => {
 
                         <div className="space-y-4">
                             <div>
-                                <h2 className="text-4xl font-bold text-neutral-900">
+                                <h2 className="text-4xl font-bold text-sky-950">
                                     {PROFILE_TEXT.name}
                                 </h2>
-                                <p className="text-lg font-medium text-blue-600">
+                                <p className="text-lg font-medium text-sky-800">
                                     {PROFILE_TEXT.title}
                                 </p>
                             </div>
@@ -38,13 +38,13 @@ const ProfileSection = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Skills & Animation */}
-                    <div className="flex h-full flex-col justify-between gap-6">
-                        <h3 className="text-2xl md:mt-20 font-bold text-neutral-900">
+                    <div className="flex flex-col  gap-5">
+                        <h3 className="text-2xl font-bold text-neutral-900">
                             {PROFILE_TEXT.skillsHeader}
                         </h3>
 
                         {/* Render the extracted SkillRows */}
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col mt-5 gap-8">
                             {SKILLS_DATA.map((skill, index) => (
                                 <SkillRow
                                     key={skill.label}
@@ -54,20 +54,20 @@ const ProfileSection = () => {
                             ))}
                         </div>
 
-                        {/* Certification Card */}
-                        <div className="mt-4 flex items-center gap-4 rounded-xl border border-blue-100 bg-blue-50/50 p-6">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-                                <GraduationCap size={28} />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-neutral-900">
-                                    {PROFILE_TEXT.certification.title}
-                                </h4>
-                                <p className="text-sm text-neutral-500">
-                                    {PROFILE_TEXT.certification.details}
-                                </p>
-                            </div>
-                        </div>
+                        {/* Certification Card
+						<div className="mt-4 flex items-center gap-4 rounded-xl border border-blue-100 bg-blue-50/50 p-6">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+								<GraduationCap size={28} />
+							</div>
+							<div>
+								<h4 className="font-bold text-neutral-900">
+									{PROFILE_TEXT.certification.title}
+								</h4>
+								<p className="text-sm text-neutral-500">
+									{PROFILE_TEXT.certification.details}
+								</p>
+							</div>
+						</div> */}
                     </div>
                 </div>
             </section>

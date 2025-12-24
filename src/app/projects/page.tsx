@@ -1,9 +1,9 @@
-import ProjectsGallery from "@/src/components/layout/projects/projects/Projects";
+import ProductGallery from "@/src/components/layout/projects/products/ProductGallery";
 
-export default function Home() {
+export default function ProductsPage() {
 	return (
 		<main>
-			<ProjectsGallery />
+			<ProductGallery />
 		</main>
 	);
 }

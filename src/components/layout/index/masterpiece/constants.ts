@@ -13,7 +13,7 @@ export const HEADERCONTENT: Header = {
 
 export const PHOTOSIMAGES: Photos[] = [
     {
-        photo: { src: "/VillaFront.jpg", alt: "1st" },
+        photo: { src: "/VillaFront.webp", alt: "1st" },
         tag: {
             text: "Private property",
             className:
@@ -23,7 +23,7 @@ export const PHOTOSIMAGES: Photos[] = [
         text: "this photo will be changed",
     },
     {
-        photo: { src: "/IMG_2290.JPG", alt: "2nd" },
+        photo: { src: "/IMG_2290.webp", alt: "2nd" },
         tag: {
             text: "Private property",
             className:
@@ -33,7 +33,7 @@ export const PHOTOSIMAGES: Photos[] = [
         text: "will ask my father",
     },
     {
-        photo: { src: "/IMG_0064.JPG", alt: "3rd" },
+        photo: { src: "/IMG_0064.webp", alt: "3rd" },
         tag: {
             text: "Design & Hardscape",
             className:
@@ -43,7 +43,7 @@ export const PHOTOSIMAGES: Photos[] = [
         text: "Saudi Television station",
     },
     {
-        photo: { src: "/23--1.jpg", alt: "4th" },
+        photo: { src: "/23--1.webp", alt: "4th" },
         tag: {
             text: "Design & Hardscape",
             className:
