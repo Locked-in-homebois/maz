@@ -14,15 +14,15 @@ export const SERVICE_LINKS: Links[] = [
         label: "Hardscape",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Renovation & Decor",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Facedes",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Landscape",
     },
 ];
