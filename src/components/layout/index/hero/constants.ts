@@ -14,7 +14,7 @@ export const INDEX_HERO_CONTENT: HeroContents = {
         },
     ],
     image: {
-        src: "/SCF0022 (32).jpg",
+        src: "/herobg.webp",
         alt: "Hero BG",
     },
 };
