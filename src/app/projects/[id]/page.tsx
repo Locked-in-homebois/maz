@@ -1,12 +1,24 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
-import { PRODUCTS } from "@/src/components/layout/projects/products/constants";
-import ProductImageGallery from "@/src/components/layout/projects/products/ProductImageGallery";
+import { PRODUCTS } from "@/src/components/layout/projects/projects/constants";
+import ProductImageGallery from "@/src/components/layout/projects/projects/ProductImageGallery";
 
 interface PageProps {
     params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({
+    params,
+}: PageProps): Promise<Metadata> {
+    const { id } = await params;
+    const product = PRODUCTS.find((p) => p.id === id);
+    return {
+        title: product ? `${product.name} | MAZ` : "Product Not Found",
+        description: product?.description,
+    };
 }
 
 export default async function ProductDetailPage({ params }: PageProps) {
@@ -44,7 +56,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     {/* RIGHT COLUMN: Product Details (Unchanged) */}
                     <div className="flex flex-col">
                         <span className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">
-                            {product.categories}
+                            {product.category}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
                             {product.name}

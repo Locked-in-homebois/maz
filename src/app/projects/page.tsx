@@ -1,4 +1,4 @@
-import ProductGallery from "@/src/components/layout/projects/products/ProductGallery";
+import ProductGallery from "@/src/components/layout/projects/projects/ProductGallery";
 
 export default function ProductsPage() {
 	return (
