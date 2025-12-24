@@ -11,7 +11,7 @@ export const BOXCONTENT: ServiceBox[] = [
     {
         title: "Residential",
         description: "Luxury property construction and renovation services. ",
-        image: { src: "/3.webp", alt: "Hardscape design" },
+        image: { src: "/3.jpeg", alt: "Hardscape design" },
         icon: House,
         // FIX: Use 'md:' so it takes full width on mobile, and 2 columns on desktop
         colspan: "md:col-span-2",
@@ -35,7 +35,7 @@ export const BOXCONTENT: ServiceBox[] = [
     {
         title: "Rock Works",
         description: "Natural rock installations and artistic stone features.",
-        image: { src: "/IMG_2889.webp", alt: "Rock work" },
+        image: { src: "/IMG_2889.JPG", alt: "Rock work" },
         icon: Hammer,
         colspan: "md:col-span-2",
     },

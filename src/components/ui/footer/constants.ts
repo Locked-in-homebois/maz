@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+// import { LucideIcon } from "lucide-react";
 import { LucideDraftingCompass, Mail, Phone, LocationEdit } from "lucide-react";
 import { LeftEnd, RightEnd, Links } from "./types";
 
