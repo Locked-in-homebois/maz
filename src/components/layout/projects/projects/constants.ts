@@ -1,56 +1,42 @@
-import { Project, Category } from "./types";
+import { Product, Category } from "./types";
 
-// 1. Define the Categories (for the buttons)
 export const FILTERS: Category[] = [
     "All",
-    "Residential",
-    "Commercial",
-    "Industrial",
-    "Landscape",
+    "Hardscape",
+    "Facedes",
+    "Renovation",
+    "Finishing Decor",
+    "Raised Floor",
 ];
 
-// 2. Define the Projects
-export const PROJECTS: Project[] = [
+export const PRODUCTS: Product[] = [
     {
-        id: "1",
-        title: "Modern Villa",
-        category: "Residential",
-        image: { src: "/image2.webp", alt: "Modern Villa" },
-        description: "Luxury private residence in Riyadh.",
+        id: "01",
+        name: "Luxury Marble Slab",
+        category: "Hardscape",
+        images: [
+            { src: "/image2.webp" },
+            { src: "/image3.webp" },
+            { src: "/12.webp" },
+        ],
+        description: "Premium Italian marble for high-end interiors.",
+        details:
+            "This exquisite marble slab is sourced directly from the quarries of Tuscany...",
     },
     {
-        id: "2",
-        title: "City Center Mall",
-        category: "Commercial",
-        image: { src: "/image2.webp", alt: "Shopping Mall" },
-        description: "High-end retail complex facade.",
+        id: "02",
+        name: "Industrial Steel Beam",
+        category: "Hardscape",
+        images: [{ src: "/image2.webp" }],
+        description: "High-strength steel for structural support.",
+        details: "Engineered for maximum load-bearing capacity...",
     },
     {
-        id: "3",
-        title: "Desert Resort",
-        category: "Landscape",
-        image: { src: "/image2.webp", alt: "Desert Resort" },
-        description: "Integration of natural rock with modern pools.",
-    },
-    {
-        id: "4",
-        title: "Tech Park",
-        category: "Industrial",
-        image: { src: "/image2.webp", alt: "Tech Park" },
-        description: "Sustainable warehouse and office complex.",
-    },
-    {
-        id: "5",
-        title: "Family Home",
-        category: "Residential",
-        image: { src: "/image2.webp", alt: "Family Home" },
-        description: "Contemporary design for a growing family.",
-    },
-    {
-        id: "6",
-        title: "Hotel Garden",
-        category: "Landscape",
-        image: { src: "/image2.webp", alt: "Hotel Garden" },
-        description: "Lush greenery layout for a 5-star hotel.",
+        id: "03",
+        name: "Modern Lounge Chair",
+        category: "Hardscape",
+        images: [{ src: "/image2.webp" }],
+        description: "Ergonomic design with premium leather.",
+        details: "Experience ultimate comfort with our Modern Lounge Chair...",
     },
 ];
