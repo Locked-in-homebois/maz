@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+// import { LucideIcon } from "lucide-react";
 import { LucideDraftingCompass, Mail, Phone, LocationEdit } from "lucide-react";
 import { LeftEnd, RightEnd, Links } from "./types";
 
@@ -14,15 +14,15 @@ export const SERVICE_LINKS: Links[] = [
         label: "Hardscape",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Renovation & Decor",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Facedes",
     },
     {
-        href: "/products",
+        href: "/projects",
         label: "Landscape",
     },
 ];

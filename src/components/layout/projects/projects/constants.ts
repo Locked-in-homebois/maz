@@ -1,56 +1,76 @@
-import { Project, Category } from "./types";
+import { Category, Product } from "../projects/types";
 
-// 1. Define the Categories (for the buttons)
 export const FILTERS: Category[] = [
     "All",
-    "Residential",
-    "Commercial",
-    "Industrial",
-    "Landscape",
+    "Hardscape",
+    "Facedes",
+    "Renovation",
+    "Finishing Decor",
+    "Raised Floor",
 ];
 
-// 2. Define the Projects
-export const PROJECTS: Project[] = [
+export const PRODUCTS: Product[] = [
     {
-        id: "1",
-        title: "Modern Villa",
-        category: "Residential",
-        image: { src: "/image2.webp", alt: "Modern Villa" },
-        description: "Luxury private residence in Riyadh.",
+        id: "ARCADE",
+        name: "Decorative Arched Colonnade",
+        category: "Finishing Decor", // "Facedes",
+        images: [
+            { src: "/COCA_024.webp" },
+            { src: "/COCA_019.webp" },
+            { src: "/COCO_020.webp" },
+            { src: "/IMG_2220.JPG" },
+            { src: "/IMG_2227.JPG" },
+            { src: "/IMG_2290.JPG" },
+            { src: "/IMG_2295.JPG" },
+        ],
+        description: "Designing suppling and crafting",
+        details:
+            "Finely detailed with a harminonius blend of classical geometry and ornamental artistry that gave the structure a timless,dignified presence.",
     },
     {
-        id: "2",
-        title: "City Center Mall",
-        category: "Commercial",
-        image: { src: "/image2.webp", alt: "Shopping Mall" },
-        description: "High-end retail complex facade.",
+        id: "KFU",
+        name: "King Faisal University",
+        category: "Hardscape", //finishing and decor
+        images: [
+            { src: "/23--1.jpg" },
+            { src: "/herobg.webp" },
+            { src: "/image67.webp" },
+            { src: "/IMG_1140.jpg" },
+            { src: "/(59) - 1.jpg" },
+            { src: "/PAIN_059.WEBP" },
+            { src: "/PAAL_056.WEBP" },
+            { src: "/PAPL_045.WEBP" },
+            { src: "/PAPL_038.WEBP" },
+            { src: "/IMG_1139.webp" },
+            { src: "/PLWI_046.WEBP" },
+            { src: "/PLST_040.WEBP" },
+            { src: "/IMG_0649.WEBP" },
+            { src: "/DOBU_042.WEBP" },
+            { src: "/ROCL_047.WEBP" },
+            { src: "/ROLA_044.WEBP" },
+            { src: "/ROOV_050.WEBP" },
+        ],
+        description: "Designing supplying crafting and constructing.",
+        details:
+            "Engineered for maximum sustainability while maintaining an artistic design.",
     },
     {
-        id: "3",
-        title: "Desert Resort",
-        category: "Landscape",
-        image: { src: "/image2.webp", alt: "Desert Resort" },
-        description: "Integration of natural rock with modern pools.",
-    },
-    {
-        id: "4",
-        title: "Tech Park",
-        category: "Industrial",
-        image: { src: "/image2.webp", alt: "Tech Park" },
-        description: "Sustainable warehouse and office complex.",
-    },
-    {
-        id: "5",
-        title: "Family Home",
-        category: "Residential",
-        image: { src: "/image2.webp", alt: "Family Home" },
-        description: "Contemporary design for a growing family.",
-    },
-    {
-        id: "6",
-        title: "Hotel Garden",
-        category: "Landscape",
-        image: { src: "/image2.webp", alt: "Hotel Garden" },
-        description: "Lush greenery layout for a 5-star hotel.",
+        id: "03",
+        name: "Saudi Telivision Tower",
+        category: "Hardscape",
+        images: [
+            { src: "/IMG_0064.webp" },
+            { src: "/ROPL_061.webp" },
+            { src: "/ROPL_062.webp" },
+            { src: "/ROPL_063.webp" },
+            { src: "/ROPL_072.webp" },
+            { src: "/ROPL_073.webp" },
+            { src: "/ROPL_064.webp" },
+            { src: "/ROPL_066.webp" },
+            { src: "/BLMO_068.webp" },
+            { src: "/ROPL_060.webp" },
+        ],
+        description: "Ergonomic design with premium leather.",
+        details: "Experience ultimate comfort with our Modern Lounge Chair...",
     },
 ];
