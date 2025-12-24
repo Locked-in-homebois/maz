@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
-import { PRODUCTS } from "@/src/components/layout/projects/products/constants";
-import ProductImageGallery from "@/src/components/layout/projects/products/ProductImageGallery";
+import { PRODUCTS } from "@/src/components/layout/projects/projects/constants";
+import ProductImageGallery from "@/src/components/layout/projects/projects/ProductImageGallery";
 
 interface PageProps {
 	params: Promise<{ id: string }>;

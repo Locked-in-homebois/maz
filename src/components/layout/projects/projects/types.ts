@@ -1,26 +1,28 @@
 export type Category =
-	| "All"
-	| "Residential"
-	| "Commercial"
-	| "Industrial"
-	| "Landscape";
+    | "All"
+    | "Hardscape"
+    | "Facedes"
+    | "Renovation"
+    | "Finishing Decor"
+    | "Raised Floor";
+export type SortOption = "name-asc" | "name-desc";
 
-export interface Project {
-	id: string;
-	title: string;
-	category: Category;
-	image: {
-		src: string;
-		alt: string;
-	};
-	description?: string; // Optional short description
+export interface Product {
+    id: string;
+    name: string;
+    category: Category;
+    images: {
+        src: string;
+    }[];
+    description: string;
+    details: string;
+}
+
+export interface ProductCardProps {
+    product: Product;
 }
 
 export interface FilterTabsProps {
-	activeFilter: Category;
-	onFilterChange: (category: Category) => void;
-}
-
-export interface ProjectCardProps {
-	project: Project;
+    activeFilter: Category;
+    onFilterChange: (filter: Category) => void;
 }
