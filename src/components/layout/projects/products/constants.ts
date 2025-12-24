@@ -59,8 +59,7 @@ export const PRODUCTS: Product[] = [
         name: "Saudi Telivision Tower",
         category: "Hardscape",
         images: [
-            { src: "/IMG_0064.JPG" },
-            { src: "/ROPL_071.webp" },
+            { src: "/IMG_0064.jpg" },
             { src: "/ROPL_061.webp" },
             { src: "/ROPL_062.webp" },
             { src: "/ROPL_063.webp" },
