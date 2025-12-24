@@ -23,7 +23,7 @@ export const SERVICE_LINKS: Links[] = [
     },
     {
         href: "/projects",
-        label: "Landscape",
+        label: "Finishing and Decor",
     },
 ];
 
