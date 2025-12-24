@@ -8,7 +8,7 @@ import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
 
 const LINKS = [
-    { label: "Products", href: "/products" },
+    { label: "Projects", href: "/projects" },
     { label: "Material Manufacturing", href: "/material-manufacturing" },
     { label: "Contact", href: "/contact" },
     { label: "About me", href: "/aboutus" },

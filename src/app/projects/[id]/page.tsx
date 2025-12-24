@@ -26,7 +26,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <MaxWidthWrapper>
                 {/* Back Button */}
                 <Link
-                    href="/products"
+                    href="/projects"
                     className="inline-flex items-center text-sm font-medium text-neutral-500 hover:text-neutral-900 mb-8 transition-colors"
                 >
                     <ArrowLeft className="mr-2 h-4 w-4" />
