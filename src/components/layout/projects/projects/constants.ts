@@ -12,7 +12,7 @@ export const FILTERS: Category[] = [
 export const PRODUCTS: Product[] = [
     {
         id: "ARCADE",
-        name: "Decorative Arched Colonnade",
+        name: "Projects.products.ARCADE.name",
         category: "Finishing Decor", // "Facedes",
         images: [
             { src: "/COCA_024.webp" },
@@ -24,20 +24,20 @@ export const PRODUCTS: Product[] = [
             { src: "/IMG_2295.JPG" },
             { src: "/IMGNIGHT.jpeg" },
         ],
-        description: "Decorative stone cladding engraving",
+        description: "Projects.products.ARCADE.description",
         details:
-            "Finely detailed with a harminonius blend of classical geometry and ornamental artistry that gave the structure a timless,dignified presence.",
+            "Projects.products.ARCADE.details",
     },
     {
         id: "KFU",
-        name: "King Faisal University",
+        name: "Projects.products.KFU.name",
         category: "Hardscape", //finishing and decor
         images: [
-            { src: "/23--1.jpg" },
+            { src: "/23-1.jpg" },
             { src: "/herobg.webp" },
             { src: "/image67.webp" },
             { src: "/IMG_1140.JPG" },
-            { src: "/(59) - 1.jpg" },
+            { src: "/59-1.jpg" },
             { src: "/PAIN_059.webp" },
             { src: "/PAAL_056.webp" },
             { src: "/PAPL_045.webp" },
@@ -49,13 +49,13 @@ export const PRODUCTS: Product[] = [
             { src: "/DOBU_042.webp" },
             { src: "/ROLA_044.webp" },
         ],
-        description: "Designing supplying crafting and constructing.",
+        description: "Projects.products.KFU.description",
         details:
-            "Engineered for maximum sustainability while maintaining an artistic design.",
+            "Projects.products.KFU.details",
     },
     {
         id: "TTP",
-        name: "TV Tower Plaza",
+        name: "Projects.products.TTP.name",
         category: "Hardscape",
         images: [
             { src: "/IMG_0064.webp" },
@@ -68,12 +68,12 @@ export const PRODUCTS: Product[] = [
             { src: "/ROPL_066.webp" },
             { src: "/BLMO_068.webp" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.TTP.description",
+        details: "Projects.products.TTP.details",
     },
     {
         id: "BackYard",
-        name: "Backyard Decor and Landscape",
+        name: "Projects.products.BackYard.name",
         category: "Renovation",
         images: [
             { src: "/BY7.jpeg" },
@@ -84,12 +84,12 @@ export const PRODUCTS: Product[] = [
             { src: "/BY1.jpeg" },
             { src: "/BY2.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.BackYard.description",
+        details: "Projects.products.BackYard.details",
     },
     {
         id: "Bus",
-        name: "Riyadh bus stations",
+        name: "Projects.products.Bus.name",
         category: "Hardscape",
         images: [
             { src: "/bus1.jpeg" },
@@ -99,12 +99,12 @@ export const PRODUCTS: Product[] = [
             { src: "/busirl2.jpeg" },
             { src: "/busirl3.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.Bus.description",
+        details: "Projects.products.Bus.details",
     },
     {
         id: "Vrock",
-        name: "V-Rock decor",
+        name: "Projects.products.Vrock.name",
         category: "Finishing Decor",
         images: [
             { src: "/Vrock3.2.jpeg" },
@@ -113,12 +113,12 @@ export const PRODUCTS: Product[] = [
             { src: "/Vrock4.jpeg" },
             { src: "/Vrock5.2.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.Vrock.description",
+        details: "Projects.products.Vrock.details",
     },
     {
         id: "Block",
-        name: "Residential porcelain facede",
+        name: "Projects.products.Block.name",
         category: "Facedes",
         images: [
             { src: "/SQ1.jpeg" },
@@ -127,12 +127,12 @@ export const PRODUCTS: Product[] = [
             { src: "/SQ5.jpeg" },
             { src: "/SQ6.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.Block.description",
+        details: "Projects.products.Block.details",
     },
     {
         id: "SV",
-        name: "Residential Landscape and Fence",
+        name: "Projects.products.SV.name",
         category: "Finishing Decor",
         images: [
             { src: "/2v7.jpeg" },
@@ -146,12 +146,12 @@ export const PRODUCTS: Product[] = [
             { src: "/2v10.jpeg" },
             { src: "/2v11.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.SV.description",
+        details: "Projects.products.SV.details",
     },
     {
         id: "RF",
-        name: "Work office Raised Floor",
+        name: "Projects.products.RF.name",
         category: "Raised Floor",
         images: [
             { src: "/RF1.jpeg" },
@@ -161,12 +161,12 @@ export const PRODUCTS: Product[] = [
             { src: "/RF5.jpeg" },
             { src: "/RF6.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.RF.description",
+        details: "Projects.products.RF.details",
     },
     {
         id: "Fence",
-        name: "Rock fence",
+        name: "Projects.products.Fence.name",
         category: "Finishing Decor",
         images: [
             { src: "/F1.JPG" },
@@ -174,12 +174,12 @@ export const PRODUCTS: Product[] = [
             { src: "/F3.webp" },
             { src: "/F4.webp" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.Fence.description",
+        details: "Projects.products.Fence.details",
     },
     {
         id: "Lime",
-        name: "Limestone Hardscape",
+        name: "Projects.products.Lime.name",
         category: "Hardscape",
         images: [
             { src: "/hs2.jpeg" },
@@ -197,12 +197,12 @@ export const PRODUCTS: Product[] = [
 
             { src: "/hs6.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.Lime.description",
+        details: "Projects.products.Lime.details",
     },
     {
         id: "marble",
-        name: "Artistic marble usage  ",
+        name: "Projects.products.marble.name",
         category: "Facedes",
         images: [
             { src: "/marb3.jpeg" },
@@ -211,20 +211,20 @@ export const PRODUCTS: Product[] = [
             { src: "/marb4.jpeg" },
             { src: "/marb5.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.marble.description",
+        details: "Projects.products.marble.details",
     },
     {
         id: "renoV",
-        name: "Villa Renovation",
+        name: "Projects.products.renoV.name",
         category: "Renovation",
         images: [{ src: "/RenoV2.jpeg" }, { src: "/RenoV1.jpeg" }],
-        description: ".",
-        details: ".",
+        description: "Projects.products.renoV.description",
+        details: "Projects.products.renoV.details",
     },
     {
         id: "renoV2",
-        name: "Villa Renovation",
+        name: "Projects.products.renoV2.name",
         category: "Renovation",
         images: [
             { src: "/reno2v7.jpeg" },
@@ -235,7 +235,7 @@ export const PRODUCTS: Product[] = [
             { src: "/reno2v6.jpeg" },
             { src: "/reno2v4.jpeg" },
         ],
-        description: ".",
-        details: ".",
+        description: "Projects.products.renoV2.description",
+        details: "Projects.products.renoV2.details",
     },
 ];

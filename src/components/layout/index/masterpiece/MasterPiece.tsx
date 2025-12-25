@@ -5,6 +5,7 @@ import { HEADERCONTENT, PHOTOSIMAGES } from "./constants";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -16,22 +17,23 @@ const itemVariants: Variants = {
 };
 
 const MasterPiece = () => {
+    const t = useTranslations();
     return (
         <MaxWidthWrapper>
             <div>
                 <div className="py-7 grid gap-2">
                     <h1 className="text-5xl font-extrabold">
-                        {HEADERCONTENT.header}
+                        {t(HEADERCONTENT.header)}
                     </h1>
 
                     <div className="flex justify-between">
                         <h1 className="text-xl text-gray-400">
-                            {HEADERCONTENT.desc}
+                            {t(HEADERCONTENT.desc)}
                         </h1>
 
                         <h1 className={HEADERCONTENT.linkFull.className}>
                             <Link href={HEADERCONTENT.linkFull.href}>
-                                {HEADERCONTENT.linkFull.text}
+                                {t(HEADERCONTENT.linkFull.text)}
                             </Link>
                         </h1>
                     </div>
@@ -69,16 +71,16 @@ const MasterPiece = () => {
 
                                 <div className="absolute bottom-0 left-0 grid grid-cols-2 gap-1 rounded-xl mx-3 my-3">
                                     <h1 className={item.tag.className}>
-                                        {item.tag.text}
+                                        {t(item.tag.text)}
                                     </h1>
 
                                     <div className="flex backdrop-blur-sm rounded-xl gap-1 items-center w-fit">
                                         <item.location.icon />
-                                        <h1>{item.location.text}</h1>
+                                        <h1>{t(item.location.text)}</h1>
                                     </div>
 
                                     <h1 className="col-span-2 text-2xl backdrop-blur-2xl w-fit text-gray-50 rounded-2xl">
-                                        {item.text}
+                                        {t(item.text)}
                                     </h1>
                                 </div>
                             </div>

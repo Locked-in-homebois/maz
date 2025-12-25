@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLocale } from "next-intl";
 
 interface ProductImageGalleryProps {
 	images: { src: string }[];
@@ -15,12 +16,15 @@ export default function ProductImageGallery({
 	productName,
 }: ProductImageGalleryProps) {
 	const [selectedIndex, setSelectedIndex] = useState(0);
+    const locale = useLocale();
+    const direction = locale === "ar" ? "rtl" : "ltr";
 
 	// 1. Initialize Main and Thumb Carousels
-	const [mainRef, mainApi] = useEmblaCarousel({ loop: true });
+	const [mainRef, mainApi] = useEmblaCarousel({ loop: true, direction });
 	const [thumbRef, thumbApi] = useEmblaCarousel({
 		containScroll: "keepSnaps",
 		dragFree: true,
+        direction
 	});
 
 	// 2. Sync Logic

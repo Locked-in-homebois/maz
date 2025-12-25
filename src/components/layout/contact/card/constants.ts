@@ -1,8 +1,8 @@
 import { InfoGrid, Header, Carousel, ContactForm } from "./types";
 
 export const HEADERCONTENT: Header = {
-    title: "Get in Touch",
-    desc: "We respond within 24 hours to all inquiries.",
+    title: "Contact.Header.title",
+    desc: "Contact.Header.desc",
 };
 
 export const CAROUSELCONTENT: Carousel = {
@@ -10,33 +10,33 @@ export const CAROUSELCONTENT: Carousel = {
 };
 
 export const GRIDCONTENT: InfoGrid[] = [
-    { title: "Location", desc: "Riyadh/alnafl" },
-    { title: "Social Media", desc: "@azzamahdab" },
-    { title: "Email", desc: "mohazzama@gmail.com" },
-    { title: "Contact", desc: "+966 504 413 053" },
+    { title: "Contact.Grid.Location.title", desc: "Contact.Grid.Location.desc" },
+    { title: "Contact.Grid.Social.title", desc: "Contact.Grid.Social.desc" },
+    { title: "Contact.Grid.Email.title", desc: "Contact.Grid.Email.desc" },
+    { title: "Contact.Grid.Contact.title", desc: "Contact.Grid.Contact.desc" },
 ];
 
 // NEW: The Form Configuration
 export const FORMCONTENT: ContactForm = {
-    title: "Send a Message",
-    buttonText: "Submit Request",
+    title: "Contact.Form.title",
+    buttonText: "Contact.Form.buttonText",
     fields: [
         {
-            label: "Full Name",
+            label: "Contact.Form.fields.fullName.label",
             name: "fullName",
-            placeholder: "Enter your name",
+            placeholder: "Contact.Form.fields.fullName.placeholder",
             type: "text",
         },
         {
-            label: "Email Address",
+            label: "Contact.Form.fields.email.label",
             name: "email",
-            placeholder: "name@example.com",
+            placeholder: "Contact.Form.fields.email.placeholder",
             type: "email",
         },
         {
-            label: "Message",
+            label: "Contact.Form.fields.message.label",
             name: "message",
-            placeholder: "How can we help you?",
+            placeholder: "Contact.Form.fields.message.placeholder",
             type: "textarea",
         },
     ],

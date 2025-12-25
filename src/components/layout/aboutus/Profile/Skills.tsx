@@ -5,8 +5,10 @@ import { GraduationCap } from "lucide-react";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { SkillRow } from "./SkillRow";
 import { PROFILE_TEXT, SKILLS_DATA } from "./constants";
+import { useTranslations } from "next-intl";
 
 const ProfileSection = () => {
+    const t = useTranslations();
     return (
         <MaxWidthWrapper>
             <section className="mt-10">
@@ -25,14 +27,14 @@ const ProfileSection = () => {
                         <div className="space-y-4">
                             <div>
                                 <h2 className="text-4xl font-bold text-sky-950">
-                                    {PROFILE_TEXT.name}
+                                    {t(PROFILE_TEXT.name)}
                                 </h2>
                                 <p className="text-lg font-medium text-sky-800">
-                                    {PROFILE_TEXT.title}
+                                    {t(PROFILE_TEXT.title)}
                                 </p>
                             </div>
                             <p className="leading-relaxed text-neutral-600">
-                                {PROFILE_TEXT.bio}
+                                {t(PROFILE_TEXT.bio)}
                             </p>
                         </div>
                     </div>
@@ -40,7 +42,7 @@ const ProfileSection = () => {
                     {/* RIGHT COLUMN: Skills & Animation */}
                     <div className="flex flex-col  gap-5">
                         <h3 className="text-2xl font-bold text-neutral-900">
-                            {PROFILE_TEXT.skillsHeader}
+                            {t(PROFILE_TEXT.skillsHeader)}
                         </h3>
 
                         {/* Render the extracted SkillRows */}
@@ -61,10 +63,10 @@ const ProfileSection = () => {
 							</div>
 							<div>
 								<h4 className="font-bold text-neutral-900">
-									{PROFILE_TEXT.certification.title}
+									{t(PROFILE_TEXT.certification.title)}
 								</h4>
 								<p className="text-sm text-neutral-500">
-									{PROFILE_TEXT.certification.details}
+									{t(PROFILE_TEXT.certification.details)}
 								</p>
 							</div>
 						</div> */}
