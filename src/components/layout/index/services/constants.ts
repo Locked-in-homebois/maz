@@ -25,7 +25,7 @@ export const BOXCONTENT: ServiceBox[] = [
     {
         title: "Services.facades.title",
         description: "Services.facades.desc",
-        image: { src: "/11mn.webp", alt: "Facade detail" },
+        image: { src: "/SQ1.jpeg", alt: "Facade detail" },
         icon: BrickWall,
         colspan: "md:col-span-1",
     },
