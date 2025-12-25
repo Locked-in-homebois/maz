@@ -2,8 +2,10 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { PhilosophyCard } from "./phycard";
 import { PHILOSOPHY_DATA, PHY_DATA } from "./constants";
+import { getTranslations } from "next-intl/server";
 
-const Philosophy = () => {
+const Philosophy = async () => {
+    const t = await getTranslations();
 	return (
 		<MaxWidthWrapper>
 			<main>
@@ -11,10 +13,10 @@ const Philosophy = () => {
 					{/* Section Header */}
 					<div className="text-center space-y-4">
 						<h1 className="font-black text-5xl">
-							{PHY_DATA.header}
+							{t(PHY_DATA.header)}
 						</h1>
 						<p className="text-gray-600 text-xl max-w-2xl mx-auto">
-							{PHY_DATA.desc}
+							{t(PHY_DATA.desc)}
 						</p>
 					</div>
 
@@ -24,8 +26,8 @@ const Philosophy = () => {
 							<PhilosophyCard
 								key={index}
 								icon={item.icon}
-								header={item.header}
-								description={item.description}
+								header={t(item.header)}
+								description={t(item.description)}
 							/>
 						))}
 					</div>

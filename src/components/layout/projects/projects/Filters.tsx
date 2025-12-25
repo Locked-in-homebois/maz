@@ -1,7 +1,9 @@
 import { FILTERS } from "./constants";
 import { FilterTabsProps } from "./types";
+import { useTranslations } from "next-intl";
 
 const FilterTabs = ({ activeFilter, onFilterChange }: FilterTabsProps) => {
+    const t = useTranslations();
 	return (
 		<div className="flex flex-wrap justify-center gap-3 mb-8">
 			{FILTERS.map((filter) => (
@@ -17,7 +19,7 @@ const FilterTabs = ({ activeFilter, onFilterChange }: FilterTabsProps) => {
 						}
                     `}
 				>
-					{filter}
+					{t(`Projects.filters.${filter.replace(" ", "")}` as any)}
 				</button>
 			))}
 		</div>

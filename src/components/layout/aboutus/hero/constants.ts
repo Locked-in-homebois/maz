@@ -2,18 +2,18 @@
 import { HeroData } from "./types";
 
 export const HERO_CONTENT: HeroData = {
-    header: "Building Vision into Reality", // I filled this in as a placeholder
+    header: "AboutUs.Hero.header", // I filled this in as a placeholder
     subheader:
-        "A specialized one-person portfolio focusing on renovations, facade works, and stone finishing. I personally oversee every detail, from the initial survey to the final design.",
+        "AboutUs.Hero.subheader",
     imageSrc: "/IMG_2903.webp",
     imageAlt: "Renovation site background",
     buttons: [
         {
-            label: "View My Work",
+            label: "AboutUs.Hero.buttons.viewWork",
             href: "/projects",
         },
         {
-            label: "Contact Me",
+            label: "AboutUs.Hero.buttons.contactMe",
             href: "/contact",
         },
     ],
