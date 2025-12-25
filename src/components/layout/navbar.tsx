@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import { MenuIcon, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
@@ -11,7 +12,7 @@ const LINKS = [
 	{ label: "Projects", href: "/projects" },
 	{ label: "Material Manufacturing", href: "/material-manufacturing" },
 	{ label: "Contact", href: "/contact" },
-	{ label: "About me", href: "/aboutus" },
+	{ label: "About me", href: "/aboutme" },
 ];
 
 const menuVariants: Variants = {
@@ -51,11 +52,28 @@ const itemVariants: Variants = {
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+		// Cleanup function to reset scroll if component unmounts
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isOpen]);
 
 	return (
 		// 1. Outer Shell: Handles Position, Background, Blur, and Border only.
 		// Removed 'px-6' and flex utilities from here.
-		<nav className="sticky top-0 z-50 border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
+		<nav className="sticky top-0 z-999 border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
 			{/* 2. MaxWidthWrapper: Handles the width constraints and alignment */}
 			<MaxWidthWrapper className="flex items-center justify-between">
 				{/* LOGO */}
@@ -104,7 +122,7 @@ export default function Navbar() {
 				<div className="md:hidden">
 					<button
 						onClick={() => setIsOpen(!isOpen)}
-						className="relative z-50"
+						className="relative z-1002"
 						aria-label="Toggle Menu"
 					>
 						<motion.div
@@ -118,38 +136,42 @@ export default function Navbar() {
 			</MaxWidthWrapper>
 			{/* MOBILE MENU OVERLAY */}
 			{/* Kept outside the wrapper so it fills the screen properly */}
-			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						variants={menuVariants}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-24"
-					>
-						<div className="flex flex-col gap-4">
-							{LINKS.map((item) => (
-								<motion.div
-									key={item.label}
-									variants={itemVariants}
-								>
-									<Link
-										href={item.href}
-										onClick={() => setIsOpen(false)}
-										className="flex items-center justify-between border-b border-neutral-100 py-4 text-3xl font-black uppercase tracking-tighter text-neutral-900 active:text-neutral-500"
-									>
-										{item.label}
-										<ArrowRight
-											className="text-neutral-300"
-											size={24}
-										/>
-									</Link>
-								</motion.div>
-							))}
-						</div>
-					</motion.div>
+			{mounted &&
+				createPortal(
+					<AnimatePresence>
+						{isOpen && (
+							<motion.div
+								variants={menuVariants}
+								initial="initial"
+								animate="animate"
+								exit="exit"
+								className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-24"
+							>
+								<div className="flex flex-col gap-4">
+									{LINKS.map((item) => (
+										<motion.div
+											key={item.label}
+											variants={itemVariants}
+										>
+											<Link
+												href={item.href}
+												onClick={() => setIsOpen(false)}
+												className="flex items-center justify-between border-b border-neutral-100 py-4 text-3xl font-black uppercase tracking-tighter text-neutral-900 active:text-neutral-500"
+											>
+												{item.label}
+												<ArrowRight
+													className="text-neutral-300"
+													size={24}
+												/>
+											</Link>
+										</motion.div>
+									))}
+								</div>
+							</motion.div>
+						)}
+					</AnimatePresence>,
+					document.body
 				)}
-			</AnimatePresence>
 		</nav>
 	);
 }
