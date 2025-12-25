@@ -9,4 +9,5 @@ export interface Photos {
     tag: { text: string; className: string };
     location: { text: string; icon: LucideIcon };
     text: string;
+    href: string;
 }
