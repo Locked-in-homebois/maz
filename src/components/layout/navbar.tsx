@@ -11,7 +11,7 @@ const LINKS = [
 	{ label: "Projects", href: "/projects" },
 	{ label: "Material Manufacturing", href: "/material-manufacturing" },
 	{ label: "Contact", href: "/contact" },
-	{ label: "About me", href: "/aboutus" },
+	{ label: "About me", href: "/aboutme" },
 ];
 
 const menuVariants: Variants = {
