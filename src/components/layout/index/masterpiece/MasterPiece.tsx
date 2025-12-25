@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import clsx from "clsx"; // Optional: helps merge classes cleanly if you have it installed
 
 const containerVariants: Variants = {
 	hidden: { opacity: 0 },
