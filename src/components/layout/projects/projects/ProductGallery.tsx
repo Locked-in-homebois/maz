@@ -7,8 +7,10 @@ import { PRODUCTS } from "./constants";
 import { Category, SortOption } from "./types";
 import SortDropdown from "./SortDropdown";
 import ProductGrid from "./ProductGrid";
+import { useTranslations } from "next-intl";
 
 const ProductGallery = () => {
+    const t = useTranslations();
     // --- State ---
     const [activeFilter, setActiveFilter] = useState<Category>("All");
     const [sortOption, setSortOption] = useState<SortOption>("name-asc");
@@ -21,9 +23,17 @@ const ProductGallery = () => {
 
     const sortedProducts = [...filteredProducts].sort((a, b) => {
         if (sortOption === "name-asc") {
-            return a.name.localeCompare(b.name);
+            // Translate names for sorting logic?
+            // Ideally yes, but fetching translations here is tricky. 
+            // We can sort by KEY if that's acceptable or translate inside sort.
+            // Since useTranslations is synchronous hook, we CAN translate inside.
+            const nameA = t(a.name as any);
+            const nameB = t(b.name as any);
+            return nameA.localeCompare(nameB);
         } else {
-            return b.name.localeCompare(a.name);
+            const nameA = t(a.name as any);
+            const nameB = t(b.name as any);
+            return nameB.localeCompare(nameA);
         }
     });
 
@@ -33,10 +43,10 @@ const ProductGallery = () => {
             <MaxWidthWrapper>
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4 tracking-tight">
-                        Our Products
+                        {t("Projects.Gallery.title")}
                     </h2>
                     <p className="text-neutral-600 max-w-2xl mx-auto">
-                        Browse our catalog of premium materials and furniture.
+                        {t("Projects.Gallery.desc")}
                     </p>
                 </div>
 

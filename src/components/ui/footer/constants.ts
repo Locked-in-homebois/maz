@@ -5,40 +5,40 @@ import { LeftEnd, RightEnd, Links } from "./types";
 export const LEFT_DATA: LeftEnd = {
 	icon: LucideDraftingCompass,
 	header: "MAZ",
-	text: " Cutting your stones and making lime with it with exelance ",
+	text: "Footer.description",
 };
 
 export const SERVICE_LINKS: Links[] = [
 	{
 		href: "/material-manufacturing",
-		label: "Hardscape",
+		label: "Footer.links.hardscape",
 	},
 	{
 		href: "/projects",
-		label: "Renovation & Decor",
+		label: "Footer.links.renovation",
 	},
 	{
 		href: "/projects",
-		label: "Facedes",
+		label: "Footer.links.facades",
 	},
 	{
 		href: "/projects",
-		label: "Finishing and Decor",
+		label: "Footer.links.finishing",
 	},
 ];
 
 export const COMPANY_LINKS: Links[] = [
 	{
 		href: "/",
-		label: "Renovations",
+		label: "Footer.links.company_renovations",
 	},
 	{
 		href: "/",
-		label: "Company Owner",
+		label: "Footer.links.company_owner",
 	},
 	{
 		href: "/",
-		label: "Cutting stone ",
+		label: "Footer.links.company_cutting",
 	},
 ];
 
@@ -46,16 +46,16 @@ export const RIGHT_DATA: RightEnd[] = [
 	{
 		icon: Mail,
 		href: "/contact",
-		text: "mohazzama@gmail.com ",
+		text: "Footer.contact.email",
 	},
 	{
 		icon: Phone,
 		href: "#",
-		text: " +966 504413053 ",
+		text: "Footer.contact.phone",
 	},
 	{
 		icon: LocationEdit,
 		href: "https://maps.app.goo.gl/2uM7ejbC2Vis1xb97",
-		text: "riyadh ",
+		text: "Footer.contact.location",
 	},
 ];

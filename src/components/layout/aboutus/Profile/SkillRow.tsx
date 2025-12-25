@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { SkillItem } from "./types";
+import { useTranslations } from "next-intl";
 
 interface SkillRowProps {
 	skill: SkillItem;
@@ -9,6 +10,7 @@ interface SkillRowProps {
 }
 
 export const SkillRow = ({ skill, index }: SkillRowProps) => {
+    const t = useTranslations();
 	return (
 		<div className="relative w-full group">
 			{/* 1. The Box Container */}
@@ -20,10 +22,10 @@ export const SkillRow = ({ skill, index }: SkillRowProps) => {
 					</div>
 					<div className="flex flex-col">
 						<span className="font-bold text-lg text-sky-950">
-							{skill.label}
+							{t(skill.label)}
 						</span>
 						<span className="text-xs font-medium text-sky-950 uppercase tracking-wider">
-							{skill.level}
+							{t(skill.level)}
 						</span>
 					</div>
 				</div>

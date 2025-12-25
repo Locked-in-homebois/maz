@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import Image from "next/image";
-import MaxWidthWrapper from "../../../ui/MaxWidthWrapper";
+import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { INDEX_HERO_CONTENT } from "./constants";
 import { motion, type Variants } from "motion/react";
+import { useTranslations } from "next-intl";
 
 // 1. Cleaned up Button Vars:
 // - Unified padding logic for better mobile touch targets
@@ -18,7 +19,7 @@ const buttonVars =
 const pVars =
     "z-10 rounded-lg backdrop-blur-sm bg-black/1 text-gray-300 font-light leading-relaxed " +
     "text-base text-center px-4 py-2 mt-8  mx-auto " + // Mobile: Centered, constrained width, reasonable margin
-    "md:text-2xl md:text-left md:absolute md:bottom-10 md:left-10 md:m-0 md:max-w-none md:px-4"; // Desktop: Pinned, larger
+    "md:text-2xl md:text-start md:absolute md:bottom-10 md:start-10 md:m-0 md:max-w-none md:px-4"; // Desktop: Pinned, larger
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -30,6 +31,8 @@ const fadeInUp: Variants = {
 };
 
 const Hero = () => {
+    const t = useTranslations();
+
     return (
         <main className="flex justify-center py-4 md:py-5">
             <MaxWidthWrapper>
@@ -52,18 +55,14 @@ const Hero = () => {
                         className="relative z-10 flex flex-col justify-center gap-8 md:gap-10 max-w-5xl rounded-3xl py-6 md:py-10"
                     >
                         <h1 className="text-3xl sm:text-4xl md:text-6xl text-center md:text-start font-extrabold tracking-tight leading-tight text-white drop-shadow-sm">
-                            {INDEX_HERO_CONTENT.title}
+                            {t(INDEX_HERO_CONTENT.title)}
                         </h1>
                         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                            {INDEX_HERO_CONTENT.button.map((item, index) => (
-                                <Link
-                                    key={index}
-                                    href={item.href}
-                                    className={buttonVars}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
+                             {INDEX_HERO_CONTENT.button.map((btn, index) => (
+                                 <Link key={index} href={btn.href} className={buttonVars}>
+                                    {t(btn.label)}
+                                 </Link>
+                             ))}
                         </div>
                     </motion.div>
                     <motion.p
@@ -73,7 +72,7 @@ const Hero = () => {
                         viewport={{ once: true }}
                         className={pVars}
                     >
-                        {INDEX_HERO_CONTENT.footer}
+                        {t(INDEX_HERO_CONTENT.footer)}
                     </motion.p>
                 </div>
             </MaxWidthWrapper>

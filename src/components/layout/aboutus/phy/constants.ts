@@ -5,24 +5,24 @@ import { PhilosophyItem, PhyItem } from "./types";
 export const PHILOSOPHY_DATA: PhilosophyItem[] = [
 	{
 		icon: LightbulbIcon,
-		header: "Direct Involvement",
+		header: "AboutUs.Philosophy.items.involvement.header",
 		description:
-			"I don't outsource critical thinking. I perform the measuring, I draw the plans, and I manage the site personally.",
+			"AboutUs.Philosophy.items.involvement.description",
 	},
 	{
 		icon: Target,
-		header: "Acuracy",
+		header: "AboutUs.Philosophy.items.accuracy.header",
 		description:
-			"I ensure every output aligns with the client's requests by confirming scope, requirements, and success criteria.",
+			"AboutUs.Philosophy.items.accuracy.description",
 	},
 	{
 		icon: BrickWallShieldIcon,
-		header: "Sustainability",
+		header: "AboutUs.Philosophy.items.sustainability.header",
 		description:
-			"I integrate sustainability considerations to reduce material waste and long-term maintenance needs.",
+			"AboutUs.Philosophy.items.sustainability.description",
 	},
 ];
 export const PHY_DATA: PhyItem = {
-	header: "My Philosophy",
-	desc: "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
+	header: "AboutUs.Philosophy.header",
+	desc: "AboutUs.Philosophy.desc",
 };

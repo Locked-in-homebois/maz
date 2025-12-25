@@ -1,8 +1,10 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { HEADERCONTENT, LISTCONTENT, IMAGECONTENT } from "./constants";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-const Expertise = () => {
+const Expertise = async () => {
+	const t = await getTranslations();
 	return (
 		<div className="bg-white md:py-25 py-15 mb-20">
 			<MaxWidthWrapper>
@@ -10,13 +12,13 @@ const Expertise = () => {
 					<div className="grid gap-5">
 						<div className="flex gap-2 text-2xl font-extrabold text-blue-700">
 							<HEADERCONTENT.title.icon size={30} />
-							<p>{HEADERCONTENT.title.text}</p>
+							<p>{t(HEADERCONTENT.title.text)}</p>
 						</div>
 						<h1 className="text-5xl font-black tracking-tight">
-							{HEADERCONTENT.header}
+							{t(HEADERCONTENT.header)}
 						</h1>
 						<p className="text-xl text-gray-500">
-							{HEADERCONTENT.desc}
+							{t(HEADERCONTENT.desc)}
 						</p>
 					</div>
 					<div className="row-span-2 py-7 ">
@@ -45,7 +47,7 @@ const Expertise = () => {
 									/>
 								</div>
 								<h1 className="text-2xl md:max-w-full max-w-62.5">
-									{item.text}
+									{t(item.text)}
 								</h1>
 							</div>
 						))}
