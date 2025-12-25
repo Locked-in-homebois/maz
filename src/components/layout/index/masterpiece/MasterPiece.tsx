@@ -16,6 +16,7 @@ const containerVariants: Variants = {
 		},
 	},
 };
+import { useTranslations } from "next-intl";
 
 const itemVariants: Variants = {
 	hidden: { opacity: 0, y: 20, scale: 0.98 },
@@ -28,6 +29,7 @@ const itemVariants: Variants = {
 };
 
 const MasterPiece = () => {
+	const t = useTranslations();
 	return (
 		<section className="py-16 md:py-24 bg-neutral-50/50">
 			<MaxWidthWrapper>
@@ -36,10 +38,10 @@ const MasterPiece = () => {
 					<div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 border-b border-neutral-200 pb-8">
 						<div className="space-y-3 max-w-2xl">
 							<h2 className="text-4xl md:text-5xl font-black tracking-tight text-neutral-900">
-								{HEADERCONTENT.header}
+								{t(HEADERCONTENT.header)}
 							</h2>
 							<p className="text-lg text-neutral-500 max-w-lg">
-								{HEADERCONTENT.desc}
+								{t(HEADERCONTENT.desc)}
 							</p>
 						</div>
 
@@ -47,7 +49,7 @@ const MasterPiece = () => {
 							href={HEADERCONTENT.linkFull.href}
 							className="group flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-600 transition-colors hover:text-blue-700 pb-1"
 						>
-							{HEADERCONTENT.linkFull.text}
+							{t(HEADERCONTENT.linkFull.text)}
 							<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
 						</Link>
 					</div>
@@ -89,21 +91,21 @@ const MasterPiece = () => {
 											<span
 												className={`${item.tag.className} text-[10px]! px-2.5! py-1! rounded-lg! uppercase tracking-wider font-bold shadow-sm`}
 											>
-												{item.tag.text}
+												{t(item.tag.text)}
 											</span>
 
 											{/* Location Chip */}
 											<div className="flex items-center gap-1 rounded-lg bg-white/20 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold text-white border border-white/10">
 												<item.location.icon size={12} />
 												<span className="uppercase tracking-wider">
-													{item.location.text}
+													{t(item.location.text)}{" "}
 												</span>
 											</div>
 										</div>
 
 										{/* TITLE: Reduced from 3xl to 2xl */}
 										<h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-1">
-											{item.text}
+											{t(item.text)}
 										</h3>
 
 										{/* HOVER LINK */}

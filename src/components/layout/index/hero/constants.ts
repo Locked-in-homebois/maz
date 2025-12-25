@@ -1,15 +1,15 @@
 import { HeroContents } from "./types";
 
 export const INDEX_HERO_CONTENT: HeroContents = {
-    title: "Precision Engineering with a Personal Touch",
-    footer: "King Faisal University -alhufuf design supply and installation",
+    title: "Hero.title",
+    footer: "Hero.footer",
     button: [
         {
-            label: "View Portfolio",
+            label: "Hero.viewPortfolio",
             href: "/",
         },
         {
-            label: "Contact Me",
+            label: "Hero.contactMe",
             href: "/contact",
         },
     ],

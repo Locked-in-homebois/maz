@@ -1,19 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { Link, usePathname } from "@/src/i18n/routing";
 import { createPortal } from "react-dom";
-import { MenuIcon, X, ArrowRight } from "lucide-react";
+import { MenuIcon, X, ArrowRight, Globe } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
-
-const LINKS = [
-	{ label: "Projects", href: "/projects" },
-	{ label: "Material Manufacturing", href: "/material-manufacturing" },
-	{ label: "Contact", href: "/contact" },
-	{ label: "About me", href: "/aboutme" },
-];
+import { useTranslations, useLocale } from "next-intl";
 
 const menuVariants: Variants = {
 	initial: { x: "100%" },
@@ -50,6 +44,17 @@ const itemVariants: Variants = {
 };
 
 export default function Navbar() {
+	const t = useTranslations("Navigation");
+	const locale = useLocale();
+	const pathname = usePathname();
+
+	const LINKS = [
+		{ label: t("projects"), href: "/projects" },
+		{ label: t("material"), href: "/material-manufacturing" },
+		{ label: t("contact"), href: "/contact" },
+		{ label: t("about"), href: "/aboutme" },
+	];
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	const [mounted, setMounted] = useState(false);
@@ -88,12 +93,12 @@ export default function Navbar() {
 
 				{/* DESKTOP MENU */}
 				<div
-					className="hidden gap-8 md:flex"
+					className="hidden gap-8 md:flex items-center"
 					onMouseLeave={() => setHoveredIndex(null)}
 				>
 					{LINKS.map((item, index) => (
 						<Link
-							key={item.label}
+							key={item.href}
 							href={item.href}
 							onMouseEnter={() => setHoveredIndex(index)}
 							className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
@@ -116,10 +121,26 @@ export default function Navbar() {
 							)}
 						</Link>
 					))}
+
+					<Link
+						href={pathname}
+						locale={locale === "en" ? "ar" : "en"}
+						className="text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-logocolor flex items-center gap-1"
+					>
+						<Globe size={16} />
+						{locale === "en" ? "AR" : "EN"}
+					</Link>
 				</div>
 
 				{/* MOBILE TOGGLE */}
-				<div className="md:hidden">
+				<div className="md:hidden flex items-center gap-4">
+					<Link
+						href={pathname}
+						locale={locale === "en" ? "ar" : "en"}
+						className="text-neutral-900"
+					>
+						<Globe size={24} />
+					</Link>
 					<button
 						onClick={() => setIsOpen(!isOpen)}
 						className="relative z-1002"
@@ -150,7 +171,7 @@ export default function Navbar() {
 								<div className="flex flex-col gap-4">
 									{LINKS.map((item) => (
 										<motion.div
-											key={item.label}
+											key={item.href}
 											variants={itemVariants}
 										>
 											<Link
@@ -160,7 +181,7 @@ export default function Navbar() {
 											>
 												{item.label}
 												<ArrowRight
-													className="text-neutral-300"
+													className="text-neutral-300 rtl:rotate-180"
 													size={24}
 												/>
 											</Link>
