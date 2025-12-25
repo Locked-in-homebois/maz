@@ -4,90 +4,125 @@ import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { HEADERCONTENT, PHOTOSIMAGES } from "./constants";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import clsx from "clsx"; // Optional: helps merge classes cleanly if you have it installed
+
+const containerVariants: Variants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+};
 
 const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: "easeOut" },
-    },
+	hidden: { opacity: 0, y: 20, scale: 0.98 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		scale: 1,
+		transition: { duration: 0.5, ease: "easeOut" },
+	},
 };
 
 const MasterPiece = () => {
-    return (
-        <MaxWidthWrapper>
-            <div>
-                <div className="py-7 grid gap-2">
-                    <h1 className="text-5xl font-extrabold">
-                        {HEADERCONTENT.header}
-                    </h1>
+	return (
+		<section className="py-16 md:py-24 bg-neutral-50/50">
+			<MaxWidthWrapper>
+				<div className="flex flex-col gap-10">
+					{/* HEADER: More compact vertical spacing */}
+					<div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 border-b border-neutral-200 pb-8">
+						<div className="space-y-3 max-w-2xl">
+							<h2 className="text-4xl md:text-5xl font-black tracking-tight text-neutral-900">
+								{HEADERCONTENT.header}
+							</h2>
+							<p className="text-lg text-neutral-500 max-w-lg">
+								{HEADERCONTENT.desc}
+							</p>
+						</div>
 
-                    <div className="flex justify-between">
-                        <h1 className="text-xl text-gray-400">
-                            {HEADERCONTENT.desc}
-                        </h1>
+						<Link
+							href={HEADERCONTENT.linkFull.href}
+							className="group flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-600 transition-colors hover:text-blue-700 pb-1"
+						>
+							{HEADERCONTENT.linkFull.text}
+							<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+						</Link>
+					</div>
 
-                        <h1 className={HEADERCONTENT.linkFull.className}>
-                            <Link href={HEADERCONTENT.linkFull.href}>
-                                {HEADERCONTENT.linkFull.text}
-                            </Link>
-                        </h1>
-                    </div>
-                </div>
+					{/* GRID: Reduced gap and card heights */}
+					<motion.div
+						variants={containerVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-50px" }}
+						className="grid md:grid-cols-2 gap-4 md:gap-6"
+					>
+						{PHOTOSIMAGES.map((item, index) => (
+							<motion.div
+								key={index}
+								variants={itemVariants}
+								// FIX: Reduced height to h-[300px] (mobile) and h-[400px] (desktop)
+								className="group relative h-75 md:h-100 w-full overflow-hidden rounded-2xl bg-neutral-200 shadow-sm cursor-pointer"
+							>
+								{/* 1. IMAGE */}
+								<div className="absolute inset-0 h-full w-full">
+									<Image
+										src={item.photo.src}
+										alt={item.photo.alt}
+										fill
+										className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+										sizes="(max-width: 768px) 100vw, 50vw"
+									/>
+									{/* Darker gradient at bottom for text readability */}
+									<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+								</div>
 
-                <div className="grid md:gap-10 gap-3 md:grid-cols-2 justify-self-center text-white">
-                    {PHOTOSIMAGES.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
-                            className="flex gap-10 relative"
-                        >
-                            {/* Card wrapper clips the zoomed image */}
-                            <div className="relative overflow-hidden rounded-2xl">
-                                {/* Zoom ONLY the image on hover */}
-                                <motion.div
-                                    whileHover={{ scale: 1.03 }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 260,
-                                        damping: 20,
-                                    }}
-                                >
-                                    <Image
-                                        src={item.photo.src}
-                                        width={1000}
-                                        height={1000}
-                                        alt={item.photo.alt}
-                                        className="rounded-2xl md:h-100 object-cover h-56"
-                                    />
-                                </motion.div>
+								{/* 2. CONTENT */}
+								<div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+									<div className="translate-y-2 transform transition-transform duration-300 ease-out group-hover:translate-y-0">
+										{/* TAGS */}
+										<div className="mb-3 flex flex-wrap gap-2 items-center">
+											{/* We use your class from constants, but force a smaller text size if needed */}
+											<span
+												className={`${item.tag.className} text-[10px]! px-2.5! py-1! rounded-lg! uppercase tracking-wider font-bold shadow-sm`}
+											>
+												{item.tag.text}
+											</span>
 
-                                <div className="absolute bottom-0 left-0 grid grid-cols-2 gap-1 rounded-xl mx-3 my-3">
-                                    <h1 className={item.tag.className}>
-                                        {item.tag.text}
-                                    </h1>
+											{/* Location Chip */}
+											<div className="flex items-center gap-1 rounded-lg bg-white/20 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold text-white border border-white/10">
+												<item.location.icon size={12} />
+												<span className="uppercase tracking-wider">
+													{item.location.text}
+												</span>
+											</div>
+										</div>
 
-                                    <div className="flex backdrop-blur-sm rounded-xl gap-1 items-center w-fit">
-                                        <item.location.icon />
-                                        <h1>{item.location.text}</h1>
-                                    </div>
+										{/* TITLE: Reduced from 3xl to 2xl */}
+										<h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-1">
+											{item.text}
+										</h3>
 
-                                    <h1 className="col-span-2 text-2xl backdrop-blur-2xl w-fit text-gray-50 rounded-2xl">
-                                        {item.text}
-                                    </h1>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </MaxWidthWrapper>
-    );
+										{/* HOVER LINK */}
+										<div className="h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:h-6 group-hover:opacity-100 group-hover:mt-2">
+											<span className="flex items-center gap-2 text-xs font-bold text-blue-200 uppercase tracking-widest">
+												View Details{" "}
+												<ArrowRight size={14} />
+											</span>
+										</div>
+									</div>
+								</div>
+							</motion.div>
+						))}
+					</motion.div>
+				</div>
+			</MaxWidthWrapper>
+		</section>
+	);
 };
 
 export default MasterPiece;

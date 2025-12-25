@@ -32,7 +32,7 @@ const Expertise = () => {
 					{/*'auto-rows-[1fr]'
                        forces every grid row to match the height of the tallest one (the 2-line item).
                     */}
-					<div className="grid md:gap-10 gap-3 auto-rows-[45px]">
+					<div className="grid md:gap-10 gap-3 md:auto-rows-[45px] auto-rows-[110px]">
 						{LISTCONTENT.map((item, index) => (
 							<div
 								key={index}
