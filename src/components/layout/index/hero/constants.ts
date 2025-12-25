@@ -6,7 +6,7 @@ export const INDEX_HERO_CONTENT: HeroContents = {
     button: [
         {
             label: "Hero.viewPortfolio",
-            href: "/",
+            href: "/projects",
         },
         {
             label: "Hero.contactMe",
