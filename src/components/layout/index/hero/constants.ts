@@ -17,4 +17,8 @@ export const INDEX_HERO_CONTENT: HeroContents = {
         src: "/herobg.webp",
         alt: "Hero BG",
     },
+    imagephone: {
+        src: "/herobgphone.webp",
+        alt: "Hero BG",
+    },
 };

@@ -7,7 +7,7 @@ import { getTranslations } from "next-intl/server";
 
 const Hero = async () => {
     const t = await getTranslations();
-    const { header, subheader, imageSrc, imageAlt, buttons } = HERO_CONTENT;
+    const { header, subheader, image, buttons } = HERO_CONTENT;
 
     return (
         <MaxWidthWrapper>
@@ -15,12 +15,13 @@ const Hero = async () => {
                 <div className="relative md:w-full rounded-4xl overflow-hidden flex flex-col items-center text-center py-24 px-6">
                     {/* Background Image */}
                     <Image
-                        src={imageSrc}
-                        alt={imageAlt}
+                        src={image.src}
+                        alt={image.alt}
                         fill
                         priority
                         className="md:object-fill object-cover"
                     />
+
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-black/50" />
                     {/* Content Container */}
