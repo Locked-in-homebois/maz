@@ -1,8 +1,7 @@
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { HEADERCONTENT, LISTCONTENT, IMAGECONTENT } from "./constants";
 import Image from "next/image";
-{
-}
+
 const Expertise = () => {
 	return (
 		<div className="bg-white md:py-25 py-15 mb-20">
@@ -29,16 +28,22 @@ const Expertise = () => {
 							className="justify-self-center rounded-2xl shadow-2xl"
 						/>
 					</div>
-					<div className="grid md:gap-10 gap-3 ">
+
+					{/*'auto-rows-[1fr]'
+                       forces every grid row to match the height of the tallest one (the 2-line item).
+                    */}
+					<div className="grid md:gap-10 gap-3 auto-rows-[45px]">
 						{LISTCONTENT.map((item, index) => (
 							<div
 								key={index}
-								className="flex gap-10 items-center"
+								className="flex gap-10 items-start"
 							>
-								<item.icon
-									size={30}
-									className="text-blue-700"
-								/>
+								<div className="min-w-7.5 flex justify-center flex-none mt-1">
+									<item.icon
+										size={30}
+										className="text-blue-700"
+									/>
+								</div>
 								<h1 className="text-2xl md:max-w-full max-w-62.5">
 									{item.text}
 								</h1>
