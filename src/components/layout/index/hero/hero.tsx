@@ -37,17 +37,17 @@ const Hero = () => {
             Desktop: md:h-[600px] (was 800) 
         */}
 				<div className="relative flex flex-col justify-center rounded-2xl md:rounded-4xl min-h-[60dvh] md:h-150rflow-hidden shadow-xl">
-					<div className="absolute inset-0 select-none">
+					<div className="absolute inset-0 select-none ">
 						<Image
 							src={INDEX_HERO_CONTENT.image.src}
 							alt={INDEX_HERO_CONTENT.image.alt}
 							fill
-							className="object-cover"
+							className="object-cover md:rounded-4xl rounded-3xl"
 							priority
 							sizes="100vw"
 						/>
-						<div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/10 to-black/80 md:hidden" />
-						<div className="absolute inset-0 hidden md:block bg-linear-to-r from-black/60 via-black/30 to-transparent" />
+						<div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/10 to-black/80 md:hidden rounded-3xl" />
+						<div className="absolute inset-0 hidden md:block bg-linear-to-r from-black/60 via-black/30 to-transparent rounded-4xl" />
 					</div>
 
 					<motion.div
