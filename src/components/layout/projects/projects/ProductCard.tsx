@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ProductCardProps } from "./types";
+import { useTranslations } from "next-intl";
 
 const ProductCard = ({ product }: ProductCardProps) => {
+    const t = useTranslations();
     return (
         <Link href={`/projects/${product.id}`} className="block h-full">
             <motion.div
@@ -29,13 +31,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 {/* Content Container */}
                 <div className="p-6 flex flex-col grow">
                     <span className="text-blue-500 text-xs font-bold uppercase tracking-wider mb-2">
-                        {product.category}
+                        {t(`Projects.filters.${product.category.replace(" ", "")}` as any)}
                     </span>
                     <h3 className="text-neutral-900 text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
-                        {product.name}
+                        {t(product.name as any)}
                     </h3>
                     <p className="text-neutral-500 text-sm line-clamp-2 mb-4 grow">
-                        {product.description}
+                        {t(product.description as any)}
                     </p>
                 </div>
             </motion.div>

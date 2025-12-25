@@ -2,18 +2,18 @@ import { Photo, Header, Checklist, Button } from "./types";
 import { CheckCircle2, BadgeCheckIcon } from "lucide-react";
 
 export const HEADERCONTENT: Header = {
-    title: { text: "Dual Expertise", icon: BadgeCheckIcon },
-    header: "Straight to construction",
-    desc: "I produce the materials. This ensure strict quality control from raw stones to the final polish in your property while also ensuring the most competitive prices on the market",
+    title: { text: "Expertise.headerBadge", icon: BadgeCheckIcon },
+    header: "Expertise.title",
+    desc: "Expertise.description",
 };
 
 export const LISTCONTENT: Checklist[] = [
     {
         icon: CheckCircle2,
-        text: "Direct sourcing of Granite, Basalt, Marble and Limestone",
+        text: "Expertise.list.item1",
     },
-    { icon: CheckCircle2, text: "Custom cutting and finishing facility " },
-    { icon: CheckCircle2, text: "In-house structural engineering team" },
+    { icon: CheckCircle2, text: "Expertise.list.item2" },
+    { icon: CheckCircle2, text: "Expertise.list.item3" },
 ];
 // did it like this so that we could add buttons later easily
 export const BUTTONS: Button = {

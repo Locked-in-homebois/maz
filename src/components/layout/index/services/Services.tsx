@@ -4,6 +4,7 @@ import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { BOXCONTENT, HEADERCONTENT } from "./constants";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -25,6 +26,7 @@ const itemVariants: Variants = {
 };
 
 const Services = () => {
+    const t = useTranslations();
     return (
         <MaxWidthWrapper>
             <motion.div
@@ -39,10 +41,10 @@ const Services = () => {
                     className="col-span-full text-center mb-4"
                 >
                     <h1 className="uppercase text-3xl md:text-4xl font-black mb-3">
-                        {HEADERCONTENT.title}
+                        {t(HEADERCONTENT.title)}
                     </h1>
                     <p className="text-neutral-600 max-w-2xl mx-auto">
-                        {HEADERCONTENT.description}
+                        {t(HEADERCONTENT.description)}
                     </p>
                 </motion.div>
                 {BOXCONTENT.map((item, index) => (
@@ -60,17 +62,17 @@ const Services = () => {
                                 className="object-cover transition-transform duration-500 md:max-h-full max-h-60 group-hover:scale-105"
                             />
                             {/* Icon */}
-                            <div className="absolute top-4 right-4 bg-white/90 p-2 rounded-xl backdrop-blur-sm">
+                            <div className="absolute top-4 end-4 bg-white/90 p-2 rounded-xl backdrop-blur-sm">
                                 <item.icon size={24} className="text-black" />
                             </div>
                         </div>
                         {/* Text Content */}
                         <div className="px-2">
                             <h3 className="text-xl font-bold mb-1">
-                                {item.title}
+                                {t(item.title)}
                             </h3>
                             <p className="text-sm text-neutral-600 leading-relaxed">
-                                {item.description}
+                                {t(item.description)}
                             </p>
                         </div>
                     </motion.div>

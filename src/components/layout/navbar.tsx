@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { MenuIcon, X, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, usePathname } from "@/src/i18n/routing";
+import { createPortal } from "react-dom";
+import { MenuIcon, X, ArrowRight, Globe } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import Image from "next/image";
-
-const LINKS = [
-	{ label: "Projects", href: "/projects" },
-	{ label: "Material Manufacturing", href: "/material-manufacturing" },
-	{ label: "Contact", href: "/contact" },
-	{ label: "About me", href: "/aboutus" },
-];
+import { useTranslations, useLocale } from "next-intl";
 
 const menuVariants: Variants = {
 	initial: { x: "100%" },
@@ -49,13 +44,41 @@ const itemVariants: Variants = {
 };
 
 export default function Navbar() {
+	const t = useTranslations("Navigation");
+	const locale = useLocale();
+	const pathname = usePathname();
+
+	const LINKS = [
+		{ label: t("projects"), href: "/projects" },
+		{ label: t("material"), href: "/material-manufacturing" },
+		{ label: t("contact"), href: "/contact" },
+		{ label: t("about"), href: "/aboutme" },
+	];
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+		// Cleanup function to reset scroll if component unmounts
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isOpen]);
 
 	return (
 		// 1. Outer Shell: Handles Position, Background, Blur, and Border only.
 		// Removed 'px-6' and flex utilities from here.
-		<nav className="sticky top-0 z-50 border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
+		<nav className="sticky top-0 z-999 border-b border-neutral-100 bg-white/80 py-4 shadow-sm backdrop-blur-md">
 			{/* 2. MaxWidthWrapper: Handles the width constraints and alignment */}
 			<MaxWidthWrapper className="flex items-center justify-between">
 				{/* LOGO */}
@@ -70,12 +93,12 @@ export default function Navbar() {
 
 				{/* DESKTOP MENU */}
 				<div
-					className="hidden gap-8 md:flex"
+					className="hidden gap-8 md:flex items-center"
 					onMouseLeave={() => setHoveredIndex(null)}
 				>
 					{LINKS.map((item, index) => (
 						<Link
-							key={item.label}
+							key={item.href}
 							href={item.href}
 							onMouseEnter={() => setHoveredIndex(index)}
 							className={`relative z-0 px-2 py-1 text-xs font-bold uppercase tracking-widest transition-colors ${
@@ -98,13 +121,29 @@ export default function Navbar() {
 							)}
 						</Link>
 					))}
+
+					<Link
+						href={pathname}
+						locale={locale === "en" ? "ar" : "en"}
+						className="text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-logocolor flex items-center gap-1"
+					>
+						<Globe size={16} />
+						{locale === "en" ? "AR" : "EN"}
+					</Link>
 				</div>
 
 				{/* MOBILE TOGGLE */}
-				<div className="md:hidden">
+				<div className="md:hidden flex items-center gap-4">
+					<Link
+						href={pathname}
+						locale={locale === "en" ? "ar" : "en"}
+						className="text-neutral-900"
+					>
+						<Globe size={24} />
+					</Link>
 					<button
 						onClick={() => setIsOpen(!isOpen)}
-						className="relative z-50"
+						className="relative z-1002"
 						aria-label="Toggle Menu"
 					>
 						<motion.div
@@ -118,38 +157,42 @@ export default function Navbar() {
 			</MaxWidthWrapper>
 			{/* MOBILE MENU OVERLAY */}
 			{/* Kept outside the wrapper so it fills the screen properly */}
-			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						variants={menuVariants}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-24"
-					>
-						<div className="flex flex-col gap-4">
-							{LINKS.map((item) => (
-								<motion.div
-									key={item.label}
-									variants={itemVariants}
-								>
-									<Link
-										href={item.href}
-										onClick={() => setIsOpen(false)}
-										className="flex items-center justify-between border-b border-neutral-100 py-4 text-3xl font-black uppercase tracking-tighter text-neutral-900 active:text-neutral-500"
-									>
-										{item.label}
-										<ArrowRight
-											className="text-neutral-300"
-											size={24}
-										/>
-									</Link>
-								</motion.div>
-							))}
-						</div>
-					</motion.div>
+			{mounted &&
+				createPortal(
+					<AnimatePresence>
+						{isOpen && (
+							<motion.div
+								variants={menuVariants}
+								initial="initial"
+								animate="animate"
+								exit="exit"
+								className="fixed inset-0 z-40 flex h-dvh w-full flex-col justify-between overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-24"
+							>
+								<div className="flex flex-col gap-4">
+									{LINKS.map((item) => (
+										<motion.div
+											key={item.href}
+											variants={itemVariants}
+										>
+											<Link
+												href={item.href}
+												onClick={() => setIsOpen(false)}
+												className="flex items-center justify-between border-b border-neutral-100 py-4 text-3xl font-black uppercase tracking-tighter text-neutral-900 active:text-neutral-500"
+											>
+												{item.label}
+												<ArrowRight
+													className="text-neutral-300 rtl:rotate-180"
+													size={24}
+												/>
+											</Link>
+										</motion.div>
+									))}
+								</div>
+							</motion.div>
+						)}
+					</AnimatePresence>,
+					document.body
 				)}
-			</AnimatePresence>
 		</nav>
 	);
 }

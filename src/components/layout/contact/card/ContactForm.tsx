@@ -5,8 +5,10 @@ import { FORMCONTENT } from "./constants";
 import { sendContactEmail } from "@/src/app/actions"; // Keeping your fixed import path
 import { motion, AnimatePresence } from "motion/react";
 import { Loader2, CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
+    const t = useTranslations();
 	const [status, setStatus] = useState<
 		"idle" | "submitting" | "success" | "error"
 	>("idle");
@@ -62,10 +64,10 @@ const ContactForm = () => {
 							<CheckCircle2 className="w-20 h-20 text-logocolor mb-4" />
 						</motion.div>
 						<h3 className="text-2xl font-bold text-white mb-2">
-							Message Sent!
+							{t("Contact.Form.status.successTitle")}
 						</h3>
 						<p className="text-neutral-300">
-							We'll get back to you shortly.
+							{t("Contact.Form.status.successDesc")}
 						</p>
 					</motion.div>
 				) : (
@@ -79,7 +81,7 @@ const ContactForm = () => {
 					>
 						<div className="mb-6">
 							<h2 className="text-2xl font-bold text-white mb-1">
-								{FORMCONTENT.title}
+								{t(FORMCONTENT.title)}
 							</h2>
 						</div>
 
@@ -93,13 +95,13 @@ const ContactForm = () => {
 									className="flex flex-col gap-2"
 								>
 									<label className="text-sm font-medium text-neutral-300 ml-1">
-										{field.label}
+										{t(field.label)}
 									</label>
 
 									{field.type === "textarea" ? (
 										<textarea
 											name={field.name}
-											placeholder={field.placeholder}
+											placeholder={t(field.placeholder)}
 											required
 											rows={4}
 											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor resize-none transition-all"
@@ -108,7 +110,7 @@ const ContactForm = () => {
 										<input
 											type={field.type}
 											name={field.name}
-											placeholder={field.placeholder}
+											placeholder={t(field.placeholder)}
 											required
 											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor transition-all"
 										/>
@@ -128,12 +130,12 @@ const ContactForm = () => {
 								{status === "submitting" ? (
 									<>
 										<Loader2 className="w-5 h-5 animate-spin" />
-										Sending...
+										{t("Contact.Form.status.sending")}
 									</>
 								) : status === "error" ? (
-									"Failed. Try Again"
+									t("Contact.Form.status.failed")
 								) : (
-									FORMCONTENT.buttonText
+									t(FORMCONTENT.buttonText)
 								)}
 							</button>
 						</form>
