@@ -6,11 +6,14 @@ export const HEADERCONTENT: Header = {
 };
 
 export const CAROUSELCONTENT: Carousel = {
-    image: { src: "/IMG_2220.webp", alt: "Contact Background" },
+    image: { src: "/BY4.jpeg", alt: "Contact Background" },
 };
 
 export const GRIDCONTENT: InfoGrid[] = [
-    { title: "Contact.Grid.Location.title", desc: "Contact.Grid.Location.desc" },
+    {
+        title: "Contact.Grid.Location.title",
+        desc: "Contact.Grid.Location.desc",
+    },
     { title: "Contact.Grid.Social.title", desc: "Contact.Grid.Social.desc" },
     { title: "Contact.Grid.Email.title", desc: "Contact.Grid.Email.desc" },
     { title: "Contact.Grid.Contact.title", desc: "Contact.Grid.Contact.desc" },
