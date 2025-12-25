@@ -1,6 +1,6 @@
 // src/components/sections/Hero/index.tsx
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import MaxWidthWrapper from "../../../ui/MaxWidthWrapper";
 import { HERO_CONTENT } from "./constants";
 import { getTranslations } from "next-intl/server";

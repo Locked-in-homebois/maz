@@ -24,7 +24,7 @@ export const PHOTOSIMAGES: Photos[] = [
         href: "/projects/renoV2",
     },
     {
-        photo: { src: "/IMG_2290.webp", alt: "2nd" },
+        photo: { src: "/Vrock3.2.jpeg", alt: "2nd" },
         tag: {
             text: "MasterPiece.tags.private",
             className:
@@ -32,7 +32,7 @@ export const PHOTOSIMAGES: Photos[] = [
         },
         location: { text: "MasterPiece.locations.riyadh", icon: MapPin },
         text: "MasterPiece.projects.p2",
-        href: "/projects/ARCADE",
+        href: "/projects/Vrock",
     },
     {
         photo: { src: "/IMG_0064.webp", alt: "3rd" },
