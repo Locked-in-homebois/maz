@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/src/i18n/routing";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
 import { INDEX_HERO_CONTENT } from "./constants";
 import { motion, type Variants } from "motion/react";
@@ -31,26 +31,38 @@ const fadeInUp: Variants = {
 
 const Hero = () => {
     const t = useTranslations();
+    const { props: desktopImageProps } = getImageProps({
+        alt: INDEX_HERO_CONTENT.image.alt,
+        src: INDEX_HERO_CONTENT.image.desktopSrc,
+        fill: true,
+        sizes: "100vw",
+        className: "object-cover",
+        fetchPriority: "high",
+        loading: "eager",
+    });
+    const { props: mobileImageProps } = getImageProps({
+        alt: INDEX_HERO_CONTENT.image.alt,
+        src: INDEX_HERO_CONTENT.image.mobileSrc,
+        fill: true,
+        sizes: "100vw",
+        className: "object-cover",
+        fetchPriority: "high",
+        loading: "eager",
+    });
 
     return (
         <main className="flex justify-center py-4 md:py-5">
             <MaxWidthWrapper>
                 <div className="relative flex flex-col justify-center rounded-3xl md:rounded-4xl min-h-[80dvh] md:min-h-0 md:h-160 overflow-hidden px-5 md:px-10">
                     {/* Background Image */}
-                    <Image
-                        src={INDEX_HERO_CONTENT.image.src}
-                        alt={INDEX_HERO_CONTENT.image.alt}
-                        fill
-                        className="object-cover md:block hidden"
-                        priority
-                    />
-                    <Image
-                        src={INDEX_HERO_CONTENT.imagephone.src}
-                        alt={INDEX_HERO_CONTENT.imagephone.alt}
-                        fill
-                        className="object-cover md:hidden block"
-                        priority
-                    />
+                    <picture className="absolute inset-0">
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet={mobileImageProps.srcSet}
+                            sizes={mobileImageProps.sizes}
+                        />
+                        <img {...desktopImageProps} />
+                    </picture>
                     {/* Overlay: Slightly darker on mobile for better text contrast */}
                     <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
                     <motion.div

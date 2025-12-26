@@ -7,6 +7,5 @@ export interface HeroContents {
     title: string;
     footer: string;
     button: HeroButton[];
-    image: { src: string; alt: string };
-    imagephone: { src: string; alt: string };
+    image: { desktopSrc: string; mobileSrc: string; alt: string };
 }
