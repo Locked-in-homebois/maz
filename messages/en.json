@@ -1,277 +1,277 @@
 {
-    "HomePage": {
-        "title": "MAZ"
-    },
-    "Navigation": {
-        "projects": "Projects",
-        "material": "Material Manufacturing",
-        "contact": "Contact",
-        "about": "About me"
-    },
-    "Hero": {
-        "title": "Precision Engineering with a Personal Touch",
-        "footer": "King Faisal University -alhufuf design supply and installation",
-        "viewPortfolio": "View Portfolio",
-        "contactMe": "Contact Me"
-    },
-    "Services": {
-        "title": "Services",
-        "description": "Comprehensive design and construction services tailored to your needs.",
-        "residential": {
-            "title": "Residential",
-            "desc": "Luxury property construction and renovation services."
-        },
-        "hardscape": {
-            "title": "Hardscape",
-            "desc": "Professional hardscaping solutions for durable and aesthetic outdoor spaces."
-        },
-        "facades": {
-            "title": "Facades",
-            "desc": "Modern and classic facade designs to elevate building aesthetics."
-        },
-        "rockworks": {
-            "title": "Rock Works",
-            "desc": "Natural rock installations and artistic stone features."
-        }
-    },
-    "Expertise": {
-        "headerBadge": "Dual Expertise",
-        "title": "Straight to construction",
-        "description": "I produce the materials. This ensure strict quality control from raw stones to the final polish in your property while also ensuring the most competitive prices on the market",
-        "list": {
-            "item1": "Direct sourcing of Granite, Basalt, Marble and Limestone",
-            "item2": "Custom cutting and finishing facility",
-            "item3": "In-house structural engineering team"
-        }
-    },
-    "MasterPiece": {
-        "title": "Our Masterpieces",
-        "description": "Explore our top pick projects in private villas and facedes",
-        "viewPortfolio": "View My Portifolio ",
-        "tags": {
-            "private": "Private property",
-            "design": "Design & Hardscape"
-        },
-        "projects": {
-            "p1": "Private villa renovation",
-            "p2": "Finishing & Decor",
-            "p3": "Saudi Television station",
-            "p4": "King Faisal university"
-        },
-        "locations": {
-            "riyadh": "Riyadh",
-            "hufuf": "AL-HUFUF"
-        }
-    },
-    "Footer": {
-        "description": "My approach is unique because I am involved in every step. I don't just hand off blueprints.",
-        "links": {
-            "hardscape": "Hardscape",
-            "renovation": "Renovation & Decor",
-            "facades": "Facedes",
-            "finishing": "Finishing and Decor",
-            "company_renovations": "Renovations",
-            "company_owner": "Company Owner",
-            "company_cutting": "Cutting stone"
-        },
-        "contact": {
-            "location": "Riyadh",
-            "email": "mohazzama@gmail.com",
-            "phone": "+966 504413053"
-        }
-    },
-    "AboutUs": {
-        "Hero": {
-            "header": "Building Vision into Reality",
-            "subheader": "A specialized one-person portfolio focusing on renovations, facade works, and stone finishing. I personally oversee every detail, from the initial survey to the final design.",
-            "buttons": {
-                "viewWork": "View My Work",
-                "contactMe": "Contact Me"
-            }
-        },
-        "Profile": {
-            "name": "Mohammed-Azzam Ahdab",
-            "title": "Civil Engineer",
-            "bio": "With over 35 years of hands-on experience, I bridge the gap between technical civil engineering and on-site craftsmanship. My approach is unique because I am involved in every step. I don't just hand off blueprints; I measure the site myself, create the CAD drawings, source the stone and materials, and oversee the project management until completion.",
-            "skillsHeader": "Technical Proficiency",
-            "certification": {
-                "title": "Certified Professional Engineer (PE)",
-                "details": "Lic. #4492011 • Specialized in Facades & Hardscape"
-            },
-            "skills": {
-                "autocad": "AutoCAD & Design",
-                "renovation": "Renovation Planning",
-                "management": "Solo Project Management"
-            },
-            "levels": {
-                "advanced": "Advanced",
-                "expert": "Expert"
-            }
-        },
-        "Philosophy": {
-            "header": "My Philosophy",
-            "desc": "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
-            "items": {
-                "involvement": {
-                    "header": "Direct Involvement",
-                    "description": "I don't outsource critical thinking. I perform the measuring, I draw the plans, and I manage the site personally."
-                },
-                "accuracy": {
-                    "header": "Accuracy",
-                    "description": "I ensure every output aligns with the client's requests by confirming scope, requirements, and success criteria."
-                },
-                "sustainability": {
-                    "header": "Sustainability",
-                    "description": "I integrate sustainability considerations to reduce material waste and long-term maintenance needs."
-                }
-            }
-        }
-    },
-    "Contact": {
-        "Header": {
-            "title": "Get in Touch",
-            "desc": "We respond within 24 hours to all inquiries."
-        },
-        "Grid": {
-            "Location": { "title": "Location", "desc": "Riyadh/alnafl" },
-            "Social": { "title": "Social Media", "desc": "@azzamahdab" },
-            "Email": { "title": "Email", "desc": "mohazzama@gmail.com" },
-            "Contact": { "title": "Contact", "desc": "+966 504 413 053" }
-        },
-        "Form": {
-            "title": "Send a Message",
-            "buttonText": "Submit Request",
-            "fields": {
-                "fullName": {
-                    "label": "Full Name",
-                    "placeholder": "Enter your name"
-                },
-                "email": {
-                    "label": "Email Address",
-                    "placeholder": "name@example.com"
-                },
-                "message": {
-                    "label": "Message",
-                    "placeholder": "How can we help you?"
-                }
-            },
-            "status": {
-                "successTitle": "Message Sent!",
-                "successDesc": "We'll get back to you shortly.",
-                "sending": "Sending...",
-                "failed": "Failed. Try Again"
-            }
-        }
-    },
-    "Projects": {
-        "Gallery": {
-            "title": "Our Products",
-            "desc": "Browse our catalog of premium materials and furniture."
-        },
-        "filters": {
-            "All": "All",
-            "Hardscape": "Hardscape",
-            "Facedes": "Facedes",
-            "Renovation": "Renovation",
-            "FinishingDecor": "Finishing Decor",
-            "RaisedFloor": "Raised Floor"
-        },
-        "products": {
-            "ARCADE": {
-                "name": "Decorative Arched Colonnade",
-                "description": "Decorative stone cladding engraving",
-                "details": "Finely detailed with a harminonius blend of classical geometry and ornamental artistry that gave the structure a timless,dignified presence."
-            },
-            "KFU": {
-                "name": "King Faisal University",
-                "description": "Designing supplying crafting and constructing.",
-                "details": "Engineered for maximum sustainability while maintaining an artistic design."
-            },
-            "TTP": {
-                "name": "TV Tower Plaza",
-                "description": " ",
-                "details": " "
-            },
-            "BackYard": {
-                "name": "Backyard Decor and Landscape",
-                "description": " ",
-                "details": " "
-            },
-            "Bus": {
-                "name": "Riyadh bus stations",
-                "description": " ",
-                "details": " "
-            },
-            "Vrock": {
-                "name": "V-Rock decor",
-                "description": " ",
-                "details": " "
-            },
-            "Block": {
-                "name": "Residential porcelain facede",
-                "description": " ",
-                "details": " "
-            },
-            "SV": {
-                "name": "Residential Landscape and Fence",
-                "description": " ",
-                "details": " "
-            },
-            "RF": {
-                "name": "Work office Raised Floor",
-                "description": " ",
-                "details": " "
-            },
-            "Fence": {
-                "name": "Rock fence",
-                "description": " ",
-                "details": " "
-            },
-            "Lime": {
-                "name": "Limestone Hardscape",
-                "description": " ",
-                "details": " "
-            },
-            "marble": {
-                "name": "Artistic marble usage",
-                "description": " ",
-                "details": " "
-            },
-            "renoV": {
-                "name": "Villa Renovation",
-                "description": " ",
-                "details": " "
-            },
-            "renoV2": {
-                "name": "Villa Renovation",
-                "description": " ",
-                "details": " "
-            }
-        }
-    },
-    "KemalOriginal": {
-        "TextPart": {
-            "iconTitle": "Direct Manufacturer",
-            "header": "Our Stone Factory: Where Raw Earth Becomes Art",
-            "desc": "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design."
-        },
-        "LeftLowCards": {
-            "advanced": {
-                "title": "Advanced Cutting",
-                "desc": "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
-            },
-            "quality": {
-                "title": "Quality Control",
-                "desc": "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity."
-            }
-        }
-    },
-    "ProductDetails": {
-        "descriptionTitle": "Description",
-        "addToQuote": "Add to Quote",
-        "contactSales": "Contact Sales"
-    },
-    "Common": {
-        "backToProducts": "Back to Products"
-    }
+	"HomePage": {
+		"title": "MAZ"
+	},
+	"Navigation": {
+		"projects": "Projects",
+		"material": "Material Manufacturing",
+		"contact": "Contact",
+		"about": "About me"
+	},
+	"Hero": {
+		"title": "Precision Engineering with a Personal Touch",
+		"footer": "King Faisal University -alhufuf design supply and installation",
+		"viewPortfolio": "View Portfolio",
+		"contactMe": "Contact Me"
+	},
+	"Services": {
+		"title": "Services",
+		"description": "Comprehensive design and construction services tailored to your needs.",
+		"residential": {
+			"title": "Residential",
+			"desc": "Luxury property construction and renovation services."
+		},
+		"hardscape": {
+			"title": "Hardscape",
+			"desc": "Professional hardscaping solutions for durable and aesthetic outdoor spaces."
+		},
+		"facades": {
+			"title": "Facades",
+			"desc": "Modern and classic facade designs to elevate building aesthetics."
+		},
+		"rockworks": {
+			"title": "Rock Works",
+			"desc": "Natural rock installations and artistic stone features."
+		}
+	},
+	"Expertise": {
+		"headerBadge": "Dual Expertise",
+		"title": "Straight to construction",
+		"description": "I produce the materials. This ensure strict quality control from raw stones to the final polish in your property while also ensuring the most competitive prices on the market",
+		"list": {
+			"item1": "Direct sourcing of Granite, Basalt, Marble and Limestone",
+			"item2": "Custom cutting and finishing facility",
+			"item3": "In-house structural engineering team"
+		}
+	},
+	"MasterPiece": {
+		"title": "Our Masterpieces",
+		"description": "Explore our top pick projects in private villas and Facades",
+		"viewPortfolio": "View My Portfolio ",
+		"tags": {
+			"private": "Private property",
+			"design": "Design & Hardscape"
+		},
+		"projects": {
+			"p1": "Private villa renovation",
+			"p2": "Finishing & Decor",
+			"p3": "Saudi Television station",
+			"p4": "King Faisal university"
+		},
+		"locations": {
+			"riyadh": "Riyadh",
+			"hufuf": "AL-HUFUF"
+		}
+	},
+	"Footer": {
+		"description": "My approach is unique because I am involved in every step. I don't just hand off blueprints.",
+		"links": {
+			"hardscape": "Hardscape",
+			"renovation": "Renovation & Decor",
+			"facades": "Facades",
+			"finishing": "Finishing and Decor",
+			"company_renovations": "Renovations",
+			"company_owner": "Company Owner",
+			"company_cutting": "Cutting stone"
+		},
+		"contact": {
+			"location": "Riyadh",
+			"email": "mohazzama@gmail.com",
+			"phone": "+966 504413053"
+		}
+	},
+	"AboutUs": {
+		"Hero": {
+			"header": "Building Vision into Reality",
+			"subheader": "A specialized one-person portfolio focusing on renovations, facade works, and stone finishing. I personally oversee every detail, from the initial survey to the final design.",
+			"buttons": {
+				"viewWork": "View My Work",
+				"contactMe": "Contact Me"
+			}
+		},
+		"Profile": {
+			"name": "Mohammed-Azzam Ahdab",
+			"title": "Civil Engineer",
+			"bio": "With over 35 years of hands-on experience, I bridge the gap between technical civil engineering and on-site craftsmanship. My approach is unique because I am involved in every step. I don't just hand off blueprints; I measure the site myself, create the CAD drawings, source the stone and materials, and oversee the project management until completion.",
+			"skillsHeader": "Technical Proficiency",
+			"certification": {
+				"title": "Certified Professional Engineer (PE)",
+				"details": "Lic. #4492011 • Specialized in Facades & Hardscape"
+			},
+			"skills": {
+				"autocad": "AutoCAD & Design",
+				"renovation": "Renovation Planning",
+				"management": "Solo Project Management"
+			},
+			"levels": {
+				"advanced": "Advanced",
+				"expert": "Expert"
+			}
+		},
+		"Philosophy": {
+			"header": "My Philosophy",
+			"desc": "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
+			"items": {
+				"involvement": {
+					"header": "Direct Involvement",
+					"description": "I don't outsource critical thinking. I perform the measuring, I draw the plans, and I manage the site personally."
+				},
+				"accuracy": {
+					"header": "Accuracy",
+					"description": "I ensure every output aligns with the client's requests by confirming scope, requirements, and success criteria."
+				},
+				"sustainability": {
+					"header": "Sustainability",
+					"description": "I integrate sustainability considerations to reduce material waste and long-term maintenance needs."
+				}
+			}
+		}
+	},
+	"Contact": {
+		"Header": {
+			"title": "Get in Touch",
+			"desc": "We respond within 24 hours to all inquiries."
+		},
+		"Grid": {
+			"Location": { "title": "Location", "desc": "Riyadh/alnafl" },
+			"Social": { "title": "Social Media", "desc": "@azzamahdab" },
+			"Email": { "title": "Email", "desc": "mohazzama@gmail.com" },
+			"Contact": { "title": "Contact", "desc": "+966 504 413 053" }
+		},
+		"Form": {
+			"title": "Send a Message",
+			"buttonText": "Submit Request",
+			"fields": {
+				"fullName": {
+					"label": "Full Name",
+					"placeholder": "Enter your name"
+				},
+				"email": {
+					"label": "Email Address",
+					"placeholder": "name@example.com"
+				},
+				"message": {
+					"label": "Message",
+					"placeholder": "How can we help you?"
+				}
+			},
+			"status": {
+				"successTitle": "Message Sent!",
+				"successDesc": "We'll get back to you shortly.",
+				"sending": "Sending...",
+				"failed": "Failed. Try Again"
+			}
+		}
+	},
+	"Projects": {
+		"Gallery": {
+			"title": "Our Products",
+			"desc": "Browse our catalog of premium materials and furniture."
+		},
+		"filters": {
+			"All": "All",
+			"Hardscape": "Hardscape",
+			"Facades": "Facades",
+			"Renovation": "Renovation",
+			"FinishingDecor": "Finishing Decor",
+			"RaisedFloor": "Raised Floor"
+		},
+		"products": {
+			"ARCADE": {
+				"name": "Decorative Arched Colonnade",
+				"description": "Decorative stone cladding engraving",
+				"details": "Finely detailed with a Harmonious blend of classical geometry and ornamental artistry that gave the structure a timeless,dignified presence."
+			},
+			"KFU": {
+				"name": "King Faisal University",
+				"description": "Designing supplying crafting and constructing.",
+				"details": "Engineered for maximum sustainability while maintaining an artistic design."
+			},
+			"TTP": {
+				"name": "TV Tower Plaza",
+				"description": " ",
+				"details": " "
+			},
+			"BackYard": {
+				"name": "Backyard Decor and Landscape",
+				"description": " ",
+				"details": " "
+			},
+			"Bus": {
+				"name": "Riyadh bus stations",
+				"description": " ",
+				"details": " "
+			},
+			"Vrock": {
+				"name": "V-Rock decor",
+				"description": " ",
+				"details": " "
+			},
+			"Block": {
+				"name": "Residential porcelain facede",
+				"description": " ",
+				"details": " "
+			},
+			"SV": {
+				"name": "Residential Landscape and Fence",
+				"description": " ",
+				"details": " "
+			},
+			"RF": {
+				"name": "Work office Raised Floor",
+				"description": " ",
+				"details": " "
+			},
+			"Fence": {
+				"name": "Rock fence",
+				"description": " ",
+				"details": " "
+			},
+			"Lime": {
+				"name": "Limestone Hardscape",
+				"description": " ",
+				"details": " "
+			},
+			"marble": {
+				"name": "Artistic marble usage",
+				"description": " ",
+				"details": " "
+			},
+			"renoV": {
+				"name": "Villa Renovation",
+				"description": " ",
+				"details": " "
+			},
+			"renoV2": {
+				"name": "Villa Renovation",
+				"description": " ",
+				"details": " "
+			}
+		}
+	},
+	"KemalOriginal": {
+		"TextPart": {
+			"iconTitle": "Direct Manufacturer",
+			"header": "Our Stone Factory: Where Raw Earth Becomes Art",
+			"desc": "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design."
+		},
+		"LeftLowCards": {
+			"advanced": {
+				"title": "Advanced Cutting",
+				"desc": "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
+			},
+			"quality": {
+				"title": "Quality Control",
+				"desc": "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity."
+			}
+		}
+	},
+	"ProductDetails": {
+		"descriptionTitle": "Description",
+		"addToQuote": "Add to Quote",
+		"contactSales": "Contact Sales"
+	},
+	"Common": {
+		"backToProducts": "Back to Products"
+	}
 }
