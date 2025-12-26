@@ -14,11 +14,8 @@ export const INDEX_HERO_CONTENT: HeroContents = {
         },
     ],
     image: {
-        src: "/herobg.webp",
-        alt: "Hero BG",
-    },
-    imagephone: {
-        src: "/herobgphone.webp",
+        desktopSrc: "/herobg.webp",
+        mobileSrc: "/herobgphone.webp",
         alt: "Hero BG",
     },
 };
