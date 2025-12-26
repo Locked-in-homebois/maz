@@ -68,9 +68,9 @@ const Services = () => {
                         </div>
                         {/* Text Content */}
                         <div className="px-2">
-                            <h3 className="text-xl font-bold mb-1">
+                            <h1 className="text-xl font-bold mb-1">
                                 {t(item.title)}
-                            </h3>
+                            </h1>
                             <p className="text-sm text-neutral-600 leading-relaxed">
                                 {t(item.description)}
                             </p>
