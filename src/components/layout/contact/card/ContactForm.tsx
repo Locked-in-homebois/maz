@@ -1,35 +1,38 @@
+// src/components/layout/contact/card/ContactForm.tsx
 "use client";
 
 import { useState } from "react";
-import { FORMCONTENT } from "./constants";
-import { sendContactEmail } from "@/src/app/actions"; // Keeping your fixed import path
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "motion/react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { FORMCONTENT } from "./constants";
+import { sendContactEmail } from "@/src/app/actions";
+import { contactFormSchema, ContactFormValues } from "@/src/lib/schemas";
+
 const ContactForm = () => {
-    const t = useTranslations();
-	const [status, setStatus] = useState<
-		"idle" | "submitting" | "success" | "error"
-	>("idle");
+	const t = useTranslations();
+	const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
+	// 1. Initialize the form with Zod
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors, isSubmitting },
+	} = useForm<ContactFormValues>({
+		resolver: zodResolver(contactFormSchema),
+	});
 
-		// 1. Capture the form element BEFORE the await so we don't lose it
-		const form = e.currentTarget;
-		const formData = new FormData(form);
-
-		setStatus("submitting");
-
-		// 2. Send the email
-		const result = await sendContactEmail(formData);
+	// 2. The cleaner submit handler
+	const onSubmit = async (data: ContactFormValues) => {
+		const result = await sendContactEmail(data);
 
 		if (result?.success) {
 			setStatus("success");
-			form.reset(); // Now this works because we used the captured variable 'form'
-
-			// Reset back to form after 3 seconds
+			reset(); // Clear the form
 			setTimeout(() => setStatus("idle"), 3000);
 		} else {
 			console.error(result?.error);
@@ -86,7 +89,7 @@ const ContactForm = () => {
 						</div>
 
 						<form
-							onSubmit={handleSubmit}
+							onSubmit={handleSubmit(onSubmit)}
 							className="flex flex-col gap-5"
 						>
 							{FORMCONTENT.fields.map((field, index) => (
@@ -100,34 +103,48 @@ const ContactForm = () => {
 
 									{field.type === "textarea" ? (
 										<textarea
-											name={field.name}
+											{...register(
+												field.name as keyof ContactFormValues
+											)}
 											placeholder={t(field.placeholder)}
-											required
 											rows={4}
 											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor resize-none transition-all"
 										/>
 									) : (
 										<input
 											type={field.type}
-											name={field.name}
+											{...register(
+												field.name as keyof ContactFormValues
+											)}
 											placeholder={t(field.placeholder)}
-											required
 											className="bg-black/20 border border-white/10 rounded-xl p-3 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-logocolor transition-all"
 										/>
+									)}
+									{/* Error Message Display */}
+									{errors[
+										field.name as keyof ContactFormValues
+									] && (
+										<span className="text-red-400 text-xs ml-1">
+											{
+												errors[
+													field.name as keyof ContactFormValues
+												]?.message
+											}
+										</span>
 									)}
 								</div>
 							))}
 
 							<button
 								type="submit"
-								disabled={status === "submitting"}
+								disabled={isSubmitting}
 								className={`mt-2 py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 ${
 									status === "error"
 										? "bg-red-500 text-white"
 										: "bg-white text-black hover:bg-neutral-200"
 								}`}
 							>
-								{status === "submitting" ? (
+								{isSubmitting ? (
 									<>
 										<Loader2 className="w-5 h-5 animate-spin" />
 										{t("Contact.Form.status.sending")}
