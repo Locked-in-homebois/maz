@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -15,11 +15,12 @@ const RedirectCarousel = ({ slides }: Props) => {
 		(slide) => slide.src && slide.src.trim() !== ""
 	);
 
+	// Configure Embla with the Autoplay plugin
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-		AutoScroll({
-			stopOnInteraction: false, // Keeps it swipeable and fluid on mobile
-			stopOnMouseEnter: true,
-			speed: 1,
+		Autoplay({
+			delay: 5000, // Time in ms (3 seconds)
+			stopOnInteraction: false, // Resume autoplay after user swipes/clicks
+			stopOnMouseEnter: true, // Stop autoplay while user hovers (Amazon behavior)
 		}),
 	]);
 
@@ -35,7 +36,7 @@ const RedirectCarousel = ({ slides }: Props) => {
 
 	return (
 		<div className="group relative overflow-hidden rounded-2xl max-h-120">
-			{/* Mobile Swipe Wrapper */}
+			{/* Viewport */}
 			<div
 				className="overflow-hidden touch-pan-y cursor-grab active:cursor-grabbing"
 				ref={emblaRef}
@@ -60,7 +61,6 @@ const RedirectCarousel = ({ slides }: Props) => {
 			</div>
 
 			{/* --- ARROWS --- */}
-			{/* Added 'hidden md:block' to completely remove them on mobile */}
 			{validSlides.length > 1 && (
 				<>
 					<button
@@ -69,7 +69,8 @@ const RedirectCarousel = ({ slides }: Props) => {
 						className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 
                        bg-white/70 text-sky-950 
                        p-3 rounded-full shadow-lg backdrop-blur-sm 
-                       transition-transform duration-200 
+                       transition-all duration-300
+                       opacity-0 group-hover:opacity-100
                        hover:bg-white hover:scale-110 active:scale-95"
 						aria-label="Previous slide"
 					>
@@ -82,7 +83,8 @@ const RedirectCarousel = ({ slides }: Props) => {
 						className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 
                        bg-white/70 text-sky-950 
                        p-3 rounded-full shadow-lg backdrop-blur-sm 
-                       transition-transform duration-200 
+                       transition-all duration-300
+                       opacity-0 group-hover:opacity-100
                        hover:bg-white hover:scale-110 active:scale-95"
 						aria-label="Next slide"
 					>
