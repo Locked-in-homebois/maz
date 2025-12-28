@@ -10,7 +10,7 @@
     },
     "Hero": {
         "title": "Precision Engineering with a Personal Touch",
-        "footer": "King Faisal University -alhufuf design supply and installation",
+        "footer": "Featured: King Faisal University (Al-Hofuf) Design • Supply • Installation",
         "viewPortfolio": "View Portfolio",
         "contactMe": "Contact Me"
     },
@@ -31,7 +31,7 @@
         },
         "rockworks": {
             "title": "Finishing and Decor",
-            "desc": "Natural rock installations and artistic stone features."
+            "desc": "Premium finishing, décor coordination, and material specifications."
         }
     },
     "RedirectComp": {
@@ -40,7 +40,7 @@
             "L": "Mohammed Azzam Ahdab, Civil Engineer based in Riyadh with 35+ years of hands-on experience.",
             "R": "I provide practical and reliable civil engineering solutions for Facades, hardscape, renovations, and finishing—from design to site execution."
         },
-        "buttonText": { "L": "Learn more", "R": "View Projects" }
+        "buttonText": { "L": "Learn more about me", "R": "View Projects" }
     },
     "Expertise": {
         "headerBadge": "Dual Expertise",
@@ -53,8 +53,8 @@
         }
     },
     "MasterPiece": {
-        "title": "Our Masterpieces",
-        "description": "Explore our top pick projects in private villas and Facades",
+        "title": "My Masterpieces",
+        "description": "Explore my top pick projects",
         "viewPortfolio": "View My Portfolio ",
         "tags": {
             "private": "Private property",
@@ -68,7 +68,7 @@
         },
         "locations": {
             "riyadh": "Riyadh",
-            "hufuf": "AL-HUFUF"
+            "hufuf": "AL-HOFUF"
         }
     },
     "Footer": {
@@ -176,7 +176,7 @@
     },
     "Projects": {
         "Gallery": {
-            "title": "Our Products",
+            "title": "My Projects",
             "desc": "Browse our catalog of premium materials and furniture."
         },
         "filters": {
@@ -190,73 +190,73 @@
         "products": {
             "ARCADE": {
                 "name": "Decorative Arched Colonnade",
-                "description": "Decorative stone cladding engraving",
-                "details": "Finely detailed with a Harmonious blend of classical geometry and ornamental artistry that gave the structure a timeless,dignified presence."
+                "description": "Arched colonnade with engraved stone cladding details.  ￼",
+                "details": "A decorative colonnade designed around classical arches and refined stone detailing. The work emphasizes symmetry, clean alignments, and fine finishing to deliver a timeless architectural statement suitable for luxury residential or hospitality spaces."
             },
             "KFU": {
                 "name": "King Faisal University",
-                "description": "Designing supplying crafting and constructing.",
-                "details": "Engineered for maximum sustainability while maintaining an artistic design."
+                "description": "KFU Al-Hofuf: campus paving and public hardscape works.",
+                "details": "Hardscape design, supply, and installation for a major campus environment—focused on durable pedestrian zones, clean geometry, and long-term performance in heavy-use areas. Delivered with strong attention to levels, drainage, and consistent finishing for a cohesive public realm."
             },
             "TTP": {
                 "name": "TV Tower Plaza",
-                "description": " ",
-                "details": " "
+                "description": "TV Tower Plaza: patterned paving and plaza hardscape works. ",
+                "details": "A plaza hardscape concept designed for public presence—combining clean paving layouts with practical site detailing. The work prioritizes pedestrian flow, durable surfaces, and tidy finishing lines for a professional civic-grade result.  "
             },
             "BackYard": {
                 "name": "Backyard Decor and Landscape",
-                "description": " ",
-                "details": " "
+                "description": "Backyard makeover: landscape design + outdoor finishing upgrades. ",
+                "details": " A complete backyard transformation combining outdoor decor with practical civil detailing—levels, layout, and durable finishes. The design focuses on creating an inviting outdoor living space while ensuring clean circulation, stable surfaces, and easy maintenance. "
             },
             "Bus": {
                 "name": "Riyadh bus stations",
-                "description": " ",
-                "details": " "
+                "description": "Riyadh bus stations: heavy-duty public hardscape surfaces. ",
+                "details": "Hardscape works for a public-transport environment where durability and safety are essential. The design supports high foot traffic with robust finishes, clear movement paths, and practical detailing for long-term performance and easier upkeep.   "
             },
             "Vrock": {
                 "name": "V-Rock decor",
-                "description": " ",
-                "details": " "
+                "description": "V-Rock cladding feature with striking stone texture. ",
+                "details": "A decorative rock concept built around strong visual rhythm and texture—ideal for feature walls or statement exterior accents. Designed with controlled patterning and clean termination details to keep the look intentional and premium. "
             },
             "Block": {
                 "name": "Residential porcelain facede",
-                "description": " ",
-                "details": " "
+                "description": "Porcelain facade cladding with modern minimal detailing.",
+                "details": "A modern residential facade finished with porcelain cladding for a sharp, contemporary look. Detailed to maintain clean lines at corners and openings, with consistent module sizing and joint control to keep the elevation visually calm and high-end.   "
             },
             "SV": {
                 "name": "Residential Landscape and Fence",
-                "description": " ",
-                "details": " "
+                "description": " Residential landscape + wood fence for a premium exterior. ",
+                "details": "A residential exterior package combining landscape elements with boundary/fence detailing to create privacy and curb appeal. The design balances aesthetics and durability, with coordinated finishes that tie the fence, ground surfaces, and surrounding outdoor space together.  "
             },
             "RF": {
                 "name": "Work office Raised Floor",
-                "description": " ",
-                "details": " "
+                "description": "Office raised floor system for flexible services and access.",
+                "details": " Raised floor installation for an office environment to support flexible cabling and future layout changes. Focused on level accuracy, stability, and a clean finished surface—ideal for technical spaces that require easy access below floor level.  "
             },
             "Fence": {
                 "name": "Rock fence",
-                "description": " ",
-                "details": " "
+                "description": "Natural rock fence with bold texture and strong presence.",
+                "details": "A boundary fence finished with natural rock character—built to feel strong, textured, and timeless. The scope focuses on consistent stone placement, stable construction, and a cohesive finish that elevates the property’s exterior identity.  "
             },
             "Lime": {
                 "name": "Limestone Hardscape",
-                "description": " ",
-                "details": " "
+                "description": " Limestone paving with precise alignment and crisp edging.",
+                "details": "A limestone hardscape package designed for a clean, elegant outdoor finish. The scope focuses on crisp edges, consistent joint spacing, safe walking surfaces, and a layout that holds up to heat, dust, and daily use.  "
             },
             "marble": {
                 "name": "Artistic marble usage",
-                "description": " ",
-                "details": " "
+                "description": "Artistic marble facade detailing with clean modern lines. ",
+                "details": "A facade concept that highlights marble as a design feature—using clean geometry, balanced proportions, and precise jointing to create a premium exterior finish. Designed for long-term performance with careful detailing at corners, edges, and transitions for a crisp architectural look. "
             },
             "renoV": {
                 "name": "Villa Renovation",
-                "description": " ",
-                "details": " "
+                "description": " Complete villa renovation with upgraded exterior and finishes.",
+                "details": "A full villa renovation focused on upgrading the look and performance of the property through improved finishes, updated exterior elements, and coordinated site execution. Delivered with a practical approach: clear drawings, controlled details, and on-site follow-through to completion. "
             },
             "renoV2": {
                 "name": "Villa Renovation",
-                "description": " ",
-                "details": " "
+                "description": "Complete villa renovation with upgraded exterior, interior, and finishes.",
+                "details": " A second villa renovation entry showcasing additional design and execution work—focused on refined finishing, clean detailing, and cohesive outdoor/exterior improvements. Emphasizes a buildable design approach with strong on-site coordination."
             }
         }
     },
@@ -280,9 +280,9 @@
     "ProductDetails": {
         "descriptionTitle": "Description",
         "addToQuote": "Add to Quote",
-        "contactSales": "Contact Sales"
+        "contactSales": "Contact Me"
     },
     "Common": {
-        "backToProducts": "Back to Products"
+        "backToProducts": "Back to Projects"
     }
 }
