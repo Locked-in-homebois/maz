@@ -1,7 +1,7 @@
 export type Category =
     | "All"
     | "Hardscape"
-    | "Facedes"
+    | "Facades"
     | "Renovation"
     | "Finishing Decor"
     | "Raised Floor";
