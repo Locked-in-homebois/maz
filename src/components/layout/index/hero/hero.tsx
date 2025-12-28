@@ -45,7 +45,7 @@ const Hero = () => {
                         priority
                         fetchPriority="high"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                        quality={85}
+                        quality={75}
                     />
                     {/* Overlay: Slightly darker on mobile for better text contrast */}
                     <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
