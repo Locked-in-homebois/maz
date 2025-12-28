@@ -6,9 +6,9 @@ import { Link } from "@/src/i18n/routing";
 const Expertise = async () => {
     const t = await getTranslations();
     return (
-        <div className="bg-white md:py-25 py-15 mb-20">
+        <div className="bg-white md:py-25 py-15">
             <MaxWidthWrapper>
-                <div className="md:grid md:grid-cols-2 grid-rows-2 gap-0 md:gap-30">
+                <div className="md:grid md:grid-cols-2 grid-rows-2 gap-x-0 md:gap-x-30">
                     <div className="grid gap-5">
                         <div className="flex gap-2 text-2xl font-extrabold text-blue-700">
                             <HEADERCONTENT.title.icon size={30} />
@@ -21,7 +21,7 @@ const Expertise = async () => {
                             {t(HEADERCONTENT.desc)}
                         </p>
                     </div>
-                    <div className="row-span-2 py-7">
+                    <div className="row-span-2 py-7 md:py-0">
                         <Image
                             src={IMAGECONTENT.photo.src}
                             alt={IMAGECONTENT.photo.alt}
@@ -29,12 +29,6 @@ const Expertise = async () => {
                             height={800}
                             className="justify-self-center rounded-2xl shadow-2xl"
                         />
-                        <Link href={"/material-manufacturing"}>
-                            <h1 className="text-2xl font-extrabold px-4 py-3 mt-10 tracking-wider bg-sky-950 text-logocolor w-full justify-self-center text-center rounded-xl">
-                                {" "}
-                                Learn more
-                            </h1>
-                        </Link>
                     </div>
 
                     {/*'auto-rows-[1fr]'
@@ -58,6 +52,11 @@ const Expertise = async () => {
                             </div>
                         ))}
                     </div>
+                    <Link href={"/material-manufacturing"}>
+                        <h1 className="text-2xl md:max-w-50 font-extrabold px-4 py-3 mt-10 tracking-wider bg-sky-950 text-logocolor w-full text-center rounded-xl">
+                            Learn more
+                        </h1>
+                    </Link>
                 </div>
             </MaxWidthWrapper>
         </div>

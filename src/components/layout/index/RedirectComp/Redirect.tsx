@@ -8,7 +8,7 @@ const Redirect = async () => {
     const t = await getTranslations();
     return (
         <MaxWidthWrapper>
-            <div className="grid md:grid-cols-2 pt-10 pb-5 md:gap-0 gap-20 px-5 border-2 border-logocolor rounded-2xl mb-10">
+            <div className="grid md:grid-cols-2 pt-10 pb-5 md:gap-0 my-10 gap-20 md:px-5 border-2 border-logocolor rounded-2xl ">
                 {REDIRECTCONTENT.map((item, index) => (
                     <div className="relative grid gap-6 px-10" key={index}>
                         <div className="grid gap-2">

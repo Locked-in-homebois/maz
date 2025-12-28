@@ -18,7 +18,7 @@ const glassCardStyles =
     "z-10 rounded-xl border border-white/10 bg-black/30 backdrop-blur-md shadow-lg " +
     "text-neutral-100 font-light leading-relaxed tracking-wide text-center " +
     "text-xs px-4 py-3 mx-auto max-w-[95%] " +
-    "md:text-lg md:text-left md:max-w-xl md:px-5 md:py-3";
+    "md:text-lg md:text-left md:px-5 md:py-3";
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -77,9 +77,11 @@ const Hero = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className={`${glassCardStyles} hidden md:block absolute bottom-8 left-8 m-0`}
+                        className={`${glassCardStyles} hidden md:block absolute bottom-6 right-6`}
                     >
-                        {t(INDEX_HERO_CONTENT.footer)}
+                        <h1 className="text-gray-300 ">
+                            {t(INDEX_HERO_CONTENT.footer)}
+                        </h1>
                     </motion.div>
                 </div>
             </MaxWidthWrapper>
