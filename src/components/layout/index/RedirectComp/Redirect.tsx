@@ -3,6 +3,7 @@ import { REDIRECTCONTENT } from "./constants";
 import { Link } from "@/src/i18n/routing";
 import Image from "next/image";
 import MaxWidthWrapper from "@/src/components/ui/MaxWidthWrapper";
+import RedirectCarousel from "./RedirectCarousel";
 
 const Redirect = async () => {
 	const t = await getTranslations();
@@ -20,13 +21,17 @@ const Redirect = async () => {
 							</p>
 						</div>
 						<div className="">
-							<Image
-								src={item.image.src}
-								alt={item.image.alt}
-								width={1024}
-								height={1200}
-								className="object-cover max-h-120 rounded-2xl "
-							/>
+							{item.slides && item.slides.length > 0 ? (
+								<RedirectCarousel slides={item.slides} />
+							) : (
+								<Image
+									src={item.image.src}
+									alt={item.image.alt}
+									width={1024}
+									height={1200}
+									className="object-cover max-h-120 rounded-2xl"
+								/>
+							)}
 						</div>
 						<Link href={item.href}>
 							<h1 className="text-2xl font-extrabold px-4 py-3 tracking-wider text-logocolor bg-sky-950 justify-self-center w-full text-center rounded-xl">
