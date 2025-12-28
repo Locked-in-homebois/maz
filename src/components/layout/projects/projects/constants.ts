@@ -3,7 +3,7 @@ import { Category, Product } from "../projects/types";
 export const FILTERS: Category[] = [
     "All",
     "Hardscape",
-    "Facedes",
+    "Facades",
     "Renovation",
     "Finishing Decor",
     "Raised Floor",
@@ -25,8 +25,7 @@ export const PRODUCTS: Product[] = [
             { src: "/IMGNIGHT.jpeg" },
         ],
         description: "Projects.products.ARCADE.description",
-        details:
-            "Projects.products.ARCADE.details",
+        details: "Projects.products.ARCADE.details",
     },
     {
         id: "KFU",
@@ -50,8 +49,7 @@ export const PRODUCTS: Product[] = [
             { src: "/ROLA_044.webp" },
         ],
         description: "Projects.products.KFU.description",
-        details:
-            "Projects.products.KFU.details",
+        details: "Projects.products.KFU.details",
     },
     {
         id: "TTP",
@@ -119,7 +117,7 @@ export const PRODUCTS: Product[] = [
     {
         id: "Block",
         name: "Projects.products.Block.name",
-        category: "Facedes",
+        category: "Facades",
         images: [
             { src: "/SQ1.jpeg" },
             { src: "/SQ2.jpeg" },
@@ -203,7 +201,7 @@ export const PRODUCTS: Product[] = [
     {
         id: "marble",
         name: "Projects.products.marble.name",
-        category: "Facedes",
+        category: "Facades",
         images: [
             { src: "/marb3.jpeg" },
             { src: "/marb1.jpeg" },
@@ -218,7 +216,16 @@ export const PRODUCTS: Product[] = [
         id: "renoV",
         name: "Projects.products.renoV.name",
         category: "Renovation",
-        images: [{ src: "/RenoV2.jpeg" }, { src: "/RenoV1.jpeg" }],
+        images: [
+            { src: "/RenoV9.jpeg" },
+            { src: "/RenoV11.jpeg" },
+            { src: "/RenoV3.jpeg" },
+            { src: "/RenoV5.jpeg" },
+            { src: "/RenoV4.jpeg" },
+            { src: "/RenoV7.jpeg" },
+            { src: "/RenoV8.jpeg" },
+            { src: "/RenoV10.jpeg" },
+        ],
         description: "Projects.products.renoV.description",
         details: "Projects.products.renoV.details",
     },
