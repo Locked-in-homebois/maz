@@ -18,9 +18,9 @@ export const REDIRECTCONTENT: RedirectComp[] = [
 
 		image: { src: "/reno2v5.jpeg", alt: "villa interior image" },
 		slides: [
-			{ src: "", alt: "" },
-			{ src: "", alt: "" },
-			{ src: "", alt: "" },
+			{ src: "/reno2v5.jpeg", alt: "villa view 1" },
+			{ src: "/reno2v1.jpeg", alt: "villa view 2" },
+			{ src: "/reno2v2.jpeg", alt: "villa view 3" },
 		],
 		href: "/projects",
 	},
