@@ -185,7 +185,7 @@
     },
     "Projects": {
         "Gallery": {
-            "title": "منتجاتنا",
+            "title": "مشاريعي",
             "desc": "تصفح كتالوجنا من المواد والأثاث المتميز."
         },
         "filters": {
@@ -292,6 +292,6 @@
         "contactSales": "تواصل معي"
     },
     "Common": {
-        "backToProducts": "العودة إلى المنتجات"
+        "backToProducts": "العودة إلى المشاريع"
     }
 }

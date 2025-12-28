@@ -41,7 +41,7 @@ const MasterPiece = () => {
                             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-neutral-900">
                                 {t(HEADERCONTENT.header)}
                             </h2>
-                            <p className="text-lg text-neutral-500 max-w-lg">
+                            <p className="text-lg text-neutral-600 max-w-lg">
                                 {t(HEADERCONTENT.desc)}
                             </p>
                         </div>
