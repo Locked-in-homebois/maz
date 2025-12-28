@@ -35,10 +35,10 @@
         }
     },
     "RedirectComp": {
-        "title": { "L": "Who am i?", "R": "What do i provide?" },
+        "title": { "L": "About me", "R": "What I deliver" },
         "description": {
-            "L": "Mohammed Azzam Ahdab, a civil engineer located in riyadh with many years of experience.",
-            "R": "I provide practical and reliable civil engineering solutions for planning, design, and construction projects."
+            "L": "Mohammed Azzam Ahdab, Civil Engineer based in Riyadh with 35+ years of hands-on experience.",
+            "R": "I provide practical and reliable civil engineering solutions for Facades, hardscape, renovations, and finishing—from design to site execution."
         },
         "buttonText": { "L": "Learn more", "R": "View Projects" }
     },
@@ -109,7 +109,10 @@
             "skills": {
                 "autocad": "AutoCAD & Design",
                 "renovation": "Renovation Planning",
-                "management": "Solo Project Management"
+                "management": "Solo Project Management",
+                "facades": "Facade & Exterior Design",
+                "hardscape": "Hardscape Design & Detailing",
+                "decor": "Finishing & Décor Design Coordination"
             },
             "levels": {
                 "advanced": "Advanced",

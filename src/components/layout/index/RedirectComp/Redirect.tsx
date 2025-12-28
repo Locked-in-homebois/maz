@@ -15,7 +15,7 @@ const Redirect = async () => {
                             <h1 className="md:text-6xl text-5xl text-sky-950 font-extrabold">
                                 {t(item.title)}
                             </h1>
-                            <p className="text-gray-600 text-[22px]">
+                            <p className="text-gray-600 text-[22px] min-h-25 max-w-150">
                                 {t(item.description)}
                             </p>
                         </div>
