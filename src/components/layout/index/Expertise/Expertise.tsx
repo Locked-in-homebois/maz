@@ -52,7 +52,10 @@ const Expertise = async () => {
                             </div>
                         ))}
                     </div>
-                    <Link href={"/material-manufacturing"}>
+                    <Link
+                        href={"/material-manufacturing"}
+                        aria-label="Learn more about material manufacturing"
+                    >
                         <h1 className="text-2xl md:max-w-50 font-extrabold px-4 py-3 mt-10 tracking-wider bg-sky-950 text-logocolor w-full text-center rounded-xl">
                             Learn more
                         </h1>

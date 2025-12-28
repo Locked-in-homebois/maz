@@ -40,7 +40,7 @@
             "L": "Mohammed Azzam Ahdab, Civil Engineer based in Riyadh with 35+ years of hands-on experience.",
             "R": "I provide practical and reliable civil engineering solutions for Facades, hardscape, renovations, and finishing—from design to site execution."
         },
-        "buttonText": { "L": "Learn more", "R": "View Projects" }
+        "buttonText": { "L": "Learn more about me", "R": "View Projects" }
     },
     "Expertise": {
         "headerBadge": "Dual Expertise",
@@ -54,7 +54,7 @@
     },
     "MasterPiece": {
         "title": "My Masterpieces",
-        "description": "Explore our top pick projects in private villas and Facades",
+        "description": "Explore my top pick projects",
         "viewPortfolio": "View My Portfolio ",
         "tags": {
             "private": "Private property",
@@ -176,7 +176,7 @@
     },
     "Projects": {
         "Gallery": {
-            "title": "Our Products",
+            "title": "My Projects",
             "desc": "Browse our catalog of premium materials and furniture."
         },
         "filters": {
@@ -280,9 +280,9 @@
     "ProductDetails": {
         "descriptionTitle": "Description",
         "addToQuote": "Add to Quote",
-        "contactSales": "Contact Sales"
+        "contactSales": "Contact Me"
     },
     "Common": {
-        "backToProducts": "Back to Products"
+        "backToProducts": "Back to Projects"
     }
 }
