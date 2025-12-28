@@ -46,7 +46,7 @@ const ProfileSection = () => {
                         </h3>
 
                         {/* Render the extracted SkillRows */}
-                        <div className="flex flex-col mt-5 gap-8">
+                        <div className="flex flex-col mt-5 gap-11">
                             {SKILLS_DATA.map((skill, index) => (
                                 <SkillRow
                                     key={skill.label}
@@ -55,21 +55,6 @@ const ProfileSection = () => {
                                 />
                             ))}
                         </div>
-
-                        {/* Certification Card
-						<div className="mt-4 flex items-center gap-4 rounded-xl border border-blue-100 bg-blue-50/50 p-6">
-							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-								<GraduationCap size={28} />
-							</div>
-							<div>
-								<h4 className="font-bold text-neutral-900">
-									{t(PROFILE_TEXT.certification.title)}
-								</h4>
-								<p className="text-sm text-neutral-500">
-									{t(PROFILE_TEXT.certification.details)}
-								</p>
-							</div>
-						</div> */}
                     </div>
                 </div>
             </section>
