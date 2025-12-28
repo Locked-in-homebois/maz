@@ -10,9 +10,9 @@ export default function Home() {
             {/* test */}
             <Hero />
             <Services />
-            <Redirect />
-            <Expertise />
             <MasterPiece />
+            <Expertise />
+            <Redirect />
         </main>
     );
 }
