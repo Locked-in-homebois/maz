@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -15,12 +15,15 @@ const RedirectCarousel = ({ slides }: Props) => {
 		(slide) => slide.src && slide.src.trim() !== ""
 	);
 
-	// Configure Embla with the Autoplay plugin
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
 		Autoplay({
-			delay: 5000, // Time in ms (3 seconds)
-			stopOnInteraction: false, // Resume autoplay after user swipes/clicks
-			stopOnMouseEnter: true, // Stop autoplay while user hovers (Amazon behavior)
+			delay: 3000,
+			stopOnInteraction: false,
+			stopOnMouseEnter: true,
+			// --- THE FIX ---
+			// This tells Embla: "Consider the user 'hovering' if they are anywhere
+			// inside the main parent wrapper, including over the buttons."
+			rootNode: (emblaRoot) => emblaRoot.parentElement as HTMLElement,
 		}),
 	]);
 
@@ -35,6 +38,7 @@ const RedirectCarousel = ({ slides }: Props) => {
 	if (validSlides.length === 0) return null;
 
 	return (
+		// The "parentElement" referred to above is THIS div:
 		<div className="group relative overflow-hidden rounded-2xl max-h-120">
 			{/* Viewport */}
 			<div
