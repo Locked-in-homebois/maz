@@ -9,9 +9,9 @@ export default function SpecsCard() {
 	const t = useTranslations();
 
 	return (
-		<div className="bg-neutral-50 rounded-2xl p-6 md:p-8 border border-neutral-200 sticky top-24">
-			<h3 className="text-xl font-bold text-neutral-900 mb-6 flex items-center gap-2">
-				<Ruler className="text-neutral-400" size={20} />
+		<div className="bg-neutral-50 rounded-2xl p-6 md:p-8 border border-neutral-200 sticky top-24 shadow-sm">
+			<h3 className="text-xl font-bold text-sky-950 mb-6 flex items-center gap-2">
+				<Ruler className="text-sky-950" size={24} />
 				{t(MANUFACTURING_CONTENT.specsTitle)}
 			</h3>
 
@@ -33,13 +33,13 @@ export default function SpecsCard() {
 			<div className="flex flex-col gap-3">
 				<Link
 					href="/contact"
-					className="w-full bg-neutral-900 text-white font-bold text-center py-3 rounded-lg hover:bg-neutral-800 transition-colors"
+					className="w-full bg-sky-950 text-white font-bold text-center py-3 rounded-lg hover:bg-sky-900 transition-colors shadow-md shadow-sky-900/10"
 				>
 					{t(MANUFACTURING_CONTENT.cta.primaryBtn)}
 				</Link>
 				<Link
 					href="/contact"
-					className="w-full bg-white text-neutral-900 font-bold text-center py-3 rounded-lg border border-neutral-300 hover:bg-neutral-50 transition-colors"
+					className="w-full bg-white text-sky-950 font-bold text-center py-3 rounded-lg border border-neutral-300 hover:bg-sky-50 transition-colors"
 				>
 					{t(MANUFACTURING_CONTENT.cta.secondaryBtn)}
 				</Link>
@@ -52,7 +52,7 @@ function SpecRow({ label, value }: { label: string; value: string }) {
 	return (
 		<div className="flex justify-between items-center py-2 border-b border-neutral-200 last:border-0">
 			<span className="text-neutral-500 font-medium">{label}</span>
-			<span className="text-neutral-900 font-bold text-right max-w-[50%]">
+			<span className="text-sky-950 font-bold text-right max-w-[50%]">
 				{value}
 			</span>
 		</div>

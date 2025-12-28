@@ -11,14 +11,15 @@ export default function CapabilitiesList() {
 		<div className="flex flex-col gap-10">
 			{/* Capabilities List */}
 			<div>
-				<h3 className="text-xl font-bold text-neutral-900 mb-6 flex items-center gap-2">
-					<Factory className="text-neutral-400" size={20} />
+				<h3 className="text-xl font-bold text-sky-950 mb-6 flex items-center gap-2">
+					<Factory className="text-sky-950" size={24} />
 					{t("Capabilities.colA.title")}
 				</h3>
 				<ul className="space-y-4">
 					{MANUFACTURING_CONTENT.capabilities.map((item) => (
 						<li key={item.id} className="flex items-start gap-3">
-							<div className="mt-1.5 min-w-1.5 h-1.5 rounded-full bg-neutral-300" />
+							{/* Dot color changed to logocolor */}
+							<div className="mt-2 min-w-1.5 h-1.5 rounded-full bg-logocolor" />
 							<span className="text-neutral-700 leading-relaxed">
 								{t(item.translationKey)}
 							</span>
@@ -29,7 +30,7 @@ export default function CapabilitiesList() {
 
 			{/* Use Cases Grid */}
 			<div>
-				<h3 className="text-xl font-bold text-neutral-900 mb-6 border-t border-neutral-100 pt-8">
+				<h3 className="text-xl font-bold text-sky-950 mb-6 border-t border-neutral-100 pt-8">
 					{t(MANUFACTURING_CONTENT.useCasesTitle)}
 				</h3>
 				<ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -40,7 +41,7 @@ export default function CapabilitiesList() {
 						>
 							<CheckCircle2
 								className="text-logocolor shrink-0"
-								size={16}
+								size={18}
 							/>
 							<span className="text-sm font-medium text-neutral-800">
 								{t(item.translationKey)}
