@@ -59,7 +59,7 @@ const Services = () => {
                                 src={item.image.src}
                                 alt={item.image.alt}
                                 fill
-                                className="object-cover transition-transform duration-500 md:max-h-full max-h-60 group-hover:scale-105"
+                                className="object-cover transition-transform duration-500 md:max-h-full max-h-60 group-hover:scale-101"
                             />
                             {/* Icon */}
                             <div className="absolute top-4 end-4 bg-white/90 p-2 rounded-xl backdrop-blur-sm">
