@@ -56,8 +56,8 @@ const Expertise = async () => {
                         href={"/material-manufacturing"}
                         aria-label="Learn more about material manufacturing"
                     >
-                        <h1 className="text-2xl md:max-w-50 font-extrabold px-4 py-3 mt-10 tracking-wider bg-sky-950 text-logocolor w-full text-center rounded-xl">
-                            Learn more
+                        <h1 className="text-2xl max-w-100 font-extrabold px-4 py-3 mt-10 tracking-wider bg-sky-950 text-logocolor w-full text-center rounded-xl">
+                            More on our manufacturing
                         </h1>
                     </Link>
                 </div>
