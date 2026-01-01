@@ -1,288 +1,353 @@
 {
-    "HomePage": {
-        "title": "MAZ"
-    },
-    "Navigation": {
-        "projects": "Projects",
-        "material": "Material Manufacturing",
-        "contact": "Contact",
-        "about": "About me"
-    },
-    "Hero": {
-        "title": "Precision Engineering with a Personal Touch",
-        "footer": "Featured: King Faisal University (Al-Hofuf) Design • Supply • Installation",
-        "viewPortfolio": "View Portfolio",
-        "contactMe": "Contact Me"
-    },
-    "Services": {
-        "title": "Services",
-        "description": "Comprehensive design and construction services tailored to your needs.",
-        "residential": {
-            "title": "Renovation",
-            "desc": "Luxury property construction and renovation services."
-        },
-        "hardscape": {
-            "title": "Hardscape",
-            "desc": "Professional hardscaping solutions for durable and aesthetic outdoor spaces."
-        },
-        "facades": {
-            "title": "Facades",
-            "desc": "Modern and classic facade designs to elevate building aesthetics."
-        },
-        "rockworks": {
-            "title": "Finishing and Decor",
-            "desc": "Premium finishing, décor coordination, and material specifications."
-        }
-    },
-    "RedirectComp": {
-        "title": { "L": "About me", "R": "What I deliver" },
-        "description": {
-            "L": "Mohammed Azzam Ahdab, Civil Engineer based in Riyadh with 35+ years of hands-on experience.",
-            "R": "I provide practical and reliable civil engineering solutions for Facades, hardscape, renovations, and finishing—from design to site execution."
-        },
-        "buttonText": { "L": "Learn more about me", "R": "View Projects" }
-    },
-    "Expertise": {
-        "headerBadge": "Dual Expertise",
-        "title": "Straight to construction",
-        "description": "I produce the materials. This ensure strict quality control from raw stones to the final polish in your property while also ensuring the most competitive prices on the market",
-        "list": {
-            "item1": "Direct sourcing of Granite, Basalt, Marble and Limestone",
-            "item2": "Custom cutting and finishing facility",
-            "item3": "In-house structural engineering team"
-        }
-    },
-    "MasterPiece": {
-        "title": "My Masterpieces",
-        "description": "Explore my top pick projects",
-        "viewPortfolio": "View My Portfolio ",
-        "tags": {
-            "private": "Private property",
-            "design": "Design & Hardscape"
-        },
-        "projects": {
-            "p1": "Private villa renovation",
-            "p2": "Finishing & Decor",
-            "p3": "Saudi Television station",
-            "p4": "King Faisal university"
-        },
-        "locations": {
-            "riyadh": "Riyadh",
-            "hufuf": "AL-HOFUF"
-        }
-    },
-    "Footer": {
-        "description": "My approach is unique because I am involved in every step. I don't just hand off blueprints.",
-        "links": {
-            "hardscape": "Hardscape",
-            "renovation": "Renovation & Decor",
-            "facades": "Facades",
-            "finishing": "Finishing and Decor",
-            "company_renovations": "Renovations",
-            "company_owner": "Company Owner",
-            "company_cutting": "Cutting stone"
-        },
-        "contact": {
-            "location": "Riyadh",
-            "email": "mohazzama@gmail.com",
-            "phone": "+966 504413053"
-        }
-    },
-    "AboutUs": {
-        "Hero": {
-            "header": "Building Vision into Reality",
-            "subheader": "A specialized one-person portfolio focusing on renovations, facade works, and stone finishing. I personally oversee every detail, from the initial survey to the final design.",
-            "buttons": {
-                "viewWork": "View My Work",
-                "contactMe": "Contact Me"
-            }
-        },
-        "Profile": {
-            "name": "Mohammed-Azzam Ahdab",
-            "title": "Civil Engineer",
-            "bio": "With over 35 years of hands-on experience, I bridge the gap between technical civil engineering and on-site craftsmanship. My approach is unique because I am involved in every step. I don't just hand off blueprints; I measure the site myself, create the CAD drawings, source the stone and materials, and oversee the project management until completion.",
-            "skillsHeader": "Technical Proficiency",
-            "certification": {
-                "title": "Certified Professional Engineer (PE)",
-                "details": "Lic. #4492011 • Specialized in Facades & Hardscape"
-            },
-            "skills": {
-                "autocad": "AutoCAD & Design",
-                "renovation": "Renovation Planning",
-                "management": "Solo Project Management",
-                "facades": "Facade & Exterior Design",
-                "hardscape": "Hardscape Design & Detailing",
-                "decor": "Finishing & Décor Design Coordination"
-            },
-            "levels": {
-                "advanced": "Advanced",
-                "expert": "Expert"
-            }
-        },
-        "Philosophy": {
-            "header": "My Philosophy",
-            "desc": "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
-            "items": {
-                "involvement": {
-                    "header": "Direct Involvement",
-                    "description": "I don't outsource critical thinking. I perform the measuring, I draw the plans, and I manage the site personally."
-                },
-                "accuracy": {
-                    "header": "Accuracy",
-                    "description": "I ensure every output aligns with the client's requests by confirming scope, requirements, and success criteria."
-                },
-                "sustainability": {
-                    "header": "Sustainability",
-                    "description": "I integrate sustainability considerations to reduce material waste and long-term maintenance needs."
-                }
-            }
-        }
-    },
-    "Contact": {
-        "Header": {
-            "title": "Get in Touch",
-            "desc": "We respond within 24 hours to all inquiries."
-        },
-        "Grid": {
-            "Location": { "title": "Location", "desc": "Riyadh/alnafl" },
-            "Social": { "title": "Social Media", "desc": "@azzamahdab" },
-            "Email": { "title": "Email", "desc": "mohazzama@gmail.com" },
-            "Contact": { "title": "Contact", "desc": "+966 504 413 053" }
-        },
-        "Form": {
-            "title": "Send a Message",
-            "buttonText": "Submit Request",
-            "fields": {
-                "fullName": {
-                    "label": "Full Name",
-                    "placeholder": "Enter your name"
-                },
-                "email": {
-                    "label": "Email Address",
-                    "placeholder": "name@example.com"
-                },
-                "message": {
-                    "label": "Message",
-                    "placeholder": "How can we help you?"
-                }
-            },
-            "status": {
-                "successTitle": "Message Sent!",
-                "successDesc": "We'll get back to you shortly.",
-                "sending": "Sending...",
-                "failed": "Failed. Try Again"
-            }
-        }
-    },
-    "Projects": {
-        "Gallery": {
-            "title": "My Projects",
-            "desc": "Browse our catalog of premium materials and furniture."
-        },
-        "filters": {
-            "All": "All",
-            "Hardscape": "Hardscape",
-            "Facades": "Facades",
-            "Renovation": "Renovation",
-            "FinishingDecor": "Finishing Decor",
-            "RaisedFloor": "Raised Floor"
-        },
-        "products": {
-            "ARCADE": {
-                "name": "Decorative Arched Colonnade",
-                "description": "Arched colonnade with engraved stone cladding details.  ￼",
-                "details": "A decorative colonnade designed around classical arches and refined stone detailing. The work emphasizes symmetry, clean alignments, and fine finishing to deliver a timeless architectural statement suitable for luxury residential or hospitality spaces."
-            },
-            "KFU": {
-                "name": "King Faisal University",
-                "description": "KFU Al-Hofuf: campus paving and public hardscape works.",
-                "details": "Hardscape design, supply, and installation for a major campus environment—focused on durable pedestrian zones, clean geometry, and long-term performance in heavy-use areas. Delivered with strong attention to levels, drainage, and consistent finishing for a cohesive public realm."
-            },
-            "TTP": {
-                "name": "TV Tower Plaza",
-                "description": "TV Tower Plaza: patterned paving and plaza hardscape works. ",
-                "details": "A plaza hardscape concept designed for public presence—combining clean paving layouts with practical site detailing. The work prioritizes pedestrian flow, durable surfaces, and tidy finishing lines for a professional civic-grade result.  "
-            },
-            "BackYard": {
-                "name": "Backyard Decor and Landscape",
-                "description": "Backyard makeover: landscape design + outdoor finishing upgrades. ",
-                "details": " A complete backyard transformation combining outdoor decor with practical civil detailing—levels, layout, and durable finishes. The design focuses on creating an inviting outdoor living space while ensuring clean circulation, stable surfaces, and easy maintenance. "
-            },
-            "Bus": {
-                "name": "Riyadh bus stations",
-                "description": "Riyadh bus stations: heavy-duty public hardscape surfaces. ",
-                "details": "Hardscape works for a public-transport environment where durability and safety are essential. The design supports high foot traffic with robust finishes, clear movement paths, and practical detailing for long-term performance and easier upkeep.   "
-            },
-            "Vrock": {
-                "name": "V-Rock decor",
-                "description": "V-Rock cladding feature with striking stone texture. ",
-                "details": "A decorative rock concept built around strong visual rhythm and texture—ideal for feature walls or statement exterior accents. Designed with controlled patterning and clean termination details to keep the look intentional and premium. "
-            },
-            "Block": {
-                "name": "Residential porcelain facede",
-                "description": "Porcelain facade cladding with modern minimal detailing.",
-                "details": "A modern residential facade finished with porcelain cladding for a sharp, contemporary look. Detailed to maintain clean lines at corners and openings, with consistent module sizing and joint control to keep the elevation visually calm and high-end.   "
-            },
-            "SV": {
-                "name": "Residential Landscape and Fence",
-                "description": " Residential landscape + wood fence for a premium exterior. ",
-                "details": "A residential exterior package combining landscape elements with boundary/fence detailing to create privacy and curb appeal. The design balances aesthetics and durability, with coordinated finishes that tie the fence, ground surfaces, and surrounding outdoor space together.  "
-            },
-            "RF": {
-                "name": "Work office Raised Floor",
-                "description": "Office raised floor system for flexible services and access.",
-                "details": " Raised floor installation for an office environment to support flexible cabling and future layout changes. Focused on level accuracy, stability, and a clean finished surface—ideal for technical spaces that require easy access below floor level.  "
-            },
-            "Fence": {
-                "name": "Rock fence",
-                "description": "Natural rock fence with bold texture and strong presence.",
-                "details": "A boundary fence finished with natural rock character—built to feel strong, textured, and timeless. The scope focuses on consistent stone placement, stable construction, and a cohesive finish that elevates the property’s exterior identity.  "
-            },
-            "Lime": {
-                "name": "Limestone Hardscape",
-                "description": " Limestone paving with precise alignment and crisp edging.",
-                "details": "A limestone hardscape package designed for a clean, elegant outdoor finish. The scope focuses on crisp edges, consistent joint spacing, safe walking surfaces, and a layout that holds up to heat, dust, and daily use.  "
-            },
-            "marble": {
-                "name": "Artistic marble usage",
-                "description": "Artistic marble facade detailing with clean modern lines. ",
-                "details": "A facade concept that highlights marble as a design feature—using clean geometry, balanced proportions, and precise jointing to create a premium exterior finish. Designed for long-term performance with careful detailing at corners, edges, and transitions for a crisp architectural look. "
-            },
-            "renoV": {
-                "name": "Villa Renovation",
-                "description": " Complete villa renovation with upgraded exterior and finishes.",
-                "details": "A full villa renovation focused on upgrading the look and performance of the property through improved finishes, updated exterior elements, and coordinated site execution. Delivered with a practical approach: clear drawings, controlled details, and on-site follow-through to completion. "
-            },
-            "renoV2": {
-                "name": "Villa Renovation",
-                "description": "Complete villa renovation with upgraded exterior, interior, and finishes.",
-                "details": " A second villa renovation entry showcasing additional design and execution work—focused on refined finishing, clean detailing, and cohesive outdoor/exterior improvements. Emphasizes a buildable design approach with strong on-site coordination."
-            }
-        }
-    },
-    "KemalOriginal": {
-        "TextPart": {
-            "iconTitle": "Direct Manufacturer",
-            "header": "Our Stone Factory: Where Raw Earth Becomes Art",
-            "desc": "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design."
-        },
-        "LeftLowCards": {
-            "advanced": {
-                "title": "Advanced Cutting",
-                "desc": "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
-            },
-            "quality": {
-                "title": "Quality Control",
-                "desc": "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity."
-            }
-        }
-    },
-    "ProductDetails": {
-        "descriptionTitle": "Description",
-        "addToQuote": "Add to Quote",
-        "contactSales": "Contact Me"
-    },
-    "Common": {
-        "backToProducts": "Back to Projects"
-    }
+	"HomePage": {
+		"title": "MAZ"
+	},
+	"Navigation": {
+		"projects": "Projects",
+		"material": "Material Manufacturing",
+		"contact": "Contact",
+		"about": "About me"
+	},
+	"Hero": {
+		"title": "Precision Engineering with a Personal Touch",
+		"footer": "Featured: King Faisal University (Al-Hofuf) Design • Supply • Installation",
+		"viewPortfolio": "View Portfolio",
+		"contactMe": "Contact Me"
+	},
+	"Services": {
+		"title": "Services",
+		"description": "Comprehensive design and construction services tailored to your needs.",
+		"residential": {
+			"title": "Renovation",
+			"desc": "Luxury property construction and renovation services."
+		},
+		"hardscape": {
+			"title": "Hardscape",
+			"desc": "Professional hardscaping solutions for durable and aesthetic outdoor spaces."
+		},
+		"facades": {
+			"title": "Facades",
+			"desc": "Modern and classic facade designs to elevate building aesthetics."
+		},
+		"rockworks": {
+			"title": "Finishing and Decor",
+			"desc": "Premium finishing, décor coordination, and material specifications."
+		}
+	},
+	"RedirectComp": {
+		"title": { "L": "About me", "R": "What I deliver" },
+		"description": {
+			"L": "Mohammed Azzam Ahdab, Civil Engineer based in Riyadh with 35+ years of hands-on experience.",
+			"R": "I provide practical and reliable civil engineering solutions for Facades, hardscape, renovations, and finishing—from design to site execution."
+		},
+		"buttonText": { "L": "Learn more about me", "R": "View Projects" }
+	},
+	"Expertise": {
+		"headerBadge": "Dual Expertise",
+		"title": "Straight to construction",
+		"description": "I produce the materials. This ensure strict quality control from raw stones to the final polish in your property while also ensuring the most competitive prices on the market",
+		"list": {
+			"item1": "Direct sourcing of Granite, Basalt, Marble and Limestone",
+			"item2": "Custom cutting and finishing facility",
+			"item3": "In-house structural engineering team"
+		}
+	},
+	"MasterPiece": {
+		"title": "My Masterpieces",
+		"description": "Explore my top pick projects",
+		"viewPortfolio": "View My Portfolio ",
+		"tags": {
+			"private": "Private property",
+			"design": "Design & Hardscape"
+		},
+		"projects": {
+			"p1": "Private villa renovation",
+			"p2": "Finishing & Decor",
+			"p3": "Saudi Television station",
+			"p4": "King Faisal university"
+		},
+		"locations": {
+			"riyadh": "Riyadh",
+			"hufuf": "AL-HOFUF"
+		}
+	},
+	"Footer": {
+		"description": "My approach is unique because I am involved in every step. I don't just hand off blueprints.",
+		"links": {
+			"hardscape": "Hardscape",
+			"renovation": "Renovation & Decor",
+			"facades": "Facades",
+			"finishing": "Finishing and Decor",
+			"company_renovations": "Renovations",
+			"company_owner": "Company Owner",
+			"company_cutting": "Cutting stone"
+		},
+		"contact": {
+			"location": "Riyadh",
+			"email": "mohazzama@gmail.com",
+			"phone": "+966 504413053"
+		}
+	},
+	"AboutUs": {
+		"Hero": {
+			"header": "Building Vision into Reality",
+			"subheader": "A specialized one-person portfolio focusing on renovations, facade works, and stone finishing. I personally oversee every detail, from the initial survey to the final design.",
+			"buttons": {
+				"viewWork": "View My Work",
+				"contactMe": "Contact Me"
+			}
+		},
+		"Profile": {
+			"name": "Mohammed-Azzam Ahdab",
+			"title": "Civil Engineer",
+			"bio": "With over 35 years of hands-on experience, I bridge the gap between technical civil engineering and on-site craftsmanship. My approach is unique because I am involved in every step. I don't just hand off blueprints; I measure the site myself, create the CAD drawings, source the stone and materials, and oversee the project management until completion.",
+			"skillsHeader": "Technical Proficiency",
+			"certification": {
+				"title": "Certified Professional Engineer (PE)",
+				"details": "Lic. #4492011 • Specialized in Facades & Hardscape"
+			},
+			"skills": {
+				"autocad": "AutoCAD & Design",
+				"renovation": "Renovation Planning",
+				"management": "Solo Project Management",
+				"facades": "Facade & Exterior Design",
+				"hardscape": "Hardscape Design & Detailing",
+				"decor": "Finishing & Décor Design Coordination"
+			},
+			"levels": {
+				"advanced": "Advanced",
+				"expert": "Expert"
+			}
+		},
+		"Philosophy": {
+			"header": "My Philosophy",
+			"desc": "I am driven by a personal commitment to safety, quality, and accountability. When you hire me, you get my full attention on every beam designed and every stone laid.",
+			"items": {
+				"involvement": {
+					"header": "Direct Involvement",
+					"description": "I don't outsource critical thinking. I perform the measuring, I draw the plans, and I manage the site personally."
+				},
+				"accuracy": {
+					"header": "Accuracy",
+					"description": "I ensure every output aligns with the client's requests by confirming scope, requirements, and success criteria."
+				},
+				"sustainability": {
+					"header": "Sustainability",
+					"description": "I integrate sustainability considerations to reduce material waste and long-term maintenance needs."
+				}
+			}
+		}
+	},
+	"Contact": {
+		"Header": {
+			"title": "Get in Touch",
+			"desc": "We respond within 24 hours to all inquiries."
+		},
+		"Grid": {
+			"Location": { "title": "Location", "desc": "Riyadh/alnafl" },
+			"Social": { "title": "Social Media", "desc": "@azzamahdab" },
+			"Email": { "title": "Email", "desc": "mohazzama@gmail.com" },
+			"Contact": { "title": "Contact", "desc": "+966 504 413 053" }
+		},
+		"Form": {
+			"title": "Send a Message",
+			"buttonText": "Submit Request",
+			"fields": {
+				"fullName": {
+					"label": "Full Name",
+					"placeholder": "Enter your name"
+				},
+				"email": {
+					"label": "Email Address",
+					"placeholder": "name@example.com"
+				},
+				"message": {
+					"label": "Message",
+					"placeholder": "How can we help you?"
+				}
+			},
+			"status": {
+				"successTitle": "Message Sent!",
+				"successDesc": "We'll get back to you shortly.",
+				"sending": "Sending...",
+				"failed": "Failed. Try Again"
+			}
+		}
+	},
+	"Projects": {
+		"Gallery": {
+			"title": "My Projects",
+			"desc": "Browse our catalog of premium materials and furniture."
+		},
+		"filters": {
+			"All": "All",
+			"Hardscape": "Hardscape",
+			"Facades": "Facades",
+			"Renovation": "Renovation",
+			"FinishingDecor": "Finishing Decor",
+			"RaisedFloor": "Raised Floor"
+		},
+		"products": {
+			"ARCADE": {
+				"name": "Decorative Arched Colonnade",
+				"description": "Arched colonnade with engraved stone cladding details.  ￼",
+				"details": "A decorative colonnade designed around classical arches and refined stone detailing. The work emphasizes symmetry, clean alignments, and fine finishing to deliver a timeless architectural statement suitable for luxury residential or hospitality spaces."
+			},
+			"KFU": {
+				"name": "King Faisal University",
+				"description": "KFU Al-Hofuf: campus paving and public hardscape works.",
+				"details": "Hardscape design, supply, and installation for a major campus environment—focused on durable pedestrian zones, clean geometry, and long-term performance in heavy-use areas. Delivered with strong attention to levels, drainage, and consistent finishing for a cohesive public realm."
+			},
+			"TTP": {
+				"name": "TV Tower Plaza",
+				"description": "TV Tower Plaza: patterned paving and plaza hardscape works. ",
+				"details": "A plaza hardscape concept designed for public presence—combining clean paving layouts with practical site detailing. The work prioritizes pedestrian flow, durable surfaces, and tidy finishing lines for a professional civic-grade result.  "
+			},
+			"BackYard": {
+				"name": "Backyard Decor and Landscape",
+				"description": "Backyard makeover: landscape design + outdoor finishing upgrades. ",
+				"details": " A complete backyard transformation combining outdoor decor with practical civil detailing—levels, layout, and durable finishes. The design focuses on creating an inviting outdoor living space while ensuring clean circulation, stable surfaces, and easy maintenance. "
+			},
+			"Bus": {
+				"name": "Riyadh bus stations",
+				"description": "Riyadh bus stations: heavy-duty public hardscape surfaces. ",
+				"details": "Hardscape works for a public-transport environment where durability and safety are essential. The design supports high foot traffic with robust finishes, clear movement paths, and practical detailing for long-term performance and easier upkeep.   "
+			},
+			"Vrock": {
+				"name": "V-Rock decor",
+				"description": "V-Rock cladding feature with striking stone texture. ",
+				"details": "A decorative rock concept built around strong visual rhythm and texture—ideal for feature walls or statement exterior accents. Designed with controlled patterning and clean termination details to keep the look intentional and premium. "
+			},
+			"Block": {
+				"name": "Residential porcelain facede",
+				"description": "Porcelain facade cladding with modern minimal detailing.",
+				"details": "A modern residential facade finished with porcelain cladding for a sharp, contemporary look. Detailed to maintain clean lines at corners and openings, with consistent module sizing and joint control to keep the elevation visually calm and high-end.   "
+			},
+			"SV": {
+				"name": "Residential Landscape and Fence",
+				"description": " Residential landscape + wood fence for a premium exterior. ",
+				"details": "A residential exterior package combining landscape elements with boundary/fence detailing to create privacy and curb appeal. The design balances aesthetics and durability, with coordinated finishes that tie the fence, ground surfaces, and surrounding outdoor space together.  "
+			},
+			"RF": {
+				"name": "Work office Raised Floor",
+				"description": "Office raised floor system for flexible services and access.",
+				"details": " Raised floor installation for an office environment to support flexible cabling and future layout changes. Focused on level accuracy, stability, and a clean finished surface—ideal for technical spaces that require easy access below floor level.  "
+			},
+			"Fence": {
+				"name": "Rock fence",
+				"description": "Natural rock fence with bold texture and strong presence.",
+				"details": "A boundary fence finished with natural rock character—built to feel strong, textured, and timeless. The scope focuses on consistent stone placement, stable construction, and a cohesive finish that elevates the property’s exterior identity.  "
+			},
+			"Lime": {
+				"name": "Limestone Hardscape",
+				"description": " Limestone paving with precise alignment and crisp edging.",
+				"details": "A limestone hardscape package designed for a clean, elegant outdoor finish. The scope focuses on crisp edges, consistent joint spacing, safe walking surfaces, and a layout that holds up to heat, dust, and daily use.  "
+			},
+			"marble": {
+				"name": "Artistic marble usage",
+				"description": "Artistic marble facade detailing with clean modern lines. ",
+				"details": "A facade concept that highlights marble as a design feature—using clean geometry, balanced proportions, and precise jointing to create a premium exterior finish. Designed for long-term performance with careful detailing at corners, edges, and transitions for a crisp architectural look. "
+			},
+			"renoV": {
+				"name": "Villa Renovation",
+				"description": " Complete villa renovation with upgraded exterior and finishes.",
+				"details": "A full villa renovation focused on upgrading the look and performance of the property through improved finishes, updated exterior elements, and coordinated site execution. Delivered with a practical approach: clear drawings, controlled details, and on-site follow-through to completion. "
+			},
+			"renoV2": {
+				"name": "Villa Renovation",
+				"description": "Complete villa renovation with upgraded exterior, interior, and finishes.",
+				"details": " A second villa renovation entry showcasing additional design and execution work—focused on refined finishing, clean detailing, and cohesive outdoor/exterior improvements. Emphasizes a buildable design approach with strong on-site coordination."
+			}
+		}
+	},
+	"KemalOriginal": {
+		"TextPart": {
+			"iconTitle": "Direct Manufacturer",
+			"header": "Our Stone Factory: Where Raw Earth Becomes Art",
+			"desc": "Located just outside the city, my personal stone processing facility bridges the gap between raw extraction and architectural mastery. We don't just source materials; we craft them. By controlling the entire production line, I ensure every slab, block, and tile meets the rigorous standards of both structural engineering and aesthetic design."
+		},
+		"LeftLowCards": {
+			"advanced": {
+				"title": "Advanced Cutting",
+				"desc": "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
+			},
+			"quality": {
+				"title": "Quality Control",
+				"desc": "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity."
+			}
+		}
+	},
+
+	"Capabilities": {
+		"eyebrow": "Capabilities",
+		"title": "Built for Precision. Finished for Architecture.",
+		"subtitle": "From raw blocks to final installation-ready pieces — cutting, finishing, and quality control are handled in-house to keep every detail consistent.",
+		"colA": {
+			"title": "What we produce",
+			"items": {
+				"1": "Slabs, tiles, and blocks tailored to project requirements",
+				"2": "Custom dimensions for façades, paving, walls, and landscaping",
+				"3": "Edge profiling & detailing for clean joins and premium finishes",
+				"4": "Surface finishes to match the look and performance your project needs",
+				"5": "CNC cutting for complex geometry and repeatable accuracy",
+				"6": "Batch consistency with controlled selection and sorting"
+			},
+			"useCasesTitle": "Typical use cases",
+			"useCases": {
+				"1": "Exterior cladding & architectural façades",
+				"2": "Pathways, courtyards, and driveways",
+				"3": "Retaining walls and landscape elements",
+				"4": "Feature walls, signage, and custom pieces"
+			}
+		},
+		"specs": {
+			"title": "Quick Specs",
+			"labels": {
+				"maxSize": "Max piece size:",
+				"thickness": "Thickness range:",
+				"tolerance": "Cutting tolerance:",
+				"finish": "Finish options:",
+				"leadTime": "Typical lead time:",
+				"delivery": "Delivery / pickup:"
+			},
+			"values": {
+				"maxSize": "Custom (Contact us)",
+				"thickness": "2cm - 10cm+",
+				"tolerance": "+/- 1mm",
+				"finish": "Honed, Polished, Bush-hammered",
+				"leadTime": "2-4 Weeks",
+				"delivery": "Ex-Works / Delivered"
+			},
+			"note": "Specs vary by material and project scope — share your drawings for an exact confirmation."
+		},
+		"cta": {
+			"title": "Ready to quote your next order?",
+			"text": "Send dimensions, finish, quantity, and timeline — you’ll get a clear lead time and a straightforward quote.",
+			"primaryBtn": "Request a Quote",
+			"secondaryBtn": "Book a Factory Visit",
+			"whatsapp": "Prefer WhatsApp? Send your drawings and photos — we’ll confirm feasibility and recommend the best finish."
+		},
+		"trust": {
+			"1": {
+				"title": "Direct Manufacturer",
+				"desc": "In-house production for consistent results."
+			},
+			"2": {
+				"title": "Quality-Controlled",
+				"desc": "Every piece checked for cracks, color, and integrity."
+			},
+			"3": {
+				"title": "On-Time Delivery",
+				"desc": "Clear timelines from quote to dispatch."
+			}
+		}
+	},
+	"ProductDetails": {
+		"descriptionTitle": "Description",
+		"addToQuote": "Add to Quote",
+		"contactSales": "Contact Me"
+	},
+	"Common": {
+		"backToProducts": "Back to Projects"
+	}
 }

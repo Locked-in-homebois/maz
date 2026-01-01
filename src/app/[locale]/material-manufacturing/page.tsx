@@ -1,9 +1,11 @@
-import OriginalFunction from "@/src/components/layout/projects/kemaloriginal/Original";
+import OriginalFunction from "@/src/components/layout/manufacturing/kemaloriginal/Original";
+import CapabilitiesSpecs from "@/src/components/layout/manufacturing/capabilities/CapabilitiesSpecs";
 
 export default function Home() {
-    return (
-        <main>
-            <OriginalFunction />
-        </main>
-    );
+	return (
+		<main>
+			<OriginalFunction />
+			<CapabilitiesSpecs />
+		</main>
+	);
 }
