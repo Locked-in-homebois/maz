@@ -26,7 +26,6 @@ export const REDIRECTCONTENT: RedirectComp[] = [
             { src: "/2v7.jpeg", alt: "photo 6" },
             { src: "/RF1.jpeg", alt: "photo 7" },
             { src: "/F1.JPG", alt: "photo 8" },
-
             { src: "/hs2.jpeg", alt: "photo 9" },
             { src: "/marb3.jpeg", alt: "photo 10" },
             { src: "/RenoV9.jpeg", alt: "photo 11" },
