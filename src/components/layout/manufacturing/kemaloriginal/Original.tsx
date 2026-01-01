@@ -13,7 +13,7 @@ export default async function OriginalFunction() {
     const t = await getTranslations();
     return (
         <MaxWidthWrapper className="">
-            <main className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
+            <main className="grid grid-cols-1 lg:grid-cols-2 gap-12 my-10">
                 {/* --- Left Side: Text Content --- */}
                 <div className="flex flex-col justify-center">
                     <div className="flex gap-4 items-center text-blue-500 text-xl font-bold">
