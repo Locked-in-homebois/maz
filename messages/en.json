@@ -269,11 +269,76 @@
         "LeftLowCards": {
             "advanced": {
                 "title": "Advanced Cutting",
-                "desc": "Utilizing 5-axis CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
+                "desc": "Utilizing CNC saws for complex geometries and ultra-precise finishing down to the millimeter."
             },
             "quality": {
                 "title": "Quality Control",
                 "desc": "Every piece is hand-inspected by me for micro-fractures, color consistency, and structural integrity."
+            }
+        }
+    },
+
+    "Capabilities": {
+        "eyebrow": "Capabilities",
+        "title": "Built for Precision. Finished for Architecture.",
+        "subtitle": "From raw blocks to final installation-ready pieces — cutting, finishing, and quality control are handled in-house to keep every detail consistent.",
+        "colA": {
+            "title": "What we produce",
+            "items": {
+                "1": "Slabs, tiles, and blocks tailored to project requirements",
+                "2": "Custom dimensions for façades, paving, walls, and landscaping",
+                "3": "Edge profiling & detailing for clean joins and premium finishes",
+                "4": "Surface finishes to match the look and performance your project needs",
+                "5": "CNC cutting for complex geometry and repeatable accuracy",
+                "6": "Batch consistency with controlled selection and sorting"
+            },
+            "useCasesTitle": "Typical use cases",
+            "useCases": {
+                "1": "Exterior cladding & architectural façades",
+                "2": "Pathways, courtyards, and driveways",
+                "3": "Retaining walls and landscape elements",
+                "4": "Feature walls, signage, and custom pieces"
+            }
+        },
+        "specs": {
+            "title": "Quick Specs",
+            "labels": {
+                "maxSize": "Max piece size:",
+                "thickness": "Thickness range:",
+                "tolerance": "Cutting tolerance:",
+                "finish": "Finish options:",
+                "leadTime": "Typical lead time:",
+                "delivery": "Delivery / pickup:"
+            },
+            "values": {
+                "maxSize": "Custom (Contact us)",
+                "thickness": "2cm - 10cm+",
+                "tolerance": "+/- 1mm",
+                "finish": "Honed, Polished, Bush-hammered",
+                "leadTime": "2-4 Weeks",
+                "delivery": "Ex-Works / Delivered"
+            },
+            "note": "Specs vary by material and project scope — share your drawings for an exact confirmation."
+        },
+        "cta": {
+            "title": "Ready to quote your next order?",
+            "text": "Send dimensions, finish, quantity, and timeline — you’ll get a clear lead time and a straightforward quote.",
+            "primaryBtn": "Request a Quote",
+            "secondaryBtn": "Book a Factory Visit",
+            "whatsapp": "Prefer WhatsApp? Send your drawings and photos — we’ll confirm feasibility and recommend the best finish."
+        },
+        "trust": {
+            "1": {
+                "title": "Direct Manufacturer",
+                "desc": "In-house production for consistent results."
+            },
+            "2": {
+                "title": "Quality-Controlled",
+                "desc": "Every piece checked for cracks, color, and integrity."
+            },
+            "3": {
+                "title": "On-Time Delivery",
+                "desc": "Clear timelines from quote to dispatch."
             }
         }
     },
