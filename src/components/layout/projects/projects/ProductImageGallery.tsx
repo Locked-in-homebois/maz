@@ -1,9 +1,18 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import type { PointerEvent, WheelEvent } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+	ChevronLeft,
+	ChevronRight,
+	Maximize2,
+	Minus,
+	Plus,
+	RotateCcw,
+	X,
+} from "lucide-react";
 import { useLocale } from "next-intl";
 
 interface ProductImageGalleryProps {
@@ -16,15 +25,21 @@ export default function ProductImageGallery({
 	productName,
 }: ProductImageGalleryProps) {
 	const [selectedIndex, setSelectedIndex] = useState(0);
-    const locale = useLocale();
-    const direction = locale === "ar" ? "rtl" : "ltr";
+	const [isZoomOpen, setIsZoomOpen] = useState(false);
+	const [zoom, setZoom] = useState(1);
+	const [pan, setPan] = useState({ x: 0, y: 0 });
+	const [isPanning, setIsPanning] = useState(false);
+	const panStartRef = useRef({ pointerX: 0, pointerY: 0, panX: 0, panY: 0 });
+	const locale = useLocale();
+	const direction = locale === "ar" ? "rtl" : "ltr";
+	const selectedImage = images[selectedIndex];
 
 	// 1. Initialize Main and Thumb Carousels
 	const [mainRef, mainApi] = useEmblaCarousel({ loop: true, direction });
 	const [thumbRef, thumbApi] = useEmblaCarousel({
 		containScroll: "keepSnaps",
 		dragFree: true,
-        direction
+		direction,
 	});
 
 	// 2. Sync Logic
@@ -50,6 +65,27 @@ export default function ProductImageGallery({
 		if (mainApi) mainApi.scrollNext();
 	}, [mainApi]);
 
+	const openZoom = useCallback(() => {
+		setZoom(1);
+		setPan({ x: 0, y: 0 });
+		setIsZoomOpen(true);
+	}, []);
+
+	const closeZoom = useCallback(() => {
+		setIsZoomOpen(false);
+		setZoom(1);
+		setPan({ x: 0, y: 0 });
+		setIsPanning(false);
+	}, []);
+
+	const setZoomLevel = useCallback((nextZoom: number) => {
+		const clampedZoom = Math.min(4, Math.max(1, nextZoom));
+		setZoom(clampedZoom);
+		if (clampedZoom === 1) {
+			setPan({ x: 0, y: 0 });
+		}
+	}, []);
+
 	// 4. Thumb Click Handler
 	const onThumbClick = useCallback(
 		(index: number) => {
@@ -58,6 +94,92 @@ export default function ProductImageGallery({
 		},
 		[mainApi]
 	);
+
+	useEffect(() => {
+		if (!isZoomOpen) return;
+
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				closeZoom();
+				return;
+			}
+
+			if (event.key === "ArrowLeft" && images.length > 1) {
+				scrollPrev();
+				return;
+			}
+
+			if (event.key === "ArrowRight" && images.length > 1) {
+				scrollNext();
+				return;
+			}
+
+			if (event.key === "+" || event.key === "=") {
+				setZoomLevel(zoom + 0.5);
+				return;
+			}
+
+			if (event.key === "-") {
+				setZoomLevel(zoom - 0.5);
+			}
+		};
+
+		document.body.style.overflow = "hidden";
+		window.addEventListener("keydown", onKeyDown);
+
+		return () => {
+			document.body.style.overflow = "";
+			window.removeEventListener("keydown", onKeyDown);
+		};
+	}, [
+		closeZoom,
+		images.length,
+		isZoomOpen,
+		scrollNext,
+		scrollPrev,
+		setZoomLevel,
+		zoom,
+	]);
+
+	useEffect(() => {
+		setZoom(1);
+		setPan({ x: 0, y: 0 });
+		setIsPanning(false);
+	}, [selectedIndex]);
+
+	const handleZoomWheel = (event: WheelEvent<HTMLDivElement>) => {
+		event.preventDefault();
+		const step = event.deltaY > 0 ? -0.25 : 0.25;
+		setZoomLevel(zoom + step);
+	};
+
+	const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+		if (zoom === 1) return;
+		event.currentTarget.setPointerCapture(event.pointerId);
+		panStartRef.current = {
+			pointerX: event.clientX,
+			pointerY: event.clientY,
+			panX: pan.x,
+			panY: pan.y,
+		};
+		setIsPanning(true);
+	};
+
+	const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+		if (!isPanning || zoom === 1) return;
+		const nextPan = {
+			x: panStartRef.current.panX + event.clientX - panStartRef.current.pointerX,
+			y: panStartRef.current.panY + event.clientY - panStartRef.current.pointerY,
+		};
+		setPan(nextPan);
+	};
+
+	const handlePointerEnd = (event: PointerEvent<HTMLDivElement>) => {
+		if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+			event.currentTarget.releasePointerCapture(event.pointerId);
+		}
+		setIsPanning(false);
+	};
 
 	return (
 		<div className="flex flex-col gap-4 w-full select-none">
@@ -82,6 +204,15 @@ export default function ProductImageGallery({
 						))}
 					</div>
 				</div>
+
+				<button
+					type="button"
+					onClick={openZoom}
+					className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-neutral-900 shadow-md transition hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
+					aria-label="Zoom image"
+				>
+					<Maximize2 className="h-5 w-5" />
+				</button>
 
 				{/* --- Overlay Navigation Buttons --- */}
 				{/* Only show buttons if there is more than 1 image */}
@@ -131,6 +262,116 @@ export default function ProductImageGallery({
 					))}
 				</div>
 			</div>
+
+			{isZoomOpen && selectedImage && (
+				<div
+					className="fixed inset-0 z-50 bg-neutral-950/95 text-white"
+					role="dialog"
+					aria-modal="true"
+					aria-label={`${productName} image viewer`}
+				>
+					<div className="absolute left-3 right-3 top-3 z-10 flex items-center justify-between gap-3 sm:left-4 sm:right-4 sm:top-4">
+						<div className="min-w-0 text-sm font-semibold text-white/90">
+							<span className="block truncate">{productName}</span>
+							<span className="text-xs font-medium text-white/60">
+								{selectedIndex + 1} / {images.length}
+							</span>
+						</div>
+
+						<button
+							type="button"
+							onClick={closeZoom}
+							className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-neutral-950 transition hover:bg-neutral-200"
+							aria-label="Close image viewer"
+						>
+							<X className="h-5 w-5" />
+						</button>
+					</div>
+
+					<div
+						className={`flex h-full w-full touch-none items-center justify-center overflow-hidden px-3 py-20 sm:px-4 sm:py-20 ${
+							zoom > 1
+								? isPanning
+									? "cursor-grabbing"
+									: "cursor-grab"
+								: "cursor-zoom-in"
+						}`}
+						onWheel={handleZoomWheel}
+						onPointerDown={handlePointerDown}
+						onPointerMove={handlePointerMove}
+						onPointerUp={handlePointerEnd}
+						onPointerCancel={handlePointerEnd}
+						onDoubleClick={() => setZoomLevel(zoom === 1 ? 2 : 1)}
+					>
+						<div
+							className="relative h-full w-full max-w-7xl transition-transform duration-100"
+							style={{
+								transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoom})`,
+								transformOrigin: "center",
+							}}
+						>
+							<Image
+								src={selectedImage.src}
+								alt={`${productName} enlarged view ${selectedIndex + 1}`}
+								fill
+								className="object-contain"
+								sizes="100vw"
+								priority
+							/>
+						</div>
+					</div>
+
+					{images.length > 1 && (
+						<>
+							<button
+								type="button"
+								onClick={scrollPrev}
+								className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-4"
+								aria-label="Previous image"
+							>
+								<ChevronLeft className="h-6 w-6" />
+							</button>
+							<button
+								type="button"
+								onClick={scrollNext}
+								className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-4"
+								aria-label="Next image"
+							>
+								<ChevronRight className="h-6 w-6" />
+							</button>
+						</>
+					)}
+
+					<div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-neutral-900/80 p-2 shadow-lg ring-1 ring-white/10 backdrop-blur">
+						<button
+							type="button"
+							onClick={() => setZoomLevel(zoom - 0.5)}
+							className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+							aria-label="Zoom out"
+							disabled={zoom <= 1}
+						>
+							<Minus className="h-5 w-5" />
+						</button>
+						<button
+							type="button"
+							onClick={() => setZoomLevel(zoom + 0.5)}
+							className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+							aria-label="Zoom in"
+							disabled={zoom >= 4}
+						>
+							<Plus className="h-5 w-5" />
+						</button>
+						<button
+							type="button"
+							onClick={() => setZoomLevel(1)}
+							className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+							aria-label="Reset zoom"
+						>
+							<RotateCcw className="h-5 w-5" />
+						</button>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
