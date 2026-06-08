@@ -20,6 +20,21 @@ interface ProductImageGalleryProps {
 	productName: string;
 }
 
+type TouchPoint = {
+	x: number;
+	y: number;
+};
+
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 4;
+const OPEN_ZOOM_LEVEL = 2;
+
+function getPointerDistance(points: TouchPoint[]) {
+	if (points.length < 2) return 0;
+
+	return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+}
+
 export default function ProductImageGallery({
 	images,
 	productName,
@@ -30,6 +45,10 @@ export default function ProductImageGallery({
 	const [pan, setPan] = useState({ x: 0, y: 0 });
 	const [isPanning, setIsPanning] = useState(false);
 	const panStartRef = useRef({ pointerX: 0, pointerY: 0, panX: 0, panY: 0 });
+	const previewPointersRef = useRef(new Map<number, TouchPoint>());
+	const previewPinchStartDistanceRef = useRef<number | null>(null);
+	const zoomPointersRef = useRef(new Map<number, TouchPoint>());
+	const zoomPinchStartRef = useRef({ distance: 0, zoom: 1 });
 	const locale = useLocale();
 	const direction = locale === "ar" ? "rtl" : "ltr";
 	const selectedImage = images[selectedIndex];
@@ -65,23 +84,28 @@ export default function ProductImageGallery({
 		if (mainApi) mainApi.scrollNext();
 	}, [mainApi]);
 
-	const openZoom = useCallback(() => {
-		setZoom(1);
+	const openZoom = useCallback((initialZoom = MIN_ZOOM) => {
+		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, initialZoom));
+		setZoom(clampedZoom);
 		setPan({ x: 0, y: 0 });
 		setIsZoomOpen(true);
 	}, []);
 
 	const closeZoom = useCallback(() => {
 		setIsZoomOpen(false);
-		setZoom(1);
+		setZoom(MIN_ZOOM);
 		setPan({ x: 0, y: 0 });
 		setIsPanning(false);
+		previewPointersRef.current.clear();
+		zoomPointersRef.current.clear();
+		previewPinchStartDistanceRef.current = null;
+		zoomPinchStartRef.current = { distance: 0, zoom: MIN_ZOOM };
 	}, []);
 
 	const setZoomLevel = useCallback((nextZoom: number) => {
-		const clampedZoom = Math.min(4, Math.max(1, nextZoom));
+		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, nextZoom));
 		setZoom(clampedZoom);
-		if (clampedZoom === 1) {
+		if (clampedZoom === MIN_ZOOM) {
 			setPan({ x: 0, y: 0 });
 		}
 	}, []);
@@ -142,7 +166,7 @@ export default function ProductImageGallery({
 	]);
 
 	useEffect(() => {
-		setZoom(1);
+		setZoom(MIN_ZOOM);
 		setPan({ x: 0, y: 0 });
 		setIsPanning(false);
 	}, [selectedIndex]);
@@ -153,8 +177,74 @@ export default function ProductImageGallery({
 		setZoomLevel(zoom + step);
 	};
 
+	const handlePreviewPointerDown = (event: PointerEvent<HTMLDivElement>) => {
+		previewPointersRef.current.set(event.pointerId, {
+			x: event.clientX,
+			y: event.clientY,
+		});
+
+		if (previewPointersRef.current.size === 2) {
+			event.currentTarget.setPointerCapture(event.pointerId);
+			previewPinchStartDistanceRef.current = getPointerDistance(
+				Array.from(previewPointersRef.current.values())
+			);
+		}
+	};
+
+	const handlePreviewPointerMove = (event: PointerEvent<HTMLDivElement>) => {
+		if (!previewPointersRef.current.has(event.pointerId)) return;
+
+		previewPointersRef.current.set(event.pointerId, {
+			x: event.clientX,
+			y: event.clientY,
+		});
+
+		if (previewPointersRef.current.size < 2 || isZoomOpen) return;
+
+		const startDistance = previewPinchStartDistanceRef.current;
+		const currentDistance = getPointerDistance(
+			Array.from(previewPointersRef.current.values())
+		);
+
+		if (!startDistance || Math.abs(currentDistance - startDistance) < 18) {
+			return;
+		}
+
+		const pinchScale = currentDistance / startDistance;
+		openZoom(Math.max(OPEN_ZOOM_LEVEL, Math.min(MAX_ZOOM, pinchScale * 1.5)));
+		previewPointersRef.current.clear();
+		previewPinchStartDistanceRef.current = null;
+	};
+
+	const handlePreviewPointerEnd = (event: PointerEvent<HTMLDivElement>) => {
+		if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+			event.currentTarget.releasePointerCapture(event.pointerId);
+		}
+
+		previewPointersRef.current.delete(event.pointerId);
+		if (previewPointersRef.current.size < 2) {
+			previewPinchStartDistanceRef.current = null;
+		}
+	};
+
 	const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-		if (zoom === 1) return;
+		zoomPointersRef.current.set(event.pointerId, {
+			x: event.clientX,
+			y: event.clientY,
+		});
+		event.currentTarget.setPointerCapture(event.pointerId);
+
+		if (zoomPointersRef.current.size === 2) {
+			zoomPinchStartRef.current = {
+				distance: getPointerDistance(Array.from(zoomPointersRef.current.values())),
+				zoom,
+			};
+			setIsPanning(false);
+			return;
+		}
+
+		if (zoom === MIN_ZOOM) return;
+
 		event.currentTarget.setPointerCapture(event.pointerId);
 		panStartRef.current = {
 			pointerX: event.clientX,
@@ -166,7 +256,27 @@ export default function ProductImageGallery({
 	};
 
 	const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
-		if (!isPanning || zoom === 1) return;
+		if (!zoomPointersRef.current.has(event.pointerId)) return;
+
+		zoomPointersRef.current.set(event.pointerId, {
+			x: event.clientX,
+			y: event.clientY,
+		});
+
+		if (zoomPointersRef.current.size >= 2) {
+			const { distance, zoom: startZoom } = zoomPinchStartRef.current;
+			const currentDistance = getPointerDistance(
+				Array.from(zoomPointersRef.current.values())
+			);
+
+			if (distance > 0 && currentDistance > 0) {
+				setZoomLevel(startZoom * (currentDistance / distance));
+			}
+			return;
+		}
+
+		if (!isPanning || zoom === MIN_ZOOM) return;
+
 		const nextPan = {
 			x: panStartRef.current.panX + event.clientX - panStartRef.current.pointerX,
 			y: panStartRef.current.panY + event.clientY - panStartRef.current.pointerY,
@@ -178,13 +288,23 @@ export default function ProductImageGallery({
 		if (event.currentTarget.hasPointerCapture(event.pointerId)) {
 			event.currentTarget.releasePointerCapture(event.pointerId);
 		}
+		zoomPointersRef.current.delete(event.pointerId);
+		if (zoomPointersRef.current.size < 2) {
+			zoomPinchStartRef.current = { distance: 0, zoom };
+		}
 		setIsPanning(false);
 	};
 
 	return (
 		<div className="flex flex-col gap-4 w-full select-none">
 			{/* --- Main Image Area --- */}
-			<div className="relative overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200 aspect-square group">
+			<div
+				className="relative overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200 aspect-square group touch-none"
+				onPointerDown={handlePreviewPointerDown}
+				onPointerMove={handlePreviewPointerMove}
+				onPointerUp={handlePreviewPointerEnd}
+				onPointerCancel={handlePreviewPointerEnd}
+			>
 				{/* Carousel Viewport */}
 				<div className="h-full" ref={mainRef}>
 					<div className="flex h-full touch-pan-y">
@@ -207,7 +327,7 @@ export default function ProductImageGallery({
 
 				<button
 					type="button"
-					onClick={openZoom}
+					onClick={() => openZoom()}
 					className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-neutral-900 shadow-md transition hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
 					aria-label="Zoom image"
 				>
@@ -357,7 +477,7 @@ export default function ProductImageGallery({
 							onClick={() => setZoomLevel(zoom + 0.5)}
 							className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
 							aria-label="Zoom in"
-							disabled={zoom >= 4}
+							disabled={zoom >= MAX_ZOOM}
 						>
 							<Plus className="h-5 w-5" />
 						</button>
