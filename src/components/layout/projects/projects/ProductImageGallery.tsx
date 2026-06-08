@@ -35,6 +35,15 @@ function getPointerDistance(points: TouchPoint[]) {
 	return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
 }
 
+function getPointerMidpoint(points: TouchPoint[]) {
+	if (points.length < 2) return { x: 0, y: 0 };
+
+	return {
+		x: (points[0].x + points[1].x) / 2,
+		y: (points[0].y + points[1].y) / 2,
+	};
+}
+
 export default function ProductImageGallery({
 	images,
 	productName,
@@ -44,11 +53,20 @@ export default function ProductImageGallery({
 	const [zoom, setZoom] = useState(1);
 	const [pan, setPan] = useState({ x: 0, y: 0 });
 	const [isPanning, setIsPanning] = useState(false);
+	const [isPinching, setIsPinching] = useState(false);
+	const zoomSurfaceRef = useRef<HTMLDivElement>(null);
+	const zoomRef = useRef(MIN_ZOOM);
+	const panRef = useRef({ x: 0, y: 0 });
 	const panStartRef = useRef({ pointerX: 0, pointerY: 0, panX: 0, panY: 0 });
 	const previewPointersRef = useRef(new Map<number, TouchPoint>());
 	const previewPinchStartDistanceRef = useRef<number | null>(null);
 	const zoomPointersRef = useRef(new Map<number, TouchPoint>());
-	const zoomPinchStartRef = useRef({ distance: 0, zoom: 1 });
+	const zoomPinchStartRef = useRef({
+		distance: 0,
+		zoom: MIN_ZOOM,
+		pan: { x: 0, y: 0 },
+		midpoint: { x: 0, y: 0 },
+	});
 	const locale = useLocale();
 	const direction = locale === "ar" ? "rtl" : "ltr";
 	const selectedImage = images[selectedIndex];
@@ -84,10 +102,76 @@ export default function ProductImageGallery({
 		if (mainApi) mainApi.scrollNext();
 	}, [mainApi]);
 
-	const openZoom = useCallback((initialZoom = MIN_ZOOM) => {
-		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, initialZoom));
+	const getZoomCenter = useCallback(() => {
+		const rect = zoomSurfaceRef.current?.getBoundingClientRect();
+
+		if (rect) {
+			return {
+				x: rect.left + rect.width / 2,
+				y: rect.top + rect.height / 2,
+			};
+		}
+
+		return {
+			x: window.innerWidth / 2,
+			y: window.innerHeight / 2,
+		};
+	}, []);
+
+	const getAnchoredPan = useCallback(
+		(nextZoom: number, focalPoint: TouchPoint) => {
+			const currentZoom = zoomRef.current;
+			const currentPan = panRef.current;
+			const center = getZoomCenter();
+			const zoomRatio = nextZoom / currentZoom;
+
+			return {
+				x:
+					focalPoint.x -
+					center.x -
+					(focalPoint.x - center.x - currentPan.x) * zoomRatio,
+				y:
+					focalPoint.y -
+					center.y -
+					(focalPoint.y - center.y - currentPan.y) * zoomRatio,
+			};
+		},
+		[getZoomCenter]
+	);
+
+	const applyZoom = useCallback((nextZoom: number, nextPan = panRef.current) => {
+		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, nextZoom));
+		const clampedPan = clampedZoom === MIN_ZOOM ? { x: 0, y: 0 } : nextPan;
+
+		zoomRef.current = clampedZoom;
+		panRef.current = clampedPan;
 		setZoom(clampedZoom);
-		setPan({ x: 0, y: 0 });
+		setPan(clampedPan);
+	}, []);
+
+	const openZoom = useCallback((initialZoom = MIN_ZOOM, focalPoint?: TouchPoint) => {
+		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, initialZoom));
+		const center = {
+			x: window.innerWidth / 2,
+			y: window.innerHeight / 2,
+		};
+		const nextPan = focalPoint
+			? {
+					x:
+						focalPoint.x -
+						center.x -
+						(focalPoint.x - center.x) * clampedZoom,
+					y:
+						focalPoint.y -
+						center.y -
+						(focalPoint.y - center.y) * clampedZoom,
+				}
+			: { x: 0, y: 0 };
+
+		zoomRef.current = clampedZoom;
+		panRef.current = clampedZoom === MIN_ZOOM ? { x: 0, y: 0 } : nextPan;
+		setZoom(clampedZoom);
+		setPan(panRef.current);
 		setIsZoomOpen(true);
 	}, []);
 
@@ -96,19 +180,27 @@ export default function ProductImageGallery({
 		setZoom(MIN_ZOOM);
 		setPan({ x: 0, y: 0 });
 		setIsPanning(false);
+		setIsPinching(false);
+		zoomRef.current = MIN_ZOOM;
+		panRef.current = { x: 0, y: 0 };
 		previewPointersRef.current.clear();
 		zoomPointersRef.current.clear();
 		previewPinchStartDistanceRef.current = null;
-		zoomPinchStartRef.current = { distance: 0, zoom: MIN_ZOOM };
+		zoomPinchStartRef.current = {
+			distance: 0,
+			zoom: MIN_ZOOM,
+			pan: { x: 0, y: 0 },
+			midpoint: { x: 0, y: 0 },
+		};
 	}, []);
 
-	const setZoomLevel = useCallback((nextZoom: number) => {
+	const setZoomLevel = useCallback((nextZoom: number, focalPoint?: TouchPoint) => {
 		const clampedZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, nextZoom));
-		setZoom(clampedZoom);
-		if (clampedZoom === MIN_ZOOM) {
-			setPan({ x: 0, y: 0 });
-		}
-	}, []);
+		applyZoom(
+			clampedZoom,
+			focalPoint ? getAnchoredPan(clampedZoom, focalPoint) : panRef.current
+		);
+	}, [applyZoom, getAnchoredPan]);
 
 	// 4. Thumb Click Handler
 	const onThumbClick = useCallback(
@@ -168,13 +260,19 @@ export default function ProductImageGallery({
 	useEffect(() => {
 		setZoom(MIN_ZOOM);
 		setPan({ x: 0, y: 0 });
+		zoomRef.current = MIN_ZOOM;
+		panRef.current = { x: 0, y: 0 };
 		setIsPanning(false);
+		setIsPinching(false);
 	}, [selectedIndex]);
 
 	const handleZoomWheel = (event: WheelEvent<HTMLDivElement>) => {
 		event.preventDefault();
 		const step = event.deltaY > 0 ? -0.25 : 0.25;
-		setZoomLevel(zoom + step);
+		setZoomLevel(zoomRef.current + step, {
+			x: event.clientX,
+			y: event.clientY,
+		});
 	};
 
 	const handlePreviewPointerDown = (event: PointerEvent<HTMLDivElement>) => {
@@ -211,7 +309,10 @@ export default function ProductImageGallery({
 		}
 
 		const pinchScale = currentDistance / startDistance;
-		openZoom(Math.max(OPEN_ZOOM_LEVEL, Math.min(MAX_ZOOM, pinchScale * 1.5)));
+		openZoom(
+			Math.max(OPEN_ZOOM_LEVEL, Math.min(MAX_ZOOM, pinchScale * 1.5)),
+			getPointerMidpoint(Array.from(previewPointersRef.current.values()))
+		);
 		previewPointersRef.current.clear();
 		previewPinchStartDistanceRef.current = null;
 	};
@@ -235,22 +336,25 @@ export default function ProductImageGallery({
 		event.currentTarget.setPointerCapture(event.pointerId);
 
 		if (zoomPointersRef.current.size === 2) {
+			const points = Array.from(zoomPointersRef.current.values());
 			zoomPinchStartRef.current = {
-				distance: getPointerDistance(Array.from(zoomPointersRef.current.values())),
-				zoom,
+				distance: getPointerDistance(points),
+				zoom: zoomRef.current,
+				pan: panRef.current,
+				midpoint: getPointerMidpoint(points),
 			};
 			setIsPanning(false);
+			setIsPinching(true);
 			return;
 		}
 
-		if (zoom === MIN_ZOOM) return;
+		if (zoomRef.current === MIN_ZOOM) return;
 
-		event.currentTarget.setPointerCapture(event.pointerId);
 		panStartRef.current = {
 			pointerX: event.clientX,
 			pointerY: event.clientY,
-			panX: pan.x,
-			panY: pan.y,
+			panX: panRef.current.x,
+			panY: panRef.current.y,
 		};
 		setIsPanning(true);
 	};
@@ -264,23 +368,46 @@ export default function ProductImageGallery({
 		});
 
 		if (zoomPointersRef.current.size >= 2) {
-			const { distance, zoom: startZoom } = zoomPinchStartRef.current;
-			const currentDistance = getPointerDistance(
-				Array.from(zoomPointersRef.current.values())
-			);
+			const points = Array.from(zoomPointersRef.current.values());
+			const {
+				distance,
+				zoom: startZoom,
+				pan: startPan,
+				midpoint: startMidpoint,
+			} = zoomPinchStartRef.current;
+			const currentDistance = getPointerDistance(points);
+			const currentMidpoint = getPointerMidpoint(points);
 
 			if (distance > 0 && currentDistance > 0) {
-				setZoomLevel(startZoom * (currentDistance / distance));
+				const nextZoom = Math.min(
+					MAX_ZOOM,
+					Math.max(MIN_ZOOM, startZoom * (currentDistance / distance))
+				);
+				const center = getZoomCenter();
+				const contentOffset = {
+					x: (startMidpoint.x - center.x - startPan.x) / startZoom,
+					y: (startMidpoint.y - center.y - startPan.y) / startZoom,
+				};
+				const nextPan =
+					nextZoom === MIN_ZOOM
+						? { x: 0, y: 0 }
+						: {
+								x: currentMidpoint.x - center.x - contentOffset.x * nextZoom,
+								y: currentMidpoint.y - center.y - contentOffset.y * nextZoom,
+							};
+
+				applyZoom(nextZoom, nextPan);
 			}
 			return;
 		}
 
-		if (!isPanning || zoom === MIN_ZOOM) return;
+		if (!isPanning || zoomRef.current === MIN_ZOOM) return;
 
 		const nextPan = {
 			x: panStartRef.current.panX + event.clientX - panStartRef.current.pointerX,
 			y: panStartRef.current.panY + event.clientY - panStartRef.current.pointerY,
 		};
+		panRef.current = nextPan;
 		setPan(nextPan);
 	};
 
@@ -290,8 +417,27 @@ export default function ProductImageGallery({
 		}
 		zoomPointersRef.current.delete(event.pointerId);
 		if (zoomPointersRef.current.size < 2) {
-			zoomPinchStartRef.current = { distance: 0, zoom };
+			zoomPinchStartRef.current = {
+				distance: 0,
+				zoom: zoomRef.current,
+				pan: panRef.current,
+				midpoint: { x: 0, y: 0 },
+			};
+			setIsPinching(false);
 		}
+
+		if (zoomPointersRef.current.size === 1 && zoomRef.current > MIN_ZOOM) {
+			const remainingPointer = Array.from(zoomPointersRef.current.values())[0];
+			panStartRef.current = {
+				pointerX: remainingPointer.x,
+				pointerY: remainingPointer.y,
+				panX: panRef.current.x,
+				panY: panRef.current.y,
+			};
+			setIsPanning(true);
+			return;
+		}
+
 		setIsPanning(false);
 	};
 
@@ -409,6 +555,7 @@ export default function ProductImageGallery({
 					</div>
 
 					<div
+						ref={zoomSurfaceRef}
 						className={`flex h-full w-full touch-none items-center justify-center overflow-hidden px-3 py-20 sm:px-4 sm:py-20 ${
 							zoom > 1
 								? isPanning
@@ -421,10 +568,19 @@ export default function ProductImageGallery({
 						onPointerMove={handlePointerMove}
 						onPointerUp={handlePointerEnd}
 						onPointerCancel={handlePointerEnd}
-						onDoubleClick={() => setZoomLevel(zoom === 1 ? 2 : 1)}
+						onDoubleClick={(event) =>
+							setZoomLevel(zoomRef.current === MIN_ZOOM ? 2 : MIN_ZOOM, {
+								x: event.clientX,
+								y: event.clientY,
+							})
+						}
 					>
 						<div
-							className="relative h-full w-full max-w-7xl transition-transform duration-100"
+							className={`relative h-full w-full max-w-7xl ${
+								isPinching || isPanning
+									? ""
+									: "transition-transform duration-150 ease-out"
+							}`}
 							style={{
 								transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoom})`,
 								transformOrigin: "center",
@@ -468,7 +624,7 @@ export default function ProductImageGallery({
 							onClick={() => setZoomLevel(zoom - 0.5)}
 							className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
 							aria-label="Zoom out"
-							disabled={zoom <= 1}
+							disabled={zoom <= MIN_ZOOM}
 						>
 							<Minus className="h-5 w-5" />
 						</button>
