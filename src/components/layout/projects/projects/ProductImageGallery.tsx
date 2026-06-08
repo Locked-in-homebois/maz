@@ -531,7 +531,7 @@ export default function ProductImageGallery({
 
 			{isZoomOpen && selectedImage && (
 				<div
-					className="fixed inset-0 z-50 bg-neutral-950/95 text-white"
+					className="fixed inset-0 z-[1100] bg-neutral-950/95 text-white"
 					role="dialog"
 					aria-modal="true"
 					aria-label={`${productName} image viewer`}
