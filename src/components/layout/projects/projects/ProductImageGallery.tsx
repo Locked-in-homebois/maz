@@ -26,7 +26,7 @@ type TouchPoint = {
 };
 
 const MIN_ZOOM = 1;
-const MAX_ZOOM = 4;
+const MAX_ZOOM = 6;
 const OPEN_ZOOM_LEVEL = 2;
 
 function getPointerDistance(points: TouchPoint[]) {
@@ -451,6 +451,13 @@ export default function ProductImageGallery({
 				onPointerUp={handlePreviewPointerEnd}
 				onPointerCancel={handlePreviewPointerEnd}
 			>
+				<button
+					type="button"
+					onClick={() => openZoom()}
+					className="absolute inset-0 z-10 cursor-zoom-in"
+					aria-label="Open image fullscreen"
+				/>
+
 				{/* Carousel Viewport */}
 				<div className="h-full" ref={mainRef}>
 					<div className="flex h-full touch-pan-y">
@@ -474,7 +481,7 @@ export default function ProductImageGallery({
 				<button
 					type="button"
 					onClick={() => openZoom()}
-					className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-neutral-900 shadow-md transition hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
+					className="absolute bottom-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-neutral-900 shadow-md transition hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
 					aria-label="Zoom image"
 				>
 					<Maximize2 className="h-5 w-5" />
@@ -487,7 +494,7 @@ export default function ProductImageGallery({
 						{/* Left Button */}
 						<button
 							onClick={scrollPrev}
-							className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 translate-x-2 group-hover:translate-x-0"
+							className="absolute left-4 top-1/2 z-20 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 translate-x-2 group-hover:translate-x-0"
 							aria-label="Previous image"
 						>
 							<ChevronLeft className="w-6 h-6 text-neutral-800" />
@@ -496,7 +503,7 @@ export default function ProductImageGallery({
 						{/* Right Button */}
 						<button
 							onClick={scrollNext}
-							className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 -translate-x-2 group-hover:translate-x-0"
+							className="absolute right-4 top-1/2 z-20 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 -translate-x-2 group-hover:translate-x-0"
 							aria-label="Next image"
 						>
 							<ChevronRight className="w-6 h-6 text-neutral-800" />
