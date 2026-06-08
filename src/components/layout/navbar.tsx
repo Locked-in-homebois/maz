@@ -107,7 +107,7 @@ export default function Navbar() {
                                     : "text-neutral-500"
                             }`}
                         >
-                            <h1 className="bg-amber-400">{item.label}</h1>
+                            {item.label}
                             {hoveredIndex === index && (
                                 <motion.span
                                     layoutId="navbar-underline"
