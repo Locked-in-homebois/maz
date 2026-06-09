@@ -58,6 +58,7 @@ export default function ProductImageGallery({
 	const zoomRef = useRef(MIN_ZOOM);
 	const panRef = useRef({ x: 0, y: 0 });
 	const panStartRef = useRef({ pointerX: 0, pointerY: 0, panX: 0, panY: 0 });
+	const swipeStartRef = useRef<{ x: number; y: number } | null>(null);
 	const previewPointersRef = useRef(new Map<number, TouchPoint>());
 	const previewPinchStartDistanceRef = useRef<number | null>(null);
 	const zoomPointersRef = useRef(new Map<number, TouchPoint>());
@@ -183,6 +184,7 @@ export default function ProductImageGallery({
 		setIsPinching(false);
 		zoomRef.current = MIN_ZOOM;
 		panRef.current = { x: 0, y: 0 };
+		swipeStartRef.current = null;
 		previewPointersRef.current.clear();
 		zoomPointersRef.current.clear();
 		previewPinchStartDistanceRef.current = null;
@@ -348,7 +350,12 @@ export default function ProductImageGallery({
 			return;
 		}
 
-		if (zoomRef.current === MIN_ZOOM) return;
+		if (zoomRef.current === MIN_ZOOM) {
+			// Not zoomed: track the gesture so a horizontal drag can swipe
+			// between images in the direction of the drag.
+			swipeStartRef.current = { x: event.clientX, y: event.clientY };
+			return;
+		}
 
 		panStartRef.current = {
 			pointerX: event.clientX,
@@ -415,6 +422,33 @@ export default function ProductImageGallery({
 		if (event.currentTarget.hasPointerCapture(event.pointerId)) {
 			event.currentTarget.releasePointerCapture(event.pointerId);
 		}
+
+		// Resolve a horizontal swipe to navigate while not zoomed.
+		if (
+			swipeStartRef.current &&
+			zoomRef.current === MIN_ZOOM &&
+			zoomPointersRef.current.size <= 1 &&
+			images.length > 1
+		) {
+			const deltaX = event.clientX - swipeStartRef.current.x;
+			const deltaY = event.clientY - swipeStartRef.current.y;
+			const SWIPE_THRESHOLD = 40;
+
+			if (
+				Math.abs(deltaX) > SWIPE_THRESHOLD &&
+				Math.abs(deltaX) > Math.abs(deltaY)
+			) {
+				// In RTL the visual direction is mirrored.
+				const swipedLeft = direction === "rtl" ? deltaX > 0 : deltaX < 0;
+				if (swipedLeft) {
+					scrollNext();
+				} else {
+					scrollPrev();
+				}
+			}
+		}
+		swipeStartRef.current = null;
+
 		zoomPointersRef.current.delete(event.pointerId);
 		if (zoomPointersRef.current.size < 2) {
 			zoomPinchStartRef.current = {
